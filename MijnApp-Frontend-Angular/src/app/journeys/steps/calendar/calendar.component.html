@@ -1,0 +1,40 @@
+<form [formGroup]="moveDateForm" *ngIf="!loading">
+    <div class="contentpart">
+        <h3>{{question?.title}}</h3>
+        <p>
+            {{question?.subtitle}}
+        </p>
+        <div class="form-group mb-4">
+            <label>Verhuisdatum</label>
+        </div>
+        <div class="row date-block">
+            <div class="form-group col-2 mr-1">
+                <label class="lbl-title">dag</label>
+                <input [class.formControl-Error]="showError('dag')" type="text" class="form-control" id="text1"
+                    aria-describedby="emailHelp" placeholder="" formControlName="dag" />
+            </div>
+            <div class="form-group col-2 mr-1">
+                <label class="lbl-title">maand</label>
+                <input [class.formControl-Error]="showError('maand')" type="text" class="form-control" id="text1"
+                    aria-describedby="emailHelp" placeholder="" formControlName="maand" />
+            </div>
+            <div class="form-group col-3 mr-1">
+                <label class="lbl-title">jaar</label>
+                <input [class.formControl-Error]="showError('jaar')" type="text" class="form-control year" id="text1"
+                    aria-describedby="emailHelp" placeholder="" formControlName="jaar" />
+            </div>
+        </div>
+    </div>
+    <div class="btnrow">
+        <a class="orangebtn cursor-pointer" *ngIf="moveDateForm.valid" (click)="nextAction()">
+            <div class="d-inline-flex">
+                Volgende stap
+                <div class="ml-2"><img src="/assets/img/Arrow-forward-w.png" /></div>
+            </div>
+        </a>
+        <a class="backbottom cursor-pointer" (click)="backAction()">
+            <div><img src="/assets/img/Arrow-back-gray.png" /></div>
+            Terug naar de vorige stap
+        </a>
+    </div>
+</form>

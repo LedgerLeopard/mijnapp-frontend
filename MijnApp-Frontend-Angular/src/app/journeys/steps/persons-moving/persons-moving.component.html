@@ -1,0 +1,36 @@
+<div class="contentpart">
+    <h3>{{question?.title}}</h3>
+    <p>
+        {{question?.subtitle}}
+    </p>
+    <div class="card" *ngFor="let person of persons;let i = index">
+        <div class="row no-gutters">
+            <div class="col-auto">
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="person{{i + 1}}" value="{{person.id}}"
+                        [checked]="order && order.value.includes(person.id)" (change)="checkBoxEvent($event, person)">
+                    <label class="custom-control-label" for="person{{i + 1}}"></label>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card-body">
+                    <p>
+                        {{person?.naam?.aanschrijfwijze}}, geboren op {{person?.geboorte?.datum.date}}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="btnrow cursor-pointer" (click)="nextAction()">
+    <a class="orangebtn">
+        <div class="d-inline-flex">
+            Volgende stap
+            <div class="ml-2"><img src="/assets/img/Arrow-forward-w.png" /></div>
+        </div>
+    </a>
+    <a class="backbottom cursor-pointer" (click)="backAction()">
+        <div><img src="/assets/img/Arrow-back-gray.png" /></div>
+        Terug naar de vorige stap
+    </a>
+</div>

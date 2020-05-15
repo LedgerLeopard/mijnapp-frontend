@@ -1,0 +1,39 @@
+<div class="page-wrapper">
+    <div class="page_name">
+      <div class="title">Zoeken</div>
+      <div class="closebtn">
+        <a routerLink="../homepage">
+          <div><img src="/assets/img/cross.png" /></div>
+          sluit
+        </a>
+      </div>
+    </div>
+    <div class="contentpart">
+      <div class="searchwrap">
+        <img src="/assets/img/searchicon.png" />
+        <input
+          type="text"
+          class="form-control"
+          id="text1"
+          aria-describedby="emailHelp"
+          placeholder="Zoeken op een regeling"
+        />
+      </div>
+      <h3>Suggesties</h3>
+      <div class="card" *ngFor="let journey of journeys">
+        <div class="row no-gutters">
+          <div class="col-auto">
+            <img src="/assets/img/srch-img-1.png" />
+          </div>
+          <div class="col">
+            <div class="card-body cursor-pointer"  [routerLink]="['search-overview']"
+            [queryParams]="{ id: journey.request_type_id }"
+            queryParamsHandling="merge" >
+              <h5 class="card-title">{{journey.title}}</h5>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

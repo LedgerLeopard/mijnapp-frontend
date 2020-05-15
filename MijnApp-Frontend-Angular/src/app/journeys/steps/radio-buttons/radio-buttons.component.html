@@ -1,0 +1,32 @@
+<div class="contentpart" *ngIf="!loading">
+    <h3>{{question?.title}}</h3>
+    <p>
+        {{question?.subtitle}}
+    </p>
+    <div class="card eh-radio-group eh-radio-group-big" *ngFor="let option of question.options;let i = index">
+        <div class="row no-gutters">
+            <div class="col-auto">
+                    <div class="eh-radio">
+                      <input id="option{{i + 1}}" 
+                             type="radio" 
+                             [checked]="order && order.value === option.value"
+                             name="radio-option" [value]="option.value"
+                             (change)="optionChange($event, option.title)">
+                      <label for="option{{i + 1}}">{{option.title}}</label>
+                  </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="btnrow cursor-pointer" >
+    <a class="orangebtn" (click)="nextAction()" *ngIf="!!order.value">
+        <div class="d-inline-flex">
+            Volgende stap
+            <div class="ml-2"><img src="/assets/img/Arrow-forward-w.png" /></div>
+        </div>
+    </a>
+    <a class="backbottom cursor-pointer" (click)="backAction()">
+        <div><img src="/assets/img/Arrow-back-gray.png" /></div>
+        Terug naar de vorige stap
+    </a>
+</div>

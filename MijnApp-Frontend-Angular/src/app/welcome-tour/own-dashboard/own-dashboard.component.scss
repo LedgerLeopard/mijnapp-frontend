@@ -1,0 +1,80 @@
+@import "../../styles/colors";
+
+.page-wrapper {
+  background: $backgroundColor;
+  height: calc(100% - 0px);
+  padding: 0;
+  .page_name {
+    display: block;
+    .title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .link {
+        color: #005ea5;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 22px;
+        font-family: "rijksoverheidsanswebtext_reRg" !important;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      img {
+        width: 30px;
+        margin-right: 8px;
+      }
+    }
+    .backpage {
+      display: flex;
+      width: 100%;
+      img {
+        margin-right: 6px;
+      }
+    }
+  }
+  .contentpart {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 0;
+    h3 {
+      color: $mineShaft;
+      font-style: normal;
+      font-family: "rijksoverheidsanswebtext_boBd";
+      font-size: 26px;
+      line-height: 30px;
+    }
+    .screenimg {
+      margin-top: 15px;
+      img {
+        max-width: 100%;
+      }
+    }
+    p {
+      margin: 0;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 22px;
+    }
+  }
+  .statusbar {
+    list-style-type: none;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    li {
+      width: 33.33%;
+      height: 4px;
+      margin-left: 4px;
+      &.active {
+        background: $laPalma;
+      }
+      &:first-child {
+        margin: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,68 @@
+@import "../../styles/colors";
+
+.page-wrapper {
+  background: $backgroundColor;
+  height: calc(100% - 0px);
+  padding: 0;
+  .page_name {
+    display: block;
+    .title {
+      display: flex;
+      align-items: center;
+      img {
+        width: 30px;
+        margin-right: 8px;
+      }
+    }
+    .backpage {
+      display: flex;
+      width: 100%;
+      img {
+        margin-right: 6px;
+      }
+    }
+  }
+  .contentpart {
+    h3 {
+      color: $mineShaft;
+      font-style: normal;
+      font-family: "rijksoverheidsanswebtext_boBd";
+      font-size: 18px;
+      line-height: 26px;
+      margin-bottom: 16px;
+    }
+
+    .overviewlist {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      li {
+        background: $white;
+        margin-bottom: 1px;
+        padding: 15px 20px;
+        a {
+          color: $mineShaft;
+          display: flex;
+          align-items: center;
+          text-decoration: none;
+          span {
+            width: 22px;
+            min-width: 22px;
+            height: 22px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 22px;
+            background: $black;
+            border-radius: 50%;
+            color: $white;
+            margin-right: 18px;
+          }
+        }
+      }
+    }
+  }
+}

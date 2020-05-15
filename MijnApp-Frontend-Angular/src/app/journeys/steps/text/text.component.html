@@ -1,0 +1,19 @@
+<div class="contentpart">
+    <h3>{{question?.title}}</h3>
+    <div class="form-group">
+        <input type="text" class="form-control" id="text" autocomplete="off"
+                     placeholder="{{question?.title}}" [(ngModel)] = "value" />
+    </div>
+</div>
+<div class="btnrow" (disabled)="contactForm.invalid">
+    <a class="orangebtn cursor-pointer" *ngIf="!!value" (click)="nextAction()">
+        <div class="d-inline-flex">
+            Volgende stap
+            <div class="ml-2"><img src="/assets/img/Arrow-forward-w.png" /></div>
+        </div>
+    </a>
+    <a class="backbottom cursor-pointer" (click)="backAction()">
+        <div><img src="/assets/img/Arrow-back-gray.png" /></div>
+        Terug naar de vorige stap
+    </a>
+</div>

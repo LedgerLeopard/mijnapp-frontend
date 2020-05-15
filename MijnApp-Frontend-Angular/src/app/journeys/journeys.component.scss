@@ -1,0 +1,76 @@
+@import "../styles/colors";
+
+.page-wrapper {
+  height: calc(100% - 0px);
+  .page_name {
+    box-shadow: none;
+    .closebtn {
+      border-left: 1px dashed $scorpion;
+      padding: 0px 0px 0px 7px;
+      color: $dustyGray;
+      text-align: center;
+      font-style: normal;
+      font-family: "rijksoverheidsanswebtext_boBd";
+      font-size: 12px;
+      line-height: 18px;
+      text-transform: uppercase;
+      a {
+        color: $dustyGray;
+      }
+    }
+  }
+  .contentpart {
+    h3 {
+      color: $mineShaft;
+      font-style: normal;
+      font-family: "rijksoverheidsanswebtext_boBd";
+      font-size: 18px;
+      line-height: 26px;
+      margin-bottom: 16px;
+    }
+    .searchwrap {
+      display: flex;
+      border: 1px solid $silverSand;
+      padding: 12px 10px;
+      background: $white;
+      align-items: center;
+      margin-bottom: 24px;
+      input {
+        border: 0;
+        padding: 0;
+        height: auto;
+        padding-left: 10px;
+        font-style: normal;
+        font-family: "rijksoverheidsanswebtext_boBd";
+        font-size: 16px;
+        line-height: 22px;
+      }
+    }
+    .card {
+      padding: 15px 20px;
+      border: 0;
+      box-shadow: inset 0px -1px 0px $gallery;
+      border-radius: 0;
+      .row {
+        align-items: center;
+      }
+      .card-body {
+        padding: 0px 0px 0px 20px;
+        h5 {
+          margin-bottom: 0;
+          font-style: normal;
+          font-family: "rijksoverheidsanswebtext_boBd";
+          font-size: 16px;
+          line-height: 22px;
+        }
+        .status {
+          font-style: normal;
+          font-weight: normal;
+          font-size: 16px;
+          line-height: 22px;
+          color: $laPalma;
+        }
+      }
+    }
+  }
+}

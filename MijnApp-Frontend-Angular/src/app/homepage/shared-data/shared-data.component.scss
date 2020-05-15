@@ -1,0 +1,92 @@
+@import "../../styles/colors";
+
+.page-wrapper {
+  background: $backgroundColor;
+  padding: 0;
+  .page_name {
+    display: block;
+    .title {
+      display: flex;
+      align-items: center;
+      img {
+        width: 30px;
+        margin-right: 8px;
+      }
+    }
+    .backpage {
+      display: flex;
+      width: 100%;
+      img {
+        margin-right: 6px;
+      }
+    }
+  }
+  .contentpart {
+        p {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 22px;
+      color: $gray;
+    }
+    .card {
+      padding: 15px 20px;
+      border: 0;
+      box-shadow: inset 0px -2px 0px rgba(43, 43, 43, 0.25);
+      border-radius: 0;
+      .row {
+        align-items: center;
+      }
+      .card-body {
+        padding: 0px;
+        p {
+          margin: 0;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 16px;
+          line-height: 22px;
+        }
+        label {
+          color: $gray;
+          margin: 0;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 14px;
+          line-height: 18px;
+        }
+        .value {
+          display: flex;
+          align-items: center;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 16px;
+          line-height: 22px;
+          img {
+            margin-right: 6px;
+          }
+        }
+        span {
+          font-style: normal;
+          font-weight: normal;
+          font-size: 14px;
+          line-height: 18px;
+          color: $gray;
+        }
+        h4 {
+          margin: 0;
+          font-style: normal;
+          font-family: "rijksoverheidsanswebtext_boBd";
+          font-size: 18px;
+          line-height: 26px;
+        }
+        h5 {
+          margin: 0;
+          font-style: normal;
+          font-family: "rijksoverheidsanswebtext_boBd";
+          font-size: 16px;
+          line-height: 22px;
+        }
+      }
+    }
+  }
+}

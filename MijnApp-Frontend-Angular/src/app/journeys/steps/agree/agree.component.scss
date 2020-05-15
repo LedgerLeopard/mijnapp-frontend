@@ -1,0 +1,49 @@
+@import "../../../styles/colors";
+
+.contentpart {
+    > p {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 22px;
+    }
+    h3 {
+      color: $mineShaft;
+      font-style: normal;
+      font-family: "rijksoverheidsanswebtext_boBd";
+      font-size: 18px;
+      line-height: 26px;
+      margin-bottom: 8px;
+    }
+    .card {
+      padding: 15px 20px;
+      border: 0;
+      box-shadow: inset 0px -1px 0px $gallery;
+      border-radius: 0;
+      .row {
+        align-items: center;
+      }
+      p {
+        margin: 0;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 22px;
+      }
+      .card-body {
+        padding: 0px 0px 0px 20px;
+        .custom-checkbox .custom-control-label::before {
+            border-radius: 0rem;
+            height: 18px;
+            width: 18px;
+          }
+          .custom-checkbox .custom-control-label::after {
+            height: 18px;
+            width: 18px;
+          }
+          .fr {
+            float: right;
+          }
+      }
+    }
+}

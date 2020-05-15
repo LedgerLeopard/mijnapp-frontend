@@ -1,0 +1,114 @@
+<div class="page-wrapper">
+  <div class="page_name">
+    <div class="backpage cursor-pointer" routerLink="../">
+      <div><img src="/assets/img/Arrow-back.png" /></div>
+      Terug naar Start
+    </div>
+    <div class="d-flex justify-content-between">
+      <div class="title">Ad de Vries</div>
+      <div class="profilepic">
+        <img src="/assets/img/Ellipse 4.png" />
+      </div>
+    </div>
+  </div>
+
+  <div class="contentpart">
+    <h3>Persoonsgegevens</h3>
+    <div class="card">
+      <div class="row no-gutters">
+        <div class="col">
+          <div class="card-body">
+            <label>Voornaam(en)</label>
+            <p>
+              {{personalInfo?.naam?.voornamen}}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="row no-gutters">
+        <div class="col">
+          <div class="card-body">
+            <label>Achternaam</label>
+            <p>
+              {{personalInfo?.naam?.geslachtsnaam}} 
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="row no-gutters">
+        <div class="col">
+          <div class="card-body">
+            <label>Geboortedatum</label>
+            <p>
+             {{personalInfo?.geboorte?.datum?.date}}  
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="row no-gutters">
+        <div class="col">
+          <div class="card-body">
+            <label>Burgerservicenummer</label>
+            <p>
+              {{personalInfo?.burgerservicenummer}}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="row no-gutters">
+        <div class="col">
+          <div class="card-body">
+            <label>Geboorteplaats</label>
+            <p>
+              Utrecht
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="row no-gutters">
+        <div class="col">
+          <div class="card-body">
+            <label>Geboorteland</label>
+            <p>
+              Nederland
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="row no-gutters">
+        <div class="col">
+          <div class="card-body">
+            <label>Geregisteerd partnerschap</label>
+            <p>
+              Evelien de Vries
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="row no-gutters">
+        <div class="col">
+          <div class="card-body">
+            <label>Kinderen</label>
+            <p>
+              Paul de Vries
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,39 @@
+<div class="page-wrapper">
+  <div class="contentpart">
+    <div class="slogan">
+      <h3>MijnApp</h3>
+      <h5>Alles zelf regelen.</h5>
+    </div>
+  </div>
+  <div class="btnrow">
+    <div class="row mb-2" *ngIf="hasFakeLoginEnabled">
+      <div class="col">
+        <a class="orangebtn"  (click)='_signInWithDigiDFake()' >
+          Test inloggen met DigiD
+        </a>
+      </div>
+      <div class="col-auto pl-0">
+        <img src="/assets/img/digid logomark.png" />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <a class="orangebtn"  href="https://digid.nl/inloggen">
+          Inloggen met DigiD
+        </a>
+      </div>
+      <div class="col-auto pl-0">
+        <img src="/assets/img/digid logomark.png" />
+      </div>
+    </div>
+    <div class="normallinks">
+      <label>
+        Heeft u nog geen DigiD?
+      </label>
+      <p>
+        Vraag uw DigiD aan op
+        <a href="https://www.digid.nl/" target="_blank">www.digid.nl</a>
+      </p>
+    </div>
+  </div>
+</div>

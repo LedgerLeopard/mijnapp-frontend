@@ -1,0 +1,56 @@
+@import "../styles/colors";
+
+.page-wrapper {
+  background: url(../../assets/img/splash-icon.png) no-repeat left bottom
+    $backgroundColor;
+  padding: 0;
+  .contentpart {
+    position: relative;
+    display: flex;
+    align-items: center;
+    .slogan {
+      margin-top: -80px;
+    }
+    h3 {
+      color: $mineShaft;
+      font-style: normal;
+      font-family: "rijksoverheidsanswebtext_boBd";
+      font-size: 26px;
+      line-height: 30px;
+      margin-bottom: 16px;
+    }
+    h5 {
+      color: $mineShaft;
+      font-style: italic;
+      font-family: 'RijksoverheidSerifWeb-Italic' !important;
+      font-weight: normal;
+      font-size: 23px;
+      line-height: 22px;
+    }
+  }
+  .btnrow {
+    .row {
+      align-items: center;
+    }
+    .normallinks {
+      margin-top: 24px;
+      label {
+        font-style: normal;
+        font-family: "rijksoverheidsanswebtext_boBd";
+        font-size: 16px;
+        line-height: 22px;
+        margin: 0;
+      }
+      p {
+        margin: 0;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 22px;
+        a {
+          color: $blue;
+        }
+      }
+    }
+  }
+}

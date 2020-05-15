@@ -1,0 +1,37 @@
+@font-face {
+  font-family: "rijksoverheidsanswebtext_boBd";
+  src: url("rosanswebtextbold.woff2") format("woff2"),
+    url("rosanswebtextbold.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "rijksoverheidsanswebtext_itIt";
+  src: url("rosanswebtextitalic.woff2") format("woff2"),
+    url("rosanswebtextitalic.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "rijksoverheidsanswebtext_reRg";
+  src: url("rosanswebtextregular.woff2") format("woff2"),
+    url("rosanswebtextregular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'RijksoverheidSerif-Regular';
+  src: url('RijksoverheidSerif-Regular.eot?#iefix') format('embedded-opentype'),  url('RijksoverheidSerif-Regular.woff') format('woff'), url('RijksoverheidSerif-Regular.ttf')  format('truetype'), url('RijksoverheidSerif-Regular.svg#RijksoverheidSerif-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'RijksoverheidSerifWeb-Italic';
+  src: url('RijksoverheidSerifWeb-Italic.eot?#iefix') format('embedded-opentype'),  url('RijksoverheidSerifWeb-Italic.woff') format('woff'), url('RijksoverheidSerifWeb-Italic.ttf')  format('truetype'), url('RijksoverheidSerifWeb-Italic.svg#RijksoverheidSerifWeb-Italic') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}

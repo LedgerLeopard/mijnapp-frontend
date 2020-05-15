@@ -1,0 +1,117 @@
+/* You can add global styles to this file, and also import other style files */
+@import "./app/styles/colors";
+
+html,
+body {
+  height: 100%;
+  font-family: "rijksoverheidsanswebtext_reRg" !important;
+}
+a {
+  cursor: pointer;
+}
+.page-wrapper {
+  min-height: 100%;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  padding-bottom: 84px;
+  .page_name {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: $white;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.04);
+    padding: 6px 15px 8px 15px;
+    .title {
+      font-style: normal;
+      font-family: "rijksoverheidsanswebtext_boBd";
+      font-size: 26px;
+      line-height: 30px;
+    }
+    .backpage {
+      margin-bottom: 4px;
+    }
+  }
+  .contentpart {
+    padding: 24px 15px;
+    min-height: calc(100vh - 202px);
+  }
+
+  .btnrow {
+    padding: 0px 15px;
+    .orangebtn {
+      background: $orange;
+      box-shadow: inset 0px -2px 0px rgba(43, 43, 43, 0.25);
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 22px;
+      color: $white;
+      width: 100%;
+      display: flex;
+      text-align: center;
+      text-decoration: none;
+      height: 48px;
+      align-items: center;
+      justify-content: center;
+    }
+    .backbottom {
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $gray;
+      margin-top: 19px;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 22px;
+      text-decoration: none;
+      img {
+        margin-right: 6px;
+      }
+    }
+  }
+  .btnrow2 {
+    padding: 15px;
+    min-height: 128px;
+    box-shadow: 0px -4px 4px rgba(0, 0, 0, 0.04);
+    background: $white;
+    .orangebtn {
+      background: $orange;
+      box-shadow: inset 0px -2px 0px rgba(43, 43, 43, 0.25);
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 22px;
+      color: $white;
+      width: 100%;
+      display: block;
+      text-align: center;
+      padding: 14px;
+      text-decoration: none;
+    }
+    .backbottom {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $gray;
+      margin-top: 19px;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 22px;
+      text-decoration: none;
+      img {
+        margin-right: 6px;
+      }
+    }
+  }
+}
+.cursor-pointer {
+  cursor: pointer;
+}
+.form-control{
+  color: #2B2B2B!important;
+}

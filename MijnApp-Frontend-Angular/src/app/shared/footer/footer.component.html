@@ -1,0 +1,39 @@
+<footer>
+  <div class="inside">
+    <div class="row m-0">
+      <div class="col-3">
+        <a routerLink="../homepage" [class.active]="router.url === '/homepage'">
+          <div class="img">
+            <img class="gray" src="/assets/img/home-link.svg" />
+            <img class="blue" src="/assets/img/home-link-active.svg" />
+          </div>
+          Start
+        </a>
+      </div>
+      <div class="col-3">
+        <a routerLink="/journeys">
+          <div class="img"><img src="/assets/img/search-link.svg" /></div>
+          Zoeken
+        </a>
+      </div>
+      <div class="col-3">
+        <a routerLink="../messages" [class.active]="router.url === '/messages'">
+          <div class="img">
+            <div class="notify">
+              <img class="gray" src="/assets/img/Notifications-link.svg" />
+              <img class="blue" src="/assets/img/Notifications-link-active.svg" />
+              <span *ngIf="!isMessageCurrentRoute">1</span>
+            </div>
+          </div>
+          Berichten
+        </a>
+      </div>
+      <div class="col-3">
+        <a (click) = "_signOut()">
+          <div class="img"><img src="/assets/img/login-link.svg" /></div>
+          Uitloggen
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>

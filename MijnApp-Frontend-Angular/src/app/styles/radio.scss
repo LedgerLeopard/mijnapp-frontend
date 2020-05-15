@@ -1,0 +1,95 @@
+@import "../styles/colors";
+.eh-radio {
+    display: inline-block;
+    position: relative;
+    user-select: none;
+    cursor: pointer;
+  
+    input[type=radio] {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      height: 0;
+      width: 0;
+      border: none;
+      margin: 0;
+      padding: 0;
+    }
+  
+    label {
+      padding-left: 24px;
+      font-size: 12px;
+      line-height: 20px;
+      position: relative;
+      margin: 0;
+      letter-spacing: normal;
+      font-weight: normal;
+      cursor: pointer;
+  
+      &:before {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        box-sizing: border-box;
+        width: 16px;
+        height: 16px;
+        content: '';
+        transition: all .3s ease;
+  
+        border: 1px solid $gray;
+        border-radius: 50%;
+      }
+      &:after {
+        content: '';
+        position: absolute;
+        display: none;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 8px;
+        width: 12px;
+        height: 12px;
+        background-color: #007bff;
+        border-radius: 50%;
+        border: 2px solid $white;
+      }
+    }
+  
+    input:checked + label:after {
+      display: block;
+    }
+    label:hover,
+    label:active,
+    input:checked + label {
+      &::before {
+        border: 2px solid #007bff;
+      }
+    }
+    input:disabled + label {
+      cursor: not-allowed;
+  
+      &:before {
+        opacity: 0.6;
+      }
+  
+      &:hover {
+        &:before {
+          opacity: 0.6;
+        }
+      }
+    }
+  
+    &-group {
+      .eh-radio:not(:last-child) {
+        margin-right: 24px;
+      }
+      &-big
+       {
+        .eh-radio,
+        .eh-radio label {
+          line-height: 36px;
+          font-size: 14px;
+        }
+      }
+    }
+  }

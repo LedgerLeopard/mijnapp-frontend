@@ -1,0 +1,60 @@
+<div class="page-wrapper">
+  <div class="page_name">
+    <div class="backpage cursor-pointer" routerLink="../">
+      <div><img src="/assets/img/Arrow-back.png" /></div>
+      Terug naar Start
+    </div>
+    <div class="d-flex justify-content-between">
+      <div class="title">
+        <div><img src="/assets/img/shared-page-icon.png" /></div>
+        Gegevens delen
+      </div>
+    </div>
+  </div>
+  <ul class="statusbar">
+    <li class="active"></li>
+    <li class="active"></li>
+  </ul>
+  <div class="contentpart">
+    <h3>Met wie wil je delen?</h3>
+    <div class="card">
+      <div class="row no-gutters">
+        <div class="col-auto pr-3">
+          <div>
+            <img src="/assets/img/Logo Overheid.png" />
+          </div>
+        </div>
+        <div class="col">
+          <div class="card-body">
+            <div class="d-flex align-items-center justify-content-between">
+              <div>
+                <h5>Centraal Justitieel Incass...</h5>
+                <span>Alleen lezen <img src="/assets/img/que-icon.png"/></span>
+              </div>
+              <div class="pl-2">
+                <ui-switch [checked]="true" size="small"></ui-switch>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <a routerLink="../add-organization" class="organiseplus">
+      <div><img src="/assets/img/plus2.png" /></div>
+      Organisatie toevoegen
+    </a>
+  </div>
+  <div class="btnrow">
+    <a class="orangebtn cursor-pointer" routerLink="../share-time">
+      <div class="d-inline-flex">
+        Volgende stap
+        <div class="ml-2"><img src="/assets/img/Arrow-forward-w.png" /></div>
+      </div>
+    </a>
+    <a class="backbottom cursor-pointer" routerLink="../share-data">
+      <div><img src="/assets/img/Arrow-back-gray.png" /></div>
+      Terug naar de vorige stap
+    </a>
+  </div>
+</div>

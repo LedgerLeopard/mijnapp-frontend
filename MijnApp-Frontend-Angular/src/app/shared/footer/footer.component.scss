@@ -1,0 +1,65 @@
+@import "../../styles/colors";
+
+footer {
+  height: 84px;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+
+  position: fixed;
+  .inside {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    background: $white;
+    box-shadow: 0px -4px 4px rgba(0, 0, 0, 0.04);
+    padding: 8px 0px 32px 0px;
+  }
+  .img {
+    display: block;
+    .notify {
+      display: inline-block;
+      position: relative;
+      span {
+        background: $orange;
+        width: 16px;
+        height: 16px;
+        display: inline-flex;
+        color: $white;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 16px;
+        border-radius: 50%;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        left: 14px;
+      }
+    }
+  }
+  a {
+    color: $gray;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    text-decoration: none;
+    img.gray {
+      display: inline-block;
+    }
+    img.blue {
+      display: none;
+    }
+    &.active {
+      color: #154273;
+      img.gray {
+        display: none;
+      }
+      img.blue {
+        display: inline-block;
+      }
+    }
+  }
+}

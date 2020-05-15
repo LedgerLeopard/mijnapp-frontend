@@ -1,0 +1,26 @@
+<form [formGroup]="contactForm" *ngIf="!loading">
+    <div class="contentpart">
+        <h3>{{questionData?.title}}</h3>
+        <p>
+            {{questionData?.subtitle}}
+        </p>
+        <div class="form-group" *ngFor="let option of questionData.options; let i = index">
+            <label>{{option.title}}</label>
+            <input [class.formControl-Error]="showError(option.value)" type="text" class="form-control"
+                id="text{{i + 1}}" aria-describedby="emailHelp" placeholder="ad.de.vries@gmail.com"
+                formControlName="{{option.value}}" />
+        </div>
+    </div>
+    <div class="btnrow" (disabled)="contactForm.invalid">
+        <a class="orangebtn cursor-pointer" (click)="nextAction()">
+            <div class="d-inline-flex">
+                Volgende stap
+                <div class="ml-2"><img src="/assets/img/Arrow-forward-w.png" /></div>
+            </div>
+        </a>
+        <a class="backbottom cursor-pointer" (click)="backAction()">
+            <div><img src="/assets/img/Arrow-back-gray.png" /></div>
+            Terug naar de vorige stap
+        </a>
+    </div>
+</form>

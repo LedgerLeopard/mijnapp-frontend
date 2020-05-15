@@ -1,0 +1,52 @@
+@import "../styles/colors";
+
+.page-wrapper {
+  background: $backgroundColor;
+
+  .contentpart {
+    h3 {
+      color: $mineShaft;
+      font-style: normal;
+      font-family: "rijksoverheidsanswebtext_boBd";
+      font-size: 18px;
+      line-height: 26px;
+      margin-bottom: 16px;
+    }
+
+    .card {
+      padding: 15px 20px;
+      border: 0;
+      box-shadow: inset 0px -2px 0px rgba(43, 43, 43, 0.25);
+      border-radius: 0;
+      .row {
+        align-items: center;
+      }
+      .card-body {
+        padding: 0px;
+        p {
+          margin: 0;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 16px;
+          line-height: 22px;
+        }
+
+        span {
+          font-style: normal;
+          font-weight: normal;
+          font-size: 14px;
+          line-height: 18px;
+          color: $gray;
+        }
+
+        h5 {
+          margin: 0;
+          font-style: normal;
+          font-family: "rijksoverheidsanswebtext_boBd";
+          font-size: 16px;
+          line-height: 22px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,54 @@
+<div class="contentpart">
+    <h3>Controleer je gegevens</h3>
+
+    <div class="card">
+        <div class="row no-gutters">
+            <div class="col">
+                <div class="card-body">
+                    <label>Indiener</label>
+                    <p>
+                        Dhr. de Vries, Ad Willem
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="row no-gutters">
+            <div class="col">
+                <div class="card-body">
+                    <label>Oud adres</label>
+                    <p>
+                        Nieuwezijds Voorburgwal 147, 1012RJ Amsterdam
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <ng-container *ngFor="let order of orders">
+    <div class="card" *ngIf="order.question !=='END'">
+        <div class="row no-gutters" >
+            <div class="col">
+                <div class="card-body">
+                    <label>{{order.keyTitle}}</label>
+                    <p *ngFor="let value of getValues(order.valueTitle)">
+                        {{value}}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-container>
+</div>
+<div class="btnrow">
+    <a class="orangebtn cursor-pointer" (click)="saveOrder()" >
+        <div class="d-inline-flex">
+            Aanvraag verzenden
+            <div class="ml-2"><img src="/assets/img/Arrow-forward-w.png" /></div>
+        </div>
+    </a>
+    <a class="backbottom cursor-pointer" (click)="backAction()">
+        <div><img src="/assets/img/Arrow-back-gray.png" /></div>
+        Terug naar de vorige stap
+    </a>
+</div>

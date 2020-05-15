@@ -1,0 +1,57 @@
+<form [formGroup]="addressForm" *ngIf="!loading">
+    <div class="contentpart">
+        <h3>{{question?.title}}</h3>
+        <p>
+            {{question?.subtitle}}
+        </p>
+        <div class="row">
+            <div class="form-group col-5">
+                <label>postcode</label>
+                <input [class.formControl-Error]="showError('postcode')" type="text" class="form-control" id="text1"
+                    aria-describedby="emailHelp" placeholder="" formControlName="postcode" (change)="getAddress()" />
+            </div>
+            <div class="form-group col-3">
+                <label>huisnummer</label>
+                <input type="text" [class.formControl-Error]="showError('huisnummer')" class="form-control" id="text1"
+                    aria-describedby="emailHelp" placeholder="" formControlName="huisnummer" (change)="getAddress()" />
+            </div>
+            <div class="form-group col-3">
+                <label>toevoeging</label>
+                <input type="text" [class.formControl-Error]="showError('huisnummertoevoeging')" class="form-control"
+                    id="text1" aria-describedby="emailHelp" placeholder="" formControlName="huisnummertoevoeging"
+                    (change)="getAddress()" />
+            </div>
+        </div>
+        <h3 *ngIf="addressForm.valid && isvalidAddress">Gevonden adressen</h3>
+        <div class="card mb-3" *ngIf="addressForm.valid && isvalidAddress">
+            <div class="row no-gutters">
+                <div class="col">
+                    <div class="card-body cursor-pointer" (click)="nextAction()">
+                        <p>
+                            {{value('straatnaam') || ''}} {{value('huisnummer')}}
+                            {{value('huisnummertoevoeging') || ''}},
+                            {{value('postcode')}} {{value('woonplaatsnaam')}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex" *ngIf="!isvalidAddress">
+            <img class="warnIcon mr-3 ml-3" src="/assets/img/warn.svg" />
+            <span>Het opgegeven adres is onbekend. <br />
+                Controleer de postcode, huisnummer en eventueel toevoeging en probeer opnieuw.</span>
+        </div>
+        <div class="d-flex" *ngIf="!isValidResidence">
+            <img class="warnIcon mr-3 ml-3" src="/assets/img/warn.svg" />
+            <span>Let op! <br />
+                Het nieuwe adres dat je opgeeft ligt helaas niet in een gemeente die MijnApp gebruikt.
+                Geef de adreswijziging door op de website van de gemeente waar je naar toe verhuist.</span>
+        </div>
+    </div>
+    <div class="btnrow">
+        <a class="backbottom cursor-pointer" (click)="backAction()">
+            <div><img src="/assets/img/Arrow-back-gray.png" /></div>
+            Terug naar de vorige stap
+        </a>
+    </div>
+</form>

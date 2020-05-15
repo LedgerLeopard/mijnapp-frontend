@@ -1,0 +1,70 @@
+<div class="page-wrapper">
+  <div class="page_name">
+    <div class="title">Welkom terug, Ad</div>
+    <div class="profilepic">
+      <img src="/assets/img/Ellipse 4.png" />
+    </div>
+  </div>
+  <div class="contentpart">
+    <h3>Zoeken</h3>
+    <div class="searchwrap">
+      <img src="/assets/img/searchicon.png" />
+      <input type="text" class="form-control cursor-pointer" id="text1" aria-describedby="emailHelp" routerLink="../journeys"
+        placeholder="Zoeken op een regeling" />
+    </div>
+    <h3>Mijn startpagina</h3>
+    <div class="card mb-2 cursor-pointer" routerLink="personal-information">
+      <div class="row no-gutters">
+        <div class="col-auto">
+          <img src="/assets/img/Persoonsgegevens.png" />
+        </div>
+        <div class="col">
+          <div class="card-body">
+            <h5 class="card-title">Persoonsgegevens</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card mb-2 cursor-pointer" routerLink="../messages">
+      <div class="row no-gutters">
+        <div class="col-auto">
+          <img src="/assets/img/Berichten.png" />
+        </div>
+        <div class="col">
+          <div class="card-body">
+            <h5 class="card-title">Berichten</h5>
+            <span class="status">1 nieuw bericht</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card mb-2 cursor-pointer" routerLink="similarities">
+      <div class="row no-gutters">
+        <div class="col-auto">
+          <img src="/assets/img/Overeenkomsten.png" />
+        </div>
+        <div class="col">
+          <div class="card-body">
+            <h5 class="card-title">Overeenkomsten</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card mb-2 cursor-pointer" routerLink="shared-data">
+      <div class="row no-gutters">
+        <div class="col-auto">
+          <img src="/assets/img/Machtigingen.png" />
+        </div>
+        <div class="col">
+          <div class="card-body">
+            <h5 class="card-title">Gedeelde gegevens</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>
+
+<router-outlet></router-outlet>
