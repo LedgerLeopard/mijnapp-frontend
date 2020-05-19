@@ -1,14 +1,3 @@
-<!-- <div>
-  <button routerLink="../../">Terug naar Start</button>
-</div>
-
-<div>
-  Overeenkomsten
-  <button routerLink="../../steps-overview">Add</button>
-</div>
-
-<div routerLink="overview">Bevestiging ondersteuning</div> -->
-
 <div class="page-wrapper">
   <div class="page_name">
     <div class="backpage cursor-pointer" routerLink="../../">
@@ -26,8 +15,10 @@
   </div>
 
   <div class="contentpart">
-    <div class="card cursor-pointer" routerLink="overview">
-      <div class="row no-gutters">
+    <div class="card cursor-pointer" *ngFor="let contract of contracts">
+      <div class="row no-gutters" [routerLink]="['overview']"
+      [queryParams]="{ id: contract?.identificatie }"
+      queryParamsHandling="merge">
         <div class="col-auto">
           <div>
             <img src="/assets/img/type-icon-2.png" />
@@ -37,9 +28,9 @@
           <div class="card-body">
             <div class="d-flex align-items-center justify-content-between">
               <div>
-                <h3>Bevestiging ondersteuning</h3>
-                <h5>Stichting WIJeindhoven</h5>
-                <span> <img src="/assets/img/check-small.png" /> Actief</span>
+                <h3>{{contract?.titel}}</h3>
+                <h5>{{contract?.organisatie}}</h5>
+                <span> <img src="/assets/img/check-small.png" /> {{contract?.status}}</span>
               </div>
             </div>
           </div>
