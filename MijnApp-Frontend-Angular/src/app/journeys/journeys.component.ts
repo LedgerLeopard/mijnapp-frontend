@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { journeys } from './steps/mock-data';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-journeys',
@@ -9,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class JourneysComponent implements OnInit {
   journeys = journeys;
-  constructor(private router: Router) {}
+  constructor() {}
 
   ngOnInit() {
   }

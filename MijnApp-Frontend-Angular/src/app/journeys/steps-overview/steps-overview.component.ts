@@ -20,7 +20,7 @@ export class StepsOverviewComponent implements OnInit {
       this.journey = this.journeys.find(x => x.request_type_id === params.id);
     });
     this.searchService.checkPreconditions().then(res => {
-      this.preconditionsFullFilled = res['preconditionsFullFilled'];
+    this.preconditionsFullFilled = res['preconditionsFullFilled'];
     }).catch(e => console.error(e))
     .finally(() => this.loading = false);
   }

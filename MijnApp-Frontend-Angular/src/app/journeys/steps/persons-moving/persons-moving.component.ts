@@ -14,7 +14,6 @@ export class PersonsMovingComponent implements OnInit {
   @Output() back = new EventEmitter<any>();
   @Output() next = new EventEmitter<any>();
 
-
   constructor(private personInfoService: PersonalInformationService) {
     this.personInfoService.GetPersonsMovingAsync().then(res => {
       this.persons = res;

@@ -23,15 +23,9 @@ export class MultipleTextComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.bindForm();
   }
 
   bindForm() {
-    // this.contactForm = this.build.group({
-    // emailadres: ['', [Validators.required, Validators.email]],
-    // telefoonnummer: ['', [Validators.required, Validators.pattern('^([1-9]|1[012])$')]],
-    // });
-
     this.contactForm = this.build.group({});
     if (!this.order) {
       this.order = new order();

@@ -13,20 +13,18 @@ export class EndJourneyComponent implements OnInit {
   @Input() journey: any;
   questions: any;
   @Output() back = new EventEmitter<any>();
-  loading = true
+  loading = true;
+  isAddressQuestion = false;
   constructor(private searchService: SearchService, private route: Router, private toastr: ToastrService) { }
 
   ngOnInit() {
     this.loading = !!this.orders ? false: true;
     this.questions = this.journey.questions;
+    this.isAddressQuestion = this.journey.questions.some(x => x.type === "address");
   }
 
-  getValues(value: any) {
-    if(typeof(value) == 'string') {
-      return [value];
-    } else {
-      return value;
-    }
+  getValues(value: any) { 
+    return typeof(value) == 'string' ? [value]: value;
   }
 
   saveOrder() {
