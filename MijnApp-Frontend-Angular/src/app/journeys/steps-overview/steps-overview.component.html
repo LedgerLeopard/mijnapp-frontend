@@ -13,14 +13,14 @@
     <h3>Deze stappen ga je doorlopen</h3>
     <ul class="overviewlist">
       <li *ngFor="let step of journey?.overview?.steps; let i = index">
-        <a href="#"><span>{{i + 1}}</span>{{step}}</a>
+        <a><span>{{i + 1}}</span>{{step}}</a>
       </li>
     </ul>
   </div>
-  <div class="btnrow cursor-pointer" *ngIf="preconditionsFullFilled" [routerLink]="['../journey']"
+  <div class="btnrow cursor-pointer">
+    <a class="orangebtn"  *ngIf="preconditionsFullFilled"  [routerLink]="['../journey']"
       [queryParams]="{ id: journey.request_type_id }"
       queryParamsHandling="merge">
-    <a class="orangebtn">
       Starten
     </a>
     <a class="backbottom cursor-pointer" routerLink="../../homepage">

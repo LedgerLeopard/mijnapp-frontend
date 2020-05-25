@@ -25,6 +25,7 @@ export class StepsComponent implements OnInit {
   nextId: string;
   order: order;
   type: string;
+  step: number;
   addressForm: FormGroup;
   moveDateForm: FormGroup;
   constructor(private build: FormBuilder, private activatedRoute: ActivatedRoute, private router: Router) {
@@ -36,15 +37,19 @@ export class StepsComponent implements OnInit {
   ngOnInit() {
     this.questions = this.journey.questions;
     this.order = null;
+    this.step = 1;
     this.question = this.questions[0];
     this.type = this.question.type;
     this.nextId = this.question['next'] || null;
+    this.journey.overview.steps.push("End");
   }
 
   backPage(id: string) {
     const index = this.orders.findIndex(x => x.question === id);
     const lastIndex = this.orders.length -1;
+    this.step = this.step-1;
     if(index === 0 || this.orders.length === 0) {
+      this.journey.overview.steps.pop("End");
       this.router.navigate(['journeys/search-overview'], { queryParams: { id: this.journey.request_type_id }});
     } else {
     this.order = index !== -1 ? this.orders[index-1] : this.orders[lastIndex];
@@ -71,6 +76,7 @@ export class StepsComponent implements OnInit {
     this.question = this.questions.find(x => x.id === nextId);
     this.type = !!this.question ? this.question.type: "END"
     this.nextId = !!this.question ?this.question.next: null;
+    this.step = this.step + 1;
     }
   }
 
@@ -82,6 +88,11 @@ export class StepsComponent implements OnInit {
       const question = this.questions.find(x => x.id === id);
       this.removeOrders(question.nextId);
     }
-   
+  }
+
+  getWidth() {
+    const count = this.journey.overview.steps.length;
+    const width = 100/count;
+    return `${width}%`;
   }
 }

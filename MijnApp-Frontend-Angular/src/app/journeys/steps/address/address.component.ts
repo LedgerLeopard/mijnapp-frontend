@@ -23,8 +23,8 @@ export class AddressComponent implements OnInit {
   @Output() form = new EventEmitter<any>();
   @Output() next = new EventEmitter<any>();
 
-  constructor(private personalInfoService: PersonalInformationService, private toastr: ToastrService, 
-        private build: FormBuilder, private searchService: SearchService) {
+  constructor(private personalInfoService: PersonalInformationService, private toastr: ToastrService,
+    private build: FormBuilder, private searchService: SearchService) {
   }
 
   ngOnInit() {
@@ -39,7 +39,6 @@ export class AddressComponent implements OnInit {
   }
 
   bindForm() {
-
     this.addressForm = this.build.group({
       id: [null],
       huisnummer: ['', [Validators.required, Validators.pattern('[0-9]*')]],
@@ -48,10 +47,6 @@ export class AddressComponent implements OnInit {
       straatnaam: [''],
       woonplaatsnaam: ['']
     })
-
-    // if (!!this.personalInfo['verblijfplaats']) {
-    //   this.addressForm.patchValue({ ...this.personalInfo['verblijfplaats'] });
-    // }
     this.loading = false;
   }
 
@@ -114,7 +109,7 @@ export class AddressComponent implements OnInit {
       }
       this.order.value = this.value('id');
       this.order.valueTitle = `${this.value('straatnaam')} ${this.value('huisnummer')}  ${this.value('huisnummertoevoeging')},
-    ${this.value('postcode')}  ${this.value('woonplaatsnaam')} `;
+      ${this.value('postcode')}  ${this.value('woonplaatsnaam')} `;
       this.form.emit(this.addressForm);
       this.next.emit(this.order);
     }
