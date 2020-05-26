@@ -1,6 +1,6 @@
 <div class="page-wrapper">
     <div class="page_name">
-        <div class="backpage cursor-pointer" routerLink="../../homepage">
+        <div class="backpage cursor-pointer" routerLink="../../../homepage">
             <div><img src="/assets/img/Arrow-back.png" /></div>
             Terug naar Start
         </div>
@@ -10,28 +10,27 @@
         </div>
     </div>
     <ul class="statusbar">
-        <li class="active"></li>
-        <li class="active"></li>
-        <li class="active"></li>
-        <li class="active"></li>
-        <li class="active"></li>
+        <ng-container *ngFor="let que of journey?.overview?.steps;let i = index">
+            <li [ngStyle]="{'width': getWidth()}" [class.active]="i < step"></li>
+        </ng-container>
     </ul>
-    <app-address *ngIf="type == 'address'" [question]="question" [order]="order" [addressForm]="addressForm"
+    <app-address *ngIf="type === 'address'" [question]="question" [order]="order" [addressForm]="addressForm"
         (form)="addressForm = $event" (next)="nextPage($event)" (back)="backPage($event)"></app-address>
-    <app-calendar *ngIf="type == 'calendar'" [question]="question" [order]="order" [moveDateForm]="moveDateForm"
+    <app-calendar *ngIf="type === 'calendar'" [question]="question" [order]="order" [moveDateForm]="moveDateForm"
         (form)="moveDateForm = $event" (next)="nextPage($event)" (back)="backPage($event)"></app-calendar>
-    <app-persons-moving *ngIf="type == 'personsMoving'" [question]="question" [order]="order" (next)="nextPage($event)"
+    <app-persons-moving *ngIf="type === 'personsMoving'" [question]="question" [order]="order" (next)="nextPage($event)"
         (back)="backPage($event)"></app-persons-moving>
-    <app-multiple-text *ngIf="type == 'multipleText'" [question]="question" [order]="order" (next)="nextPage($event)"
+    <app-multiple-text *ngIf="type === 'multipleText'" [question]="question" [order]="order" (next)="nextPage($event)"
         (back)="backPage($event)"></app-multiple-text>
-    <app-end-journey *ngIf="type == 'END'" [orders]="orders" [journey]="journey" (back)="backPage($event)">
+    <app-end-journey *ngIf="type === 'END'" [orders]="orders" [journey]="journey" (back)="backPage($event)">
     </app-end-journey>
-    <app-single *ngIf="type == 'single'" [order]="order" [question]="question" (next)="nextPage($event)"
+    <app-single *ngIf="type === 'single'" [order]="order" [question]="question" (next)="nextPage($event)"
         (removeOrders)="removeOrders($event)" (nextId)="setParams($event)" (back)="backPage($event)"></app-single>
-    <app-agree *ngIf="type == 'agree'" [order]="order" [question]="question" (next)="nextPage($event)"
+    <app-agree *ngIf="type === 'agree'" [order]="order" [question]="question" (next)="nextPage($event)"
         (back)="backPage($event)"></app-agree>
-    <app-text *ngIf="type == 'text'" [order]="order" [question]="question" (next)="nextPage($event)"
+    <app-text *ngIf="type === 'text'" [order]="order" [question]="question" (next)="nextPage($event)"
         (back)="backPage($event)"></app-text>
-    <app-radio-buttons *ngIf="type == 'radioButtons'" [order]="order" [question]="question" (next)="nextPage($event)"
-        (back)="backPage($event)" (removeOrders)="removeOrders($event)" (nextId)="setParams($event)"></app-radio-buttons>
+    <app-radio-buttons *ngIf="type === 'radioButtons'" [order]="order" [question]="question" (next)="nextPage($event)"
+        (back)="backPage($event)" (removeOrders)="removeOrders($event)" (nextId)="setParams($event)">
+    </app-radio-buttons>
 </div>

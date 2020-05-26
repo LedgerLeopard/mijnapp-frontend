@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ContractService } from '../contract.service';
+import { ToastrService } from 'ngx-toastr';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-similarities-overview',
@@ -6,10 +9,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./similarities-overview.component.scss']
 })
 export class SimilaritiesOverviewComponent implements OnInit {
-
-  constructor() { }
+  contract: any;
+  contractId: any;
+  constructor(private contractService: ContractService, private toastr: ToastrService, private activatedRoute: ActivatedRoute) { 
+    this.activatedRoute.queryParams.subscribe(params => {
+      this.contractId =params.id;
+    });
+  }
 
   ngOnInit() {
+    this.contractService.getContracts().then((res:any) => {
+      this.contract = res.find(x => x['identificatie'] ==  this.contractId);
+    }).catch(e => this.toastr.error(e['message']));
   }
 
 }
