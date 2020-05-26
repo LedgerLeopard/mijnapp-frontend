@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
-import { BsDatepickerModule, ModalModule } from 'ngx-bootstrap';
+import { ModalModule } from 'ngx-bootstrap';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { UiSwitchModule } from 'ngx-ui-switch';
 
 import { FooterComponent } from './footer/footer.component';

@@ -5,7 +5,7 @@
                      placeholder="{{question?.title}}" [(ngModel)] = "value" />
     </div>
 </div>
-<div class="btnrow" (disabled)="contactForm.invalid">
+<div class="btnrow">
     <a class="orangebtn cursor-pointer" *ngIf="!!value" (click)="nextAction()">
         <div class="d-inline-flex">
             Volgende stap
