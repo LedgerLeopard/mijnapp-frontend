@@ -41,14 +41,6 @@
 </ng-container>
 </div>
 <div class="btnrow">
-    <a class="orangebtn cursor-pointer" (click)="saveOrder()" >
-        <div class="d-inline-flex">
-            Aanvraag verzenden
-            <div class="ml-2"><img src="/assets/img/Arrow-forward-w.png" /></div>
-        </div>
-    </a>
-    <a class="backbottom cursor-pointer" (click)="backAction()">
-        <div><img src="/assets/img/Arrow-back-gray.png" /></div>
-        Terug naar de vorige stap
-    </a>
+    <app-primary-button text="Aanvraag verzenden" (click)='saveOrder()'></app-primary-button>
+    <app-back-button position="bottom" title="Terug naar de vorige stap" (click)="backAction()"></app-back-button>
 </div>
