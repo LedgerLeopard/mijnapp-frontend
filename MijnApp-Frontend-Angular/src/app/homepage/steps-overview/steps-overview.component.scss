@@ -1,4 +1,5 @@
 @import "../../styles/colors";
+@import "@nl-design-system/nl-design-system/src/components/lists/lists.scss";
 
 .page-wrapper {
   background: $backgroundColor;
@@ -45,24 +46,13 @@
           display: flex;
           align-items: center;
           text-decoration: none;
-          span {
-            width: 22px;
-            min-width: 22px;
-            height: 22px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            font-style: normal;
-            font-weight: normal;
-            font-size: 16px;
-            line-height: 22px;
-            background: $black;
-            border-radius: 50%;
-            color: $white;
-            margin-right: 18px;
-          }
+          margin-left: 35px;
+          font-size: 16px !important;
         }
       }
     }
   }
+}
+.list--decimal-circled > li::before {
+  margin-left: 0 !important;
 }

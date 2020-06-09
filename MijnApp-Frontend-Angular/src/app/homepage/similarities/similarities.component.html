@@ -15,27 +15,22 @@
   </div>
 
   <div class="contentpart">
-    <div class="card cursor-pointer" *ngFor="let contract of contracts">
-      <div class="row no-gutters" [routerLink]="['overview']"
-      [queryParams]="{ id: contract?.identificatie }"
-      queryParamsHandling="merge">
-        <div class="col-auto">
-          <div>
-            <img src="/assets/img/type-icon-2.png" />
-          </div>
-        </div>
-        <div class="col">
-          <div class="card-body">
-            <div class="d-flex align-items-center justify-content-between">
-              <div>
-                <h3>{{contract?.titel}}</h3>
-                <h5>{{contract?.organisatie}}</h5>
-                <span> <img src="/assets/img/check-small.png" /> {{contract?.status}}</span>
-              </div>
+    <ul class="list list--card list--card-small">
+      <li class="card card--small" *ngFor="let contract of contracts">
+        <a [routerLink]="['overview']" [queryParams]="{ id: contract?.identificatie }" queryParamsHandling="merge"
+          class="card__content">
+          <div class="row no-gutters">
+            <div class="col-auto">
+              <img src="/assets/img/type-icon-2.png" />
+            </div>
+            <div class="card__body">
+              <h3>{{contract?.titel}}</h3>
+              <h5 class="card-title"> {{contract?.organisatie}}</h5>
+              <span><img src="/assets/img/check-small.png" /> {{contract?.status}}</span>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
+        </a>
+      </li>
+    </ul>
   </div>
 </div>

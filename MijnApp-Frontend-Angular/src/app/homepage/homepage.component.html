@@ -9,59 +9,52 @@
     <h3>Zoeken</h3>
     <div class="searchwrap">
       <img src="/assets/img/searchicon.png" />
-      <input type="text" class="form-control cursor-pointer" id="text1" aria-describedby="emailHelp" routerLink="../journeys"
-        placeholder="Zoeken op een regeling" />
+      <input type="text" class="form-control cursor-pointer" id="text1" aria-describedby="emailHelp"
+        routerLink="../journeys" placeholder="Zoeken op een regeling" />
     </div>
     <h3>Mijn startpagina</h3>
-    <div class="card mb-2 cursor-pointer" routerLink="personal-information">
-      <div class="row no-gutters">
-        <div class="col-auto">
-          <img src="/assets/img/Persoonsgegevens.png" />
-        </div>
-        <div class="col">
-          <div class="card-body">
-            <h5 class="card-title">Persoonsgegevens</h5>
+    <ul class="list list--card list--card-small">
+      <li class="card card--small">
+        <a href="#" class="card__content" routerLink="personal-information">
+          <div class="card__thumb" style="background-image: url('/assets/img/Persoonsgegevens.png')"></div>
+          <div class="card__body">
+            <div class="card__content">
+              <span class="card__title">Persoonsgegevens</span>
+            </div>
           </div>
-        </div>
-      </div>
-    </div>
-    <div class="card mb-2 cursor-pointer" routerLink="../messages">
-      <div class="row no-gutters">
-        <div class="col-auto">
-          <img src="/assets/img/Berichten.png" />
-        </div>
-        <div class="col">
-          <div class="card-body">
-            <h5 class="card-title">Berichten</h5>
-            <span class="status">1 nieuw bericht</span>
+        </a>
+      </li>
+      <li class="card card--small">
+        <a href="#" class="card__content" routerLink="../messages">
+          <div class="card__thumb" style="background-image: url('/assets/img/Berichten.png')"></div>
+          <div class="card__body">
+            <span class="card__title">Berichten</span>
+            <span class="card__status">1 nieuw bericht</span>
           </div>
-        </div>
-      </div>
-    </div>
-    <div class="card mb-2 cursor-pointer" routerLink="similarities">
-      <div class="row no-gutters">
-        <div class="col-auto">
-          <img src="/assets/img/Overeenkomsten.png" />
-        </div>
-        <div class="col">
-          <div class="card-body">
-            <h5 class="card-title">Overeenkomsten</h5>
+        </a>
+      </li>
+      <li class="card card--small">
+        <a href="#" class="card__content" routerLink="similarities">
+          <div class="card__thumb" style="background-image: url('/assets/img/Overeenkomsten.png')"></div>
+          <div class="card__body">
+            <div class="card__content">
+              <span class="card__title">Overeenkomsten</span>
+            </div>
           </div>
-        </div>
-      </div>
-    </div>
-    <div class="card mb-2 cursor-pointer" routerLink="shared-data">
-      <div class="row no-gutters">
-        <div class="col-auto">
-          <img src="/assets/img/Machtigingen.png" />
-        </div>
-        <div class="col">
-          <div class="card-body">
-            <h5 class="card-title">Gedeelde gegevens</h5>
+        </a>
+      </li>
+      <li class="card card--small">
+        <a href="#" class="card__content" routerLink="shared-data">
+          <div class="card__thumb" style="background-image: url('/assets/img/Machtigingen.png')"></div>
+          <div class="card__body">
+            <div class="card__content">
+              <span class="card__title">Gedeelde gegevens</span>
+              <!-- <span class="card__status">1 nieuw bericht</span> -->
+            </div>
           </div>
-        </div>
-      </div>
-    </div>
+        </a>
+      </li>
+    </ul>
   </div>
 </div>
 

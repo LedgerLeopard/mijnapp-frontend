@@ -1,4 +1,5 @@
 @import "../../styles/colors";
+@import "@nl-design-system/nl-design-system/src/components/card/card.scss";
 
 .page-wrapper {
   background: $backgroundColor;
@@ -13,13 +14,6 @@
         margin-right: 8px;
       }
     }
-    .backpage {
-      display: flex;
-      width: 100%;
-      img {
-        margin-right: 6px;
-      }
-    }
   }
   .contentpart {
     p {
@@ -29,48 +23,21 @@
       line-height: 22px;
       color: $gray;
     }
+
+    ul.list.list--card.list--card-small {
+      margin: 0;
+      padding: 0;
+    }
     .card {
-      padding: 15px 20px;
+      background: none;
       border: 0;
       box-shadow: inset 0px -2px 0px rgba(43, 43, 43, 0.25);
-      border-radius: 0;
-
-      .card-body {
-        padding: 0px 0px 0px 20px;
-        p {
-          margin: 0;
-          font-style: normal;
-          font-weight: normal;
-          font-size: 16px;
-          line-height: 22px;
-        }
-        label {
-          color: $gray;
-          margin: 0;
-          font-style: normal;
-          font-weight: normal;
-          font-size: 14px;
-          line-height: 18px;
-        }
-        .value {
-          display: flex;
-          align-items: center;
-          font-style: normal;
-          font-weight: normal;
-          font-size: 16px;
-          line-height: 22px;
-          img {
-            margin-right: 6px;
-          }
-        }
-        span {
-          font-style: normal;
-          font-weight: normal;
-          font-size: 14px;
-          line-height: 18px;
-          color: $gray;
-        }
-        h3 {
+      margin-bottom: 0;
+      padding: 15px 20px;
+      .card__body {
+        min-height: inherit;
+        padding:  0px 0px 0px 20px;
+          h3 {
           margin: 0;
           font-style: normal;
           font-family: "rijksoverheidsanswebtext_boBd";
@@ -79,8 +46,8 @@
           color: $mineShaft;
           margin-top: -3px;
           margin-bottom: 10px;
-        }
-        h5 {
+          }
+          h5 {
           margin: 0;
           font-style: normal;
           font-weight: normal;
@@ -88,7 +55,15 @@
           line-height: 22px;
           color: $mineShaft;
           margin-bottom: 10px;
-        }
+          }
+          span {
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 18px;
+            color: $gray;
+            margin-top: 4px;
+          }
       }
     }
   }

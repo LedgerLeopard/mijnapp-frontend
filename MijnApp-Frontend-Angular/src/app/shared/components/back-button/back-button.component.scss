@@ -1,0 +1,11 @@
+@import "@nl-design-system/nl-design-system/src/core/bootstrapgrid/mixins/_grid-framework.scss";
+@import "@nl-design-system/nl-design-system/src/components/navigation/backlink.scss";
+@import "https://nl-design-system.gitlab.io/nl-design-system/uno/core/base.css";
+
+.align-center {
+  text-align:center;
+}
+
+ .backlink {
+   margin: 0;
+ }

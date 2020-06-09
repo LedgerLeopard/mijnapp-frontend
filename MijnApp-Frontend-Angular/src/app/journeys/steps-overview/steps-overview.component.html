@@ -11,11 +11,11 @@
   </div>
   <div class="contentpart">
     <h3>Deze stappen ga je doorlopen</h3>
-    <ul class="overviewlist">
+    <ol class="list list--decimal-circled overviewlist">
       <li *ngFor="let step of journey?.overview?.steps; let i = index">
-        <a><span>{{i + 1}}</span>{{step}}</a>
-      </li>
-    </ul>
+        <a>{{step}}</a>
+      </li>    
+  </ol>
   </div>
   <div class="btnrow cursor-pointer">
     <a class="orangebtn"  *ngIf="preconditionsFullFilled"  [routerLink]="['../journey']"

@@ -17,44 +17,37 @@
   </ul>
   <div class="contentpart">
     <h3>Met wie wil je delen?</h3>
-    <div class="card">
-      <div class="row no-gutters">
-        <div class="col-auto pr-3">
-          <div>
+    <ul class="list list--card list--card-small">
+      <li class="card card--small">
+        <div class="d-flex">
+          <div class="pr-3">
             <img src="/assets/img/Logo Overheid.png" />
           </div>
-        </div>
-        <div class="col">
-          <div class="card-body">
-            <div class="d-flex align-items-center justify-content-between">
+          <div class="card__body">
+            <div class="d-flex align-items-center justify-content-between w-100">
               <div>
-                <h5>Centraal Justitieel Incass...</h5>
-                <span>Alleen lezen <img src="/assets/img/que-icon.png"/></span>
+                <h5 class="mb-2">Centraal Justitieel Incass...</h5>
+                <p> Alleen lezen <img src="/assets/img/que-icon.png" /></p>
               </div>
-              <div class="pl-2">
-                <ui-switch [checked]="true" size="small"></ui-switch>
+              <div>
+                <label class="switch">
+                  <input class="switch__input" type="checkbox" id="switch1" value="on">
+                  <span class="switch__slider"></span>
+                </label>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-
+      </li>
+    </ul>
     <a routerLink="../add-organization" class="organiseplus">
       <div><img src="/assets/img/plus2.png" /></div>
       Organisatie toevoegen
     </a>
   </div>
   <div class="btnrow">
-    <a class="orangebtn cursor-pointer" routerLink="../share-time">
-      <div class="d-inline-flex">
-        Volgende stap
-        <div class="ml-2"><img src="/assets/img/Arrow-forward-w.png" /></div>
-      </div>
-    </a>
-    <a class="backbottom cursor-pointer" routerLink="../share-data">
-      <div><img src="/assets/img/Arrow-back-gray.png" /></div>
-      Terug naar de vorige stap
-    </a>
+    <app-primary-button text="Volgende stap" routerLink="/homepage/share-time"></app-primary-button>
+    <app-back-button title="Terug naar de vorige stap" position="bottom" routerLink="/homepage/share-data">
+    </app-back-button>
   </div>
 </div>
