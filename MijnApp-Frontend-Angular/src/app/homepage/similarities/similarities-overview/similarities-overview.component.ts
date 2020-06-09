@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ContractService } from '../contract.service';
 import { ToastrService } from 'ngx-toastr';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-similarities-overview',
@@ -11,7 +11,8 @@ import { ActivatedRoute } from '@angular/router';
 export class SimilaritiesOverviewComponent implements OnInit {
   contract: any;
   contractId: any;
-  constructor(private contractService: ContractService, private toastr: ToastrService, private activatedRoute: ActivatedRoute) { 
+  constructor(private contractService: ContractService, private toastr: ToastrService, private activatedRoute: ActivatedRoute, 
+      private router: Router) { 
     this.activatedRoute.queryParams.subscribe(params => {
       this.contractId =params.id;
     });
@@ -23,4 +24,7 @@ export class SimilaritiesOverviewComponent implements OnInit {
     }).catch(e => this.toastr.error(e['message']));
   }
 
+  backPage() {
+    this.router.navigate(["/homepage/similarities"]);
+  }
 }

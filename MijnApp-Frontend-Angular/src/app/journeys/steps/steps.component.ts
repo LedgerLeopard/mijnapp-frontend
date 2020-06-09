@@ -95,4 +95,8 @@ export class StepsComponent implements OnInit {
     const width = 100/count;
     return `${width}%`;
   }
+
+  homePage() {
+    this.router.navigate(["/homepage"]);
+  }
 }

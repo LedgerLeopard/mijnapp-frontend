@@ -6,7 +6,6 @@ import { StepsOverviewComponent } from './steps-overview/steps-overview.componen
 import { SharedModule } from '../shared/shared.module';
 import { JourneysComponent } from './journeys.component';
 
-
 @NgModule({
   declarations: [
     StepsOverviewComponent, JourneysComponent

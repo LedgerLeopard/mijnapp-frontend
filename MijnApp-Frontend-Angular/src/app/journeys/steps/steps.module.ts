@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { StepsRoutingModule } from './steps-routing.module';
@@ -18,9 +18,9 @@ import { RadioButtonsComponent } from './radio-buttons/radio-buttons.component';
 @NgModule({
   declarations: [StepsComponent, EndJourneyComponent, AddressComponent, CalendarComponent, PersonsMovingComponent, MultipleTextComponent, SingleComponent, AgreeComponent, TextComponent, RadioButtonsComponent],
   imports: [
-    CommonModule,
     SharedModule,
     StepsRoutingModule
-  ]
+  ],
+    schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })
 export class StepsModule { }

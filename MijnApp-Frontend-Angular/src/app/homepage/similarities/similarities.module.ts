@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 import { SimilaritiesRoutingModule } from './similarities-routing.module';
 import { SimilaritiesComponent } from './similarities.component';
@@ -10,6 +10,7 @@ import { SharedModule } from '../../shared/shared.module';
   imports: [
     SharedModule,
     SimilaritiesRoutingModule
-  ]
+  ],
+  schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })
 export class SimilaritiesModule { }

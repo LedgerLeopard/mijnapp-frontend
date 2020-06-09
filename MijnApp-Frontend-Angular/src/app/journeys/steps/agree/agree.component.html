@@ -23,14 +23,6 @@
     </div>
 </div>
 <div class="btnrow">
-    <button class="orangebtn cursor-pointer" (click)="nextAction()"  [hidden]="!isAgree">
-        <div class="d-inline-flex">
-            Volgende stap
-            <div class="ml-2"><img src="/assets/img/Arrow-forward-w.png" /></div>
-        </div>
-    </button>
-    <a class="backbottom cursor-pointer" (click)="backAction()">
-        <div><img src="/assets/img/Arrow-back-gray.png" /></div>
-        Terug naar de vorige stap
-    </a>
+    <maf-primary-button text=" Volgende stap"  *ngIf="isAgree" (click)='nextAction()'></maf-primary-button>
+    <maf-back-button position="bottom" title="Terug naar de vorige stap" (click)="backAction()"></maf-back-button>
 </div>

@@ -10,9 +10,12 @@ import { FooterComponent } from './footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { CdkStepperModule } from '@angular/cdk/stepper';
+import { BackButtonComponent } from './components/back-button/back-button.component';
+import { PrimaryButtonComponent } from './components/primary-button/primary-button.component';
 
 @NgModule({
-  declarations: [FooterComponent],
+  declarations: [FooterComponent, BackButtonComponent, PrimaryButtonComponent],
   imports: [
     CommonModule,
     FormsModule,
@@ -22,17 +25,21 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     BsDatepickerModule.forRoot(),
     ModalModule.forRoot(),
     UiSwitchModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    CdkStepperModule
   ],
   exports: [
     FooterComponent,
+    BackButtonComponent,
+    PrimaryButtonComponent,
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
     RouterModule,
     BsDatepickerModule,
     ModalModule,
-    UiSwitchModule
+    UiSwitchModule,
+    CdkStepperModule
   ]
 })
 export class SharedModule { }
