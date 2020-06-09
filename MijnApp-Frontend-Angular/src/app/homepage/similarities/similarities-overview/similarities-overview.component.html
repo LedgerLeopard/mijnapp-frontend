@@ -1,9 +1,6 @@
 <div class="page-wrapper" *ngIf="!!contract">
   <div class="page_name">
-    <div class="backpage cursor-pointer" routerLink="../">
-      <div><img src="/assets/img/Arrow-back.png" /></div>
-      Terug naar Berichten
-    </div>
+    <maf-back-button title="Terug naar Berichten" (back)="backPage()"></maf-back-button>
     <div class="d-flex justify-content-between">
       <div class="title">
         <div><img src="/assets/img/shared-page-icon.png" /></div>
@@ -97,9 +94,6 @@
     <a class="orangebtn cursor-pointer" routerLink="../../steps-overview">
       Delen
     </a>
-    <a class="backbottom cursor-pointer" routerLink="../../">
-      <div><img src="/assets/img/Arrow-back-gray.png" /></div>
-      Terug naar Start
-    </a>
+    <maf-back-button position="bottom"  routerLink="/homepage"></maf-back-button>
   </div>
 </div>

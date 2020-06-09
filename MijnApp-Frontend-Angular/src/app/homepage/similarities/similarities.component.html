@@ -1,11 +1,6 @@
 <div class="page-wrapper">
   <div class="page_name">
-    <div class="backpage cursor-pointer" routerLink="../../">
-      <div>
-        <img src="/assets/img/Arrow-back.png" />
-      </div>
-      Terug naar Start
-    </div>
+    <maf-back-button (back)="backPage()"></maf-back-button>
     <div class="d-flex justify-content-between">
       <div class="title">Overeenkomsten</div>
       <div class="profilepic cursor-pointer" routerLink="../../steps-overview">

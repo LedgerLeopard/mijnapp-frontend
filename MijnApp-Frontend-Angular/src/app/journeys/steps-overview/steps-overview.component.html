@@ -1,9 +1,6 @@
 <div class="page-wrapper" *ngIf="!loading">
   <div class="page_name">
-    <div class="backpage cursor-pointer" routerLink="../../homepage">
-      <div><img src="/assets/img/Arrow-back.png" /></div>
-      Terug naar Start
-    </div>
+    <maf-back-button (click)="homepage()"></maf-back-button>
     <div class="title">
       <div><img src="/assets/img/srch-img-1.png" /></div>
       Ik ga verhuizen
@@ -18,15 +15,8 @@
     </ul>
   </div>
   <div class="btnrow cursor-pointer">
-    <a class="orangebtn"  *ngIf="preconditionsFullFilled"  [routerLink]="['../journey']"
-      [queryParams]="{ id: journey.request_type_id }"
-      queryParamsHandling="merge">
-      Starten
-    </a>
-    <a class="backbottom cursor-pointer" routerLink="../../homepage">
-      <div><img src="/assets/img/Arrow-back-gray.png" /></div>
-      Terug naar Start
-    </a>
+    <maf-primary-button text="Starten" (click)="redirectToRoute()"></maf-primary-button>
+    <maf-back-button position="bottom" routerLink="/journeys"></maf-back-button>
   </div>
   <div class="d-flex" *ngIf="!preconditionsFullFilled">
     <img class="warnIcon mr-3 ml-3" src="/assets/img/warn.svg" />

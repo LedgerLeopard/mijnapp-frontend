@@ -24,4 +24,8 @@ export class StepsOverviewComponent implements OnInit {
     }).catch(e => console.error(e))
     .finally(() => this.loading = false);
   }
+
+  redirectToRoute() {
+    this.route.navigate(['/journeys/journey'], { queryParams: { id: this.journey.request_type_id }, queryParamsHandling: 'merge' });
+  }
 }

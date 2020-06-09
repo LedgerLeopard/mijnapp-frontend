@@ -1,9 +1,6 @@
 <div class="page-wrapper">
   <div class="page_name">
-    <div class="backpage cursor-pointer" routerLink="../">
-      <div><img src="/assets/img/Arrow-back.png" /></div>
-      Terug naar Start
-    </div>
+    <maf-back-button (back)="backPage()"></maf-back-button>
     <div class="title">
       <div><img src="/assets/img/shared-page-icon.png" /></div>
       Gegevens delen
@@ -26,13 +23,8 @@
       </li>
     </ul>
   </div>
-  <div class="btnrow cursor-pointer" routerLink="../step1">
-    <a class="orangebtn cursor-pointer" routerLink="../share-data">
-      Starten
-    </a>
-    <a class="backbottom cursor-pointer" routerLink="../">
-      <div><img src="/assets/img/Arrow-back-gray.png" /></div>
-      Terug naar Start
-    </a>
+  <div class="btnrow cursor-pointer">
+    <maf-primary-button text="Starten" routerLink="/homepage/share-data"></maf-primary-button>
+    <maf-back-button  position="bottom" routerLink="/homepage"></maf-back-button>
   </div>
 </div>

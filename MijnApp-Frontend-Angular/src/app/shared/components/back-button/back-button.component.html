@@ -1,0 +1,6 @@
+<div class="cursor-pointer" 
+     [ngClass]="position === 'bottom'?'backbottom':'backpage'" 
+     (click) = "onBack()">
+    <div><img [class.opacity]="position === 'bottom'" src="/assets/img/Arrow-back.png" /></div>
+    {{title}}
+</div> 

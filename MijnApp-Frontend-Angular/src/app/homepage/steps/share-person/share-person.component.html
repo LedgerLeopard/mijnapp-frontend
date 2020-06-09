@@ -1,9 +1,6 @@
 <div class="page-wrapper">
   <div class="page_name">
-    <div class="backpage cursor-pointer" routerLink="../">
-      <div><img src="/assets/img/Arrow-back.png" /></div>
-      Terug naar Start
-    </div>
+    <maf-back-button (back)="backPage()"></maf-back-button>
     <div class="d-flex justify-content-between">
       <div class="title">
         <div><img src="/assets/img/shared-page-icon.png" /></div>
@@ -46,15 +43,8 @@
     </a>
   </div>
   <div class="btnrow">
-    <a class="orangebtn cursor-pointer" routerLink="../share-time">
-      <div class="d-inline-flex">
-        Volgende stap
-        <div class="ml-2"><img src="/assets/img/Arrow-forward-w.png" /></div>
-      </div>
-    </a>
-    <a class="backbottom cursor-pointer" routerLink="../share-data">
-      <div><img src="/assets/img/Arrow-back-gray.png" /></div>
-      Terug naar de vorige stap
-    </a>
+
+    <maf-primary-button text="Volgende stap" routerLink="/homepage/share-time"></maf-primary-button>
+    <maf-back-button title="Terug naar de vorige stap" position="bottom" routerLink="/homepage/share-data"></maf-back-button>
   </div>
 </div>
