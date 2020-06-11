@@ -55,7 +55,7 @@ export class StepsComponent implements OnInit {
     this.order = index !== -1 ? this.orders[index-1] : this.orders[lastIndex];
     this.question = this.questions.find(x => x.id === this.order.question);
     this.type = this.question.type;
-    this.nextId = id;
+    this.nextId = id || "END";
     }
   }
 

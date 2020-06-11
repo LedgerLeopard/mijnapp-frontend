@@ -5,21 +5,11 @@
   background: $backgroundColor;
 
   .contentpart {
-    h3 {
-      color: $mineShaft;
-      font-style: normal;
-      font-family: "rijksoverheidsanswebtext_boBd";
-      font-size: 18px;
-      line-height: 26px;
-      margin-bottom: 16px;
-    }
-
     ul.list.list--card.list--card-small {
       margin: 0;
       padding: 0;
     }
     .card {
-      background: none;
       border: 0;
       box-shadow: inset 0px -2px 0px rgba(43, 43, 43, 0.25);
       margin-bottom: 0;

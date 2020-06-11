@@ -23,44 +23,38 @@
   }
   .contentpart {
     h3 {
-      color: $mineShaft;
-      font-style: normal;
-      font-family: "rijksoverheidsanswebtext_boBd";
       font-size: 18px;
       line-height: 26px;
-      margin-bottom: 16px;
     }
 
     ul.list.list--card.list--card-small {
       margin: 0;
       padding: 0;
+      .card {
+        border: 0;
+        border-bottom: 1px solid rgba(43, 43, 43, 0.10);
+        margin-bottom: 0;
+      }
+      
+      .card__body {
+        min-height: inherit;
+        padding: 15px 20px;
+        p {
+          margin: 0;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 16px;
+          line-height: 22px;
+        }
+        label {
+          color: $gray;
+          margin: 0;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 14px;
+          line-height: 18px;
+        }
+      }
     }
- 
-  .card {
-    background: none;
-    border: 0;
-    border-bottom: 1px solid rgba(43, 43, 43, 0.10);
-    margin-bottom: 0;
-  }
-  
-  .card__body {
-    min-height: inherit;
-    padding: 15px 20px;
-    p {
-      margin: 0;
-      font-style: normal;
-      font-weight: normal;
-      font-size: 16px;
-      line-height: 22px;
-    }
-    label {
-      color: $gray;
-      margin: 0;
-      font-style: normal;
-      font-weight: normal;
-      font-size: 14px;
-      line-height: 18px;
-    }
-  }
   }
 }
