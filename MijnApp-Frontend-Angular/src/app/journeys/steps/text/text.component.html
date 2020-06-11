@@ -1,5 +1,7 @@
 <div class="contentpart">
-    <h3>{{question?.title}}</h3>
+    <div class="inner-section inner-section--no-border p-0">
+        <h3 class="f-18px">{{question?.title}}</h3>
+    </div>
     <div class="form-group">
         <input type="text" class="form-control" id="text" autocomplete="off"
                      placeholder="{{question?.title}}" [(ngModel)] = "value" />

@@ -1,46 +1,39 @@
 @import "../../../styles/colors";
+@import "@nl-design-system/nl-design-system/src/components/form/checkbox.scss";
 
 .contentpart {
-    > p {
-      font-style: normal;
-      font-weight: normal;
-      font-size: 16px;
-      line-height: 22px;
-    }
-    h3 {
-      color: $mineShaft;
-      font-style: normal;
-      font-family: "rijksoverheidsanswebtext_boBd";
-      font-size: 18px;
-      line-height: 26px;
-      margin-bottom: 8px;
-    }
-    .card {
-      padding: 15px 20px;
-      border: 0;
-      box-shadow: inset 0px -1px 0px $gallery;
-      border-radius: 0;
-      .row {
-        align-items: center;
-        .custom-checkbox .custom-control-label::before {
-          border-radius: 0rem;
-          height: 18px;
-          width: 18px;
+    .newlist{
+      .card{
+        background-color: transparent;
+        border: 0;
+    box-shadow: inset 0px -1px 0px #ebebeb;
+      }
+      .card__body{
+        padding: 0;
+        p{
+          margin-left: 34px;
+          color: #2b2b2b;
         }
-        .custom-checkbox .custom-control-label::after {
-          height: 18px;
-          width: 18px;
+        label{
+          border: 0;
         }
       }
-      .card-body {
-        padding: 0px 0px 0px 20px;
-        p {
-          margin: 0;
-          font-style: normal;
-          font-weight: normal;
-          font-size: 16px;
-          line-height: 22px;
-        }
+      .input__label--checkbox{
+        padding: 15px 20px;
+        background: none;
+        &:before {
+         // background-color: white;
+          border: #adb5bd solid 1px;
+      //    content: "";
+        //  height: 18px;
+          left: 5px;
+          margin-left: 1.4rem;
+          position: absolute;
+          top: 1.4rem;
+         // width: 18px;
       }
+      }
+     
+     
     }
 }

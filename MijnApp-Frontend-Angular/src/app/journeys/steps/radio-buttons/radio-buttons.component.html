@@ -1,22 +1,24 @@
 <div class="contentpart" *ngIf="!loading">
-    <h3>{{question?.title}}</h3>
-    <p>
-        {{question?.subtitle}}
-    </p>
-    <div class="card eh-radio-group eh-radio-group-big" *ngFor="let option of question.options;let i = index">
-        <div class="row no-gutters">
-            <div class="col-auto">
-                    <div class="eh-radio">
-                      <input id="option{{i + 1}}" 
-                             type="radio" 
-                             [checked]="order && order.value === option.value"
-                             name="radio-option" [value]="option.value"
-                             (change)="optionChange($event, option.title)">
-                      <label for="option{{i + 1}}">{{option.title}}</label>
-                  </div>
-            </div>
-        </div>
+    <div class="inner-section inner-section--no-border p-0">
+        <h3 class="f-18px">{{question?.title}}</h3>
+        <p>
+            {{question?.subtitle}}
+        </p>
     </div>
+    <ul class="list list--card list--card-small">
+        <li class="card card--small" *ngFor="let option of question.options;let i = index">
+                <div class="card__body">
+                    <div class="input__group input__group--radio">
+                        <input id="option{{i + 1}}"  type="radio" 
+                        name="radio-option" [value]="option.value"
+                        class="input__control input__control--radio"  
+                        (change)="optionChange($event, option.title)"
+                        [checked]="order && order.value === option.value">
+                        <label class="input__label input__label--radio" for="option{{i + 1}}">{{option.title}}</label>
+                    </div>
+                </div>
+        </li>
+    </ul>
 </div>
 <div class="btnrow cursor-pointer" >
     <maf-primary-button text="Volgende stap" *ngIf="!!order.value" (click)='nextAction()'></maf-primary-button>

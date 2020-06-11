@@ -1,9 +1,11 @@
 <form [formGroup]="addressForm" *ngIf="!loading">
     <div class="contentpart">
-        <h3>{{question?.title}}</h3>
-        <p>
-            {{question?.subtitle}}
-        </p>
+        <div class="inner-section inner-section--no-border p-0">
+            <h3 class="f-18px">{{question?.title}}</h3>
+            <p>
+                {{question?.subtitle}}
+            </p>
+        </div>
         <div class="row">
             <div class="form-group col-5">
                 <label>postcode</label>
@@ -22,20 +24,22 @@
                     (change)="getAddress()" />
             </div>
         </div>
-        <h3 *ngIf="addressForm.valid && isvalidAddress">Gevonden adressen</h3>
-        <div class="card mb-3" *ngIf="addressForm.valid && isvalidAddress">
-            <div class="row no-gutters">
-                <div class="col">
-                    <div class="card-body cursor-pointer" (click)="nextAction()">
-                        <p>
+        <div class="inner-section inner-section--no-border p-0" *ngIf="addressForm.valid && isvalidAddress">
+            <h3 class="f-18px">{{question?.title}}</h3>
+        </div>
+
+        <ul class="list list--card list--card-small" *ngIf="addressForm.valid && isvalidAddress">
+            <li class="card card--small mb-3">
+                    <div class="card__body" (click)="nextAction()">
+                        <p class="card__status option" > 
                             {{value('straatnaam') || ''}} {{value('huisnummer')}}
                             {{value('huisnummertoevoeging') || ''}},
                             {{value('postcode')}} {{value('woonplaatsnaam')}}
                         </p>
                     </div>
-                </div>
-            </div>
-        </div>
+            </li>
+        </ul>
+
         <div class="d-flex" *ngIf="!isvalidAddress">
             <img class="warnIcon mr-3 ml-3" src="/assets/img/warn.svg" />
             <span>Het opgegeven adres is onbekend. <br />

@@ -8,4 +8,11 @@
 
  .backlink {
    margin: 0;
+   &:focus {
+    outline: none;
+    background: none !important;
+   }
  }
+ .align-center:focus {
+  outline: none;
+}

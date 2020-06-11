@@ -3,6 +3,7 @@
 
 .page-wrapper {
   height: calc(100% - 0px);
+  background: $white;
   .page_name {
     box-shadow: none;
     .closebtn {
@@ -52,11 +53,10 @@
       padding: 0;
     }
     .card {
-      background: none;
       border: 0;
       border-bottom: 1px solid rgba(43, 43, 43, 0.10);
       margin-bottom: 0;
-      padding: 15px 20px;
+      padding: 15px 15px;
       .card__body {
         min-height: inherit;
         padding:  0px 0px 0px 20px;
