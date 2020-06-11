@@ -11,84 +11,51 @@
 
   <div class="contentpart">
     <h3>Inhoud</h3>
-    <div class="card">
-      <div class="row no-gutters">
-        <div class="col">
-          <div class="card-body">
-            <div class="d-flex align-items-center justify-content-between">
-              <div>
-                <label>Gegevens bevestigd door</label>
-                <h4>{{contract?.organisatie}}</h4>
-                <span>Alleen lezen <img src="/assets/img/que-icon.png"/></span>
-              </div>
-              <div>
-                <img src="/assets/img/Logo WIJeindhoven.png" />
-              </div>
-            </div>
-          </div>
+
+    <ul class="list list--card list--card-small">
+      <li class="card card--small">
+        <div class="card__body">
+          <label class="mb-2">Gegevens bevestigd door</label>
+          <h4>{{contract?.organisatie}}</h4>
+          <p> Alleen lezen <img src="/assets/img/que-icon.png" /></p>
         </div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="row no-gutters">
-        <div class="col">
-          <div class="card-body">
-            <label>Naam</label>
-            <div class="value">
-              <img src="/assets/img/name-icon.png" />  Dhr. de Vries, Ad Willem
-            </div>
-          </div>
+      </li>
+      <li class="card card--small">
+        <div class="card__body">
+          <label>Naam</label>
+          <p class="card__status"><img src="/assets/img/name-icon.png" /> Dhr. de Vries, Ad Willem </p>
         </div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="row no-gutters">
-        <div class="col">
-          <div class="card-body">
-            <label>Burgerservicenummer</label>
-            <div class="value">
-              <img src="/assets/img/name-icon.png" /> {{contract?.bsn}}
-            </div>
-          </div>
+      </li>
+      <li class="card card--small">
+        <div class="card__body">
+          <label>Burgerservicenummer</label>
+          <p class="card__status"> <img src="/assets/img/name-icon.png" /> {{contract?.bsn}} </p>
         </div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="row no-gutters">
-        <div class="col">
-          <div class="card-body">
+      </li>
+      <li class="card card--small">
+        <a href="javascript:void(0)" class="card__content">
+          <div class="card__body">
             <label>Type overeenkomst</label>
-            <div class="value">
-              <img src="/assets/img/type-icon.png" /> {{contract?.titel}}
-            </div>
+            <p class="card__status"><img src="/assets/img/type-icon.png" /> {{contract?.titel}}</p>
           </div>
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="row no-gutters">
-        <div class="col">
-          <div class="card-body">
+        </a>
+      </li>
+      <li class="card card--small">
+        <a href="javascript:void(0)" class="card__content">
+          <div class="card__body">
             <label>Status overeenkomst</label>
-            <div class="value">
-              <img src="/assets/img/status-icon.png" /> {{contract?.status}}
-            </div>
+            <p class="card__status"><img src="/assets/img/status-icon.png" /> {{contract?.status}} </p>
           </div>
+        </a>
+      </li>
+      <li class="card card--small">
+        <div class="card__body">
+          <label>Startdatum</label>
+          <p class="card__status"><img src="/assets/img/calendar.png" /> {{contract?.beginDatum | date: 'dd-MM-yyyy'}}
+          </p>
         </div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="row no-gutters">
-        <div class="col">
-          <div class="card-body">
-            <label>Startdatum</label>
-            <div class="value">
-              <img src="/assets/img/calendar.png" /> {{contract?.beginDatum | date: 'dd-MM-yyyy'}}
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+      </li>
+    </ul>
   </div>
   <div class="btnrow">
     <a class="orangebtn cursor-pointer" routerLink="../../steps-overview">

@@ -1,4 +1,5 @@
 @import "../styles/colors";
+@import "@nl-design-system/nl-design-system/src/components/card/card.scss";
 
 .page-wrapper {
   height: calc(100% - 0px);
@@ -46,31 +47,27 @@
         line-height: 22px;
       }
     }
+    ul.list.list--card.list--card-small {
+      margin: 0;
+      padding: 0;
+    }
     .card {
-      padding: 15px 20px;
+      background: none;
       border: 0;
-      box-shadow: inset 0px -1px 0px $gallery;
-      border-radius: 0;
-      .row {
-        align-items: center;
-      }
-      .card-body {
-        padding: 0px 0px 0px 20px;
-        h5 {
-          margin-bottom: 0;
-          font-style: normal;
-          font-family: "rijksoverheidsanswebtext_boBd";
-          font-size: 16px;
-          line-height: 22px;
-        }
-        .status {
-          font-style: normal;
-          font-weight: normal;
-          font-size: 16px;
-          line-height: 22px;
-          color: $laPalma;
-        }
+      border-bottom: 1px solid rgba(43, 43, 43, 0.10);
+      margin-bottom: 0;
+      padding: 15px 20px;
+      .card__body {
+        min-height: inherit;
+        padding:  0px 0px 0px 20px;
+         h5 {
+                margin-bottom: 0;
+                font-style: normal;
+                font-family: "rijksoverheidsanswebtext_boBd";
+                font-size: 16px;
+                line-height: 22px;
+              }
       }
     }
-  }
+}
 }
