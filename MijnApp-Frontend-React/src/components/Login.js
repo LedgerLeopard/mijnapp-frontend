@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  Grid,
-  Button,
-  Container,
-  Link,
-} from "@material-ui/core";
+import { Grid, Button, Container, Link } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 // import {setUserSession} from "./utils/common";
 
@@ -34,7 +29,7 @@ function Login(props) {
 
   const useStyles = makeStyles((theme) => ({
     root: {
-      paddingTop:0
+      paddingTop: 0,
     },
     menuButton: {
       marginRight: theme.spacing(2),
@@ -50,48 +45,53 @@ function Login(props) {
     },
     wrapIcon: {
       verticalAlign: "middle",
-      marginTop:"200px",
-      marginBottom:"150px",
+      marginTop: "200px",
+      marginBottom: "150px",
     },
     buttonOrange: {
       backgroundColor: theme.palette.warning.dark + "!important",
       height: 40,
-      width: '90%',
+      width: "90%",
       textTransform: "none",
-      marginTop:"2px",
+      marginTop: "2px",
       color: "white",
-      fontWeight: "bold"
+      fontWeight: "bold",
     },
-    image:{
-      marginLeft: '10px',
-      marginTop:"3px",
-      height: 35
-    }
+    image: {
+      marginLeft: "10px",
+      marginTop: "3px",
+      height: 35,
+    },
   }));
 
   const classes = useStyles();
   return (
     <Container maxWidth="sm" className={classes.container}>
-      <Grid container  direction="column" alignItems="center" justify="center">
-      <Grid container className={classes.wrapIcon}>
-        <p><strong>MijnApp</strong>
-        <br />
-        Alles zelf regelem</p>
-      </Grid>
-        <Grid container >
+      <Grid container direction="column" alignItems="center" justify="center">
+        <Grid container className={classes.wrapIcon}>
+          <p>
+            <strong>MijnApp</strong>
+            <br />
+            Alles zelf regelem
+          </p>
+        </Grid>
+        <Grid container>
           <Button className={classes.buttonOrange}>
             Test inloggein met DigiD
           </Button>
           <img src="digid logomark.png" alt="img" className={classes.image} />
         </Grid>
-        <Grid container >
+        <Grid container>
           <Button className={classes.buttonOrange}>Inloggein met DigiD</Button>
           <img src="digid logomark.png" alt="img" className={classes.image} />
         </Grid>
-        <br/>
+        <br />
         <Grid container>
-        <p><strong>Heeft u nog geen DigiD?</strong><br/>
-          Vraag uw DigiD aan op <Link href="www.gigid.nl">www.gigid.nl</Link></p>
+          <p>
+            <strong>Heeft u nog geen DigiD?</strong>
+            <br />
+            Vraag uw DigiD aan op <Link href="www.gigid.nl">www.gigid.nl</Link>
+          </p>
         </Grid>
       </Grid>
     </Container>
