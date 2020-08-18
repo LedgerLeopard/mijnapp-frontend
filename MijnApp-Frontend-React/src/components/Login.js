@@ -5,7 +5,6 @@ import { userActions } from "./../store/actions";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 
-
 function Login(props) {
   const handleLogin = () => {
     // this.setState({ submitted: true });

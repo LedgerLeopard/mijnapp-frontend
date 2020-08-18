@@ -76,12 +76,12 @@ function ArrangeYourself(props) {
         </Box>
       </Grid>
       <Grid className="button-bottom" container>
-          <Button className={classes.buttonOrange} onClick={handleDashboard}>
-            {" "}
-            Volgende stap
-            <ArrowRightAltIcon />
-          </Button>
-        </Grid>
+        <Button className={classes.buttonOrange} onClick={handleDashboard}>
+          {" "}
+          Volgende stap
+          <ArrowRightAltIcon />
+        </Button>
+      </Grid>
     </Container>
   );
 }
