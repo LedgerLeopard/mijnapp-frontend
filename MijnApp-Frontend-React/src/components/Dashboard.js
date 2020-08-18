@@ -1,9 +1,9 @@
 import React from "react";
-import { Container, Button, Grid, Link } from "@material-ui/core";
+import { Container, Button, Grid, Link, Box } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import ArrowRightAltIcon from '@material-ui/icons/ArrowRightAlt';
+import ArrowRightAltIcon from "@material-ui/icons/ArrowRightAlt";
 
-function ArrangeYourself(props) {
+function Dashboard(props) {
   const handleAlwaysSafe = () => {
     props.history.push("/alwaysSafe");
   };
@@ -20,8 +20,8 @@ function ArrangeYourself(props) {
     },
     container: {
       backgroundColor: "#f9f9f9",
-      height: "90vh",
-      justifyContent:"cente"
+      height: "100vh",
+      justifyContent: "cente",
     },
     wrapIcon: {
       verticalAlign: "middle",
@@ -29,61 +29,67 @@ function ArrangeYourself(props) {
     buttonOrange: {
       backgroundColor: theme.palette.warning.dark + "!important",
       height: 40,
-      width: "95%",
+      width: "100%",
+      marginLeft: "15px !important",
+      marginRight: "15px !important",
       textTransform: "none",
       marginTop: "2px",
       color: "white",
       fontWeight: "bold",
-      justifyContent: "center"
+      justifyContent: "center",
     },
-    image: {
-      marginLeft: "10px",
-      marginTop: "3px",
-      height: 20,
-    },
-    screenImage:{
-        height: 350,
-        width: 300,
-        alignItems: "center"
-    }
   }));
 
   const classes = useStyles();
   return (
     <Container maxWidth="sm" className={classes.container}>
-      <Grid
-        container
-        direction="column"
-      >
-        <Grid container alignItems="flex-start" >
-          <Grid container >Welkomstour
-          <Link href="login" float="Right">
-              Overlaan
+      <Grid container direction="column">
+        <Grid
+          container
+          className="bg_white"
+          direction="row"
+          justify="space-around"
+          alignItems="center"
+        >
+          <Grid item className="py_10">
+            <span className="title">Welkomstour</span>
+            <Link href="login" float="Right">
+              {" "}
+              <span className="float-right">Overlann</span>{" "}
             </Link>
-            </Grid>
-        </Grid>
-        <Grid container className={classes.wrapIcon}>
-          <p>
-            {/* <strong>Vinden</strong>
+          </Grid>
+          <ul className="statusbar">
+            <li className="active"></li>
+            <li className="active"></li>
+          </ul>
+          {/* <Grid item className="py_10">
+            <Link href="login" float="Right">
             
-            <br />
-            <img src="status-icon.png" alt="img" className={classes.image} /> Op een plek terecht kunnen voor je dienstverlening<br/>
-            <img src="status-icon.png" alt="img" className={classes.image} />  Snel doorgelinkt worden naar betrouwbaar aanbod<br/>
-            <img src="status-icon.png" alt="img" className={classes.image} /> Volledig af te stemmen op jouw persaanlijke voorkeuren */}
-
-<strong>Je eigen dashboard</strong>
-<p>Via het dashboard heb je altijd toegang tot al je gegevens, nieuwe berichten, overeenkomsten en gedeelde gegevens</p>
+            </Link>
+            </Grid> */}
+        </Grid>
+        <Box component="div" className="box_section">
+          <Box className="box">
+            <h3 className="title">Je eighen Dashboard</h3>
+            <p>
+              Via het dashboard heb je altijd toegang tot al je gegevens, nieuwe
+              berichten, overeenkomsten en gedeelde gegevens
             </p>
-        </Grid>
-        <Grid container>
-            <img src="screen2.png" alt="img" className={classes.screenImage}/>
-        </Grid>
-        <Grid container>
-          <Button className={classes.buttonOrange} onClick={handleAlwaysSafe}>Ga door naar inloggen <ArrowRightAltIcon/></Button>
+          </Box>
+          <Box component="div" className="text-center mt-15px">
+            <img src="screen2.png" alt="img" className="phone_img" />
+          </Box>
+        </Box>
+
+        <Grid className="button-bottom" container>
+          <Button className={classes.buttonOrange} onClick={handleAlwaysSafe}>
+            {" "}
+            Volgende stap <ArrowRightAltIcon />
+          </Button>
         </Grid>
       </Grid>
     </Container>
   );
 }
 
-export default ArrangeYourself;
+export default Dashboard;

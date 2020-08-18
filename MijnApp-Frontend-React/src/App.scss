@@ -1,0 +1,181 @@
+@import "./shared/fonts/stylesheet.css";
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+@media (min-width: 800px) {
+.MuiContainer-maxWidthSm {
+  max-width: 800px !important;
+}
+}
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (min-width: 1200px) {
+  .MuiContainer-maxWidthSm {
+    max-width: 800px !important;
+  }
+}
+.float-right {
+  float: right;
+}
+
+.box_section {
+  background: #efefef;
+  margin-bottom: 15px;
+}
+.phone_img {
+  width: 300px;
+  margin: auto;
+}
+.box {
+  padding: 0px 15px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+h2 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.theme_button.block {
+  display: block;
+}
+.theme_button {
+  width: 100%;
+  display: block;
+  background: #ff4500 !important;
+  color: #fff !important;
+}
+.py_10 {
+  padding: 6px 15px 8px 15px;
+  width: 100%;
+}
+
+.MuiContainer-root {
+  padding: 0px !important;
+}
+
+.title {
+  color: #2b2b2b;
+  font-style: normal;
+  font-family: "rijksoverheidsanswebtext_boBd" !important;
+  font-size: 26px;
+  line-height: 30px;
+  margin: 15px 0px;
+}
+
+.title_italic {
+  color: #2b2b2b;
+  font-style: italic !important;
+  font-family: "RijksoverheidSerifWeb-Italic" !important;
+  font-weight: normal;
+  font-size: 23px !important;
+  line-height: 22px;
+  margin: 0;
+}
+.search-title {
+  color: #2B2B2B;
+  font-style: normal;
+  font-family: "rijksoverheidsanswebtext_boBd" !important;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 26px;
+  margin: 15px 0px;
+}
+
+.box_section p {
+    margin: 0;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
+}
+
+.box_section {
+  background: #F9f9F9 !important;
+}
+
+.mt-15px {
+  margin-top: 15px;
+}
+
+.button-bottom {
+  text-align: center;
+  display: block;
+}
+
+.MuiButton-text {
+  padding: 14px !important;
+}
+
+.MuiButton-root, .MuiButtonBase-root {
+  background: #FF7000;
+  box-shadow: inset 0px -2px 0px rgba(43, 43, 43, 0.25);
+  line-height: 22px !important;
+  color: #ffffff;
+  width: 100%;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  height: auto !important;
+}
+
+.MuiButton-label {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  font-family: "rijksoverheidsanswebtext_reRg" !important;
+}
+
+.bg_white {
+  background-color: #fff !important;
+}
+
+.content {
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+}
+
+.statusbar {
+  list-style-type: none;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  li {
+    width: 33.33%;
+    height: 4px;
+    margin-left: 4px;
+    &.active {
+      background: #3c861b;
+    }
+    &:first-child {
+      margin: 0;
+    }
+  }
+}

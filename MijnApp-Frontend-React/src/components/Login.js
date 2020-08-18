@@ -1,11 +1,23 @@
 import React from "react";
-import { Grid, Button, Container, Link } from "@material-ui/core";
+import {
+  Grid,
+  Button,
+  Container,
+  Link,
+} from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 // import {setUserSession} from "./utils/common";
 
 // import axios from 'axios';
 
 function Login(props) {
+
+  const handleHome = () =>{
+    props.history.push("/home");
+  }
+  const handleTest = () =>{
+    props.history.push("/test");
+  }
   // const username = useFormInput("");
   // const password = useFormInput("");
   // const [error, setError] = useState(null);
@@ -29,7 +41,7 @@ function Login(props) {
 
   const useStyles = makeStyles((theme) => ({
     root: {
-      paddingTop: 0,
+      paddingTop:0
     },
     menuButton: {
       marginRight: theme.spacing(2),
@@ -38,65 +50,66 @@ function Login(props) {
       flexGrow: 1,
     },
     container: {
-      backgroundImage: 'url("splash-icon.png")',
-      backgroundRepeat: "no-repeat",
+      background: 'url("splash-icon.png") no-repeat left bottom',
       backgroundColor: "#f9f9f9",
-      height: "90vh",
+      height: "100vh",
+      paddingLeft: "15px !important",
+      paddingRight: "15px !important"
     },
     wrapIcon: {
       verticalAlign: "middle",
-      marginTop: "200px",
-      marginBottom: "150px",
+      marginTop:"95px",
+      marginBottom:"188px",
     },
     buttonOrange: {
       backgroundColor: theme.palette.warning.dark + "!important",
       height: 40,
-      width: "90%",
+      width: '95%',
       textTransform: "none",
-      marginTop: "2px",
+      marginTop:"2px",
       color: "white",
-      fontWeight: "bold",
+      fontWeight: "bold"
     },
-    image: {
-      marginLeft: "10px",
-      marginTop: "3px",
-      height: 35,
+    image:{
+      marginLeft: '10px',
+      marginTop:"3px",
+      height: 35
     },
+    displayflex: {
+      display: "flex",
+      width: "100%"
+    }
   }));
 
   const classes = useStyles();
   return (
     <Container maxWidth="sm" className={classes.container}>
-      <Grid container direction="column" alignItems="center" justify="center">
-        <Grid container className={classes.wrapIcon}>
-          <p>
-            <strong>MijnApp</strong>
-            <br />
-            Alles zelf regelem
-          </p>
-        </Grid>
-        <Grid container>
+      <Grid container  direction="column" alignItems="center" justify="space-around">
+      <Grid container className={classes.wrapIcon}>
+        <p><h3 className="title">MijnApp</h3>
+        <h5 className = "title_italic">Alles zelf regelem</h5></p>
+      </Grid>
+      <div className={classes.displayflex}>
           <Button className={classes.buttonOrange}>
             Test inloggein met DigiD
           </Button>
           <img src="digid logomark.png" alt="img" className={classes.image} />
-        </Grid>
-        <Grid container>
+        </div>
+        <div className={classes.displayflex}>
           <Button className={classes.buttonOrange}>Inloggein met DigiD</Button>
           <img src="digid logomark.png" alt="img" className={classes.image} />
-        </Grid>
-        <br />
+        </div>
+        <br/>
         <Grid container>
-          <p>
-            <strong>Heeft u nog geen DigiD?</strong>
-            <br />
-            Vraag uw DigiD aan op <Link href="www.gigid.nl">www.gigid.nl</Link>
-          </p>
+        <p><strong>Heeft u nog geen DigiD?</strong><br/>
+          Vraag uw DigiD aan op <Link href="www.gigid.nl">www.gigid.nl</Link></p>
         </Grid>
       </Grid>
     </Container>
   );
 }
+
+
 
 // const useFormInput = (initialValue) => {
 //   const [value, setValue] = useState(initialValue);
