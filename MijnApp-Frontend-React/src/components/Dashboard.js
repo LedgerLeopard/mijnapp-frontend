@@ -21,7 +21,7 @@ function Dashboard(props) {
     container: {
       backgroundColor: "#f9f9f9",
       height: "100vh",
-      justifyContent: "cente",
+      justifyContent: "center",
     },
     wrapIcon: {
       verticalAlign: "middle",

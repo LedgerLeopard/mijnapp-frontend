@@ -97,7 +97,7 @@ function Login(props) {
 }
 
 function mapState(state) {
-  const { loggingIn } = state.authentication;
+  const { loggingIn } = state.login;
   return { loggingIn };
 }
 
