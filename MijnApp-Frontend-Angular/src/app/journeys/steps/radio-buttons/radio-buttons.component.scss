@@ -1,6 +1,5 @@
 @import "../../../styles/colors";
 @import "../../../styles/radio";
-@import "@nl-design-system/nl-design-system/src/components/form/radio.scss";
 
 .contentpart {
     > p {
@@ -17,18 +16,32 @@
       line-height: 26px;
       margin-bottom: 8px;
     }
-}
-
-.card__body {
-     padding: 0px 0px !important;
-}
-.input__control--radio:checked + .input__label--radio {
-  background-color: transparent;
-  border: none;
-}
-
-.input__label--radio {
-     background: none !important; 
-     border: none !important;
-     outline: none !important;
+    .card {
+      padding: 15px 20px;
+      border: 0;
+      box-shadow: inset 0px -1px 0px $gallery;
+      border-radius: 0;
+      .row {
+        align-items: center;
+        .custom-checkbox .custom-control-label::before {
+          border-radius: 0rem;
+          height: 18px;
+          width: 18px;
+        }
+        .custom-checkbox .custom-control-label::after {
+          height: 18px;
+          width: 18px;
+        }
+      }
+      .card-body {
+        padding: 0px 0px 0px 20px;
+        p {
+          margin: 0;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 16px;
+          line-height: 22px;
+        }
+      }
+    }
 }

@@ -1,18 +1,19 @@
 <div class="contentpart">
-    <div class="inner-section inner-section--no-border p-0">
-        <h3 class="f-18px">{{question?.title}}</h3>
-        <p>
-            {{question?.subtitle}}
-        </p>
-    </div>
-    <ul class="list list--card list--card-small">
-        <li class="card card--small" *ngFor="let option of question.options;let i = index">
-                <div class="card__body" (click)="optionClick(option)">
-                    <p class="card__status option">  {{option.title}}</p>
+    <h3>{{question?.title}}</h3>
+    <p>
+        {{question?.subtitle}}
+    </p>
+    <div class="card" *ngFor="let option of question.options;let i = index">
+            <div class="col pl-0">
+                <div class="card-body" (click)="optionClick(option)">
+                    <p class="option">
+                        {{option.title}}
+                    </p>
                 </div>
-        </li>
-    </ul>
+            </div>
+    </div>
 </div>
 <div class="btnrow cursor-pointer" >
-    <maf-back-button position="bottom" title="Terug naar de vorige stap" (click)="backAction()"></maf-back-button>
+
+    <app-back-button position="bottom" title="Terug naar de vorige stap" (click)="backAction()"></app-back-button>
 </div>

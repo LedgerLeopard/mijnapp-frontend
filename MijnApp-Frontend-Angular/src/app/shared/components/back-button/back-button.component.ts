@@ -2,7 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'maf-back-button',
+  selector: 'app-back-button',
   templateUrl: './back-button.component.html',
   styleUrls: ['./back-button.component.scss']
 })

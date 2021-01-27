@@ -1,10 +1,8 @@
 <div class="page-wrapper">
   <div class="page_name">
-    <maf-back-button (back)="backPage()"></maf-back-button> 
+    <app-back-button (back)="backPage()"></app-back-button> 
     <div class="d-flex justify-content-between">
-      <div class="inner-section inner-section--no-border p-0 m-0">
-        <h3>Ad de Vries</h3>
-      </div>
+      <div class="title">Ad de Vries</div>
       <div class="profilepic">
         <img src="/assets/img/Ellipse 4.png" />
       </div>
@@ -12,74 +10,102 @@
   </div>
 
   <div class="contentpart">
-    <div class="inner-section inner-section--no-border p-0">
-      <h3 class="f-18px">Persoonsgegevens</h3>
-    </div>
-    <ul class="list list--card list--card-small">
-      <li class="card card--small">
-        <a href="javascript:void(0)" class="card__content">
-          <div class="card__body">
+    <h3>Persoonsgegevens</h3>
+    <div class="card">
+      <div class="row no-gutters">
+        <div class="col">
+          <div class="card-body">
             <label>Voornaam(en)</label>
-            <p class="card__status">1 nieuw bericht</p>
+            <p>
+              {{personalInfo?.naam?.voornamen}}
+            </p>
           </div>
-        </a>
-      </li>
-      <li class="card card--small">
-        <a href="javascript:void(0)" class="card__content">
-          <div class="card__body">
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="row no-gutters">
+        <div class="col">
+          <div class="card-body">
             <label>Achternaam</label>
-            <p class="card__status">{{personalInfo?.naam?.geslachtsnaam}} </p>
+            <p>
+              {{personalInfo?.naam?.geslachtsnaam}} 
+            </p>
           </div>
-        </a>
-      </li>
-      <li class="card card--small">
-        <a href="javascript:void(0)" class="card__content">
-          <div class="card__body">
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="row no-gutters">
+        <div class="col">
+          <div class="card-body">
             <label>Geboortedatum</label>
-            <p class="card__status">{{personalInfo?.geboorte?.datum?.date}} </p>
+            <p>
+             {{personalInfo?.geboorte?.datum?.datum}}  
+            </p>
           </div>
-        </a>
-      </li>
-      <li class="card card--small">
-        <a href="javascript:void(0)" class="card__content">
-          <div class="card__body">
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="row no-gutters">
+        <div class="col">
+          <div class="card-body">
             <label>Burgerservicenummer</label>
-            <p class="card__status">{{personalInfo?.burgerservicenummer}} </p>
+            <p>
+              {{personalInfo?.burgerservicenummer}}
+            </p>
           </div>
-        </a>
-      </li>
-      <li class="card card--small">
-        <a href="javascript:void(0)" class="card__content">
-          <div class="card__body">
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="row no-gutters">
+        <div class="col">
+          <div class="card-body">
             <label>Geboorteplaats</label>
-            <p class="card__status">Utrecht </p>
+            <p>
+              Utrecht
+            </p>
           </div>
-        </a>
-      </li>
-      <li class="card card--small">
-        <a href="javascript:void(0)" class="card__content">
-          <div class="card__body">
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="row no-gutters">
+        <div class="col">
+          <div class="card-body">
             <label>Geboorteland</label>
-            <p class="card__status">Nederland </p>
+            <p>
+              Nederland
+            </p>
           </div>
-        </a>
-      </li>
-      <li class="card card--small">
-        <a href="javascript:void(0)" class="card__content">
-          <div class="card__body">
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="row no-gutters">
+        <div class="col">
+          <div class="card-body">
             <label>Geregisteerd partnerschap</label>
-            <p class="card__status">Evelien de Vries </p>
+            <p>
+              Evelien de Vries
+            </p>
           </div>
-        </a>
-      </li>
-      <li class="card card--small">
-        <a href="javascript:void(0)" class="card__content">
-          <div class="card__body">
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="row no-gutters">
+        <div class="col">
+          <div class="card-body">
             <label>Kinderen</label>
-            <p class="card__status">Paul de Vries </p>
+            <p>
+              Paul de Vries
+            </p>
           </div>
-        </a>
-      </li>
-    </ul>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

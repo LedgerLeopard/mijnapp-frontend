@@ -11,6 +11,9 @@ namespace MijnApp.Domain.Models
 
     public class Datum
     {
-        public string date { get; set; }
+        public string jaar { get; set; }
+        public string maand { get; set; }
+        public string dag { get; set; }
+        public string datum { get; set; }
     }
 }

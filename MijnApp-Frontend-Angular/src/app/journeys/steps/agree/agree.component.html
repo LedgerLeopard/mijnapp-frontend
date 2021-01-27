@@ -1,32 +1,28 @@
 <div class="contentpart">
-    <div class="inner-section inner-section--no-border p-0">
-        <h3 class="f-18px">{{question?.title}}</h3>
-        <p>
-            {{question?.subtitle}}
-        </p>
-    </div>
-    <ul class="list list--card list--card-small">
-        <li class="card card--small">
-            <div class="d-flex">
-                <div class="card__body">
-                    <div class="d-flex align-items-center justify-content-between w-100">
-                        <div>
-                            <p> Ja </p>
-                        </div>
-                        <div>
-                            <div class="input__group input__group--checkbox">
-                                <input name="agree" type="checkbox" id="chkbx1" [checked]="order"
-                                    (change)="checkBoxEvent($event)" class="input__control input__control--checkbox">
-                                <label class="input__label input__label--checkbox" for="chkbx1"></label>
-                            </div>
-                        </div>
-                    </div>
+    <h3>{{question?.title}}</h3>
+    <p>
+        {{question?.subtitle}}
+    </p>
+    <div class="card">
+    <div class="row no-gutters">
+        <div class="col-auto">
+            <p>
+                Ja
+            </p>
+        </div>
+        <div class="col">
+            <div class="card-body">
+                <div class="custom-control custom-checkbox fr">
+                    <input type="checkbox" class="custom-control-input" id="ja" 
+                        [checked]="order" (change)="checkBoxEvent($event)">
+                    <label class="custom-control-label" for="ja"></label>
                 </div>
             </div>
-        </li>
-    </ul>
+        </div>
+    </div>
+    </div>
 </div>
 <div class="btnrow">
-    <maf-primary-button text=" Volgende stap" *ngIf="isAgree" (click)='nextAction()'></maf-primary-button>
-    <maf-back-button position="bottom" title="Terug naar de vorige stap" (click)="backAction()"></maf-back-button>
+    <app-primary-button text=" Volgende stap"  *ngIf="isAgree" (click)='nextAction()'></app-primary-button>
+    <app-back-button position="bottom" title="Terug naar de vorige stap" (click)="backAction()"></app-back-button>
 </div>

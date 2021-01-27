@@ -1,24 +1,28 @@
 <div class="contentpart">
-    <div class="inner-section inner-section--no-border p-0">
-        <h3 class="f-18px">{{question?.title}}</h3>
-        <p>
-            {{question?.subtitle}}
-        </p>
-    </div>
-
-    <ul class="list list--card list--card-small newlist">
-        <li class="card card--small" *ngFor="let person of persons;let i = index">
-                <div class="card__body">
-                    <input type="checkbox" class="input__control input__control--checkbox" id="person{{i + 1}}" value="{{person.id}}"
+    <h3>{{question?.title}}</h3>
+    <p>
+        {{question?.subtitle}}
+    </p>
+    <div class="card" *ngFor="let person of persons;let i = index">
+        <div class="row no-gutters">
+            <div class="col-auto">
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="person{{i + 1}}" value="{{person.id}}"
                         [checked]="order && order.value.includes(person.id)" (change)="checkBoxEvent($event, person)">
-                    <label class="input__label input__label--checkbox" for="person{{i + 1}}">
-                        <p>{{person?.naam?.aanschrijfwijze}}, geboren op {{person?.geboorte?.datum.date}}</p>
-                    </label>
+                    <label class="custom-control-label" for="person{{i + 1}}"></label>
                 </div>
-        </li>
-    </ul>
+            </div>
+            <div class="col">
+                <div class="card-body">
+                    <p>
+                        {{person?.naam?.aanschrijfwijze}}, geboren op {{person?.geboorte?.datum.date}}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <div class="btnrow cursor-pointer">
-    <maf-primary-button text=" Volgende stap"  (click)='nextAction()'></maf-primary-button>
-    <maf-back-button position="bottom" title="Terug naar de vorige stap" (click)="backAction()"></maf-back-button>
+    <app-primary-button text=" Volgende stap"  (click)='nextAction()'></app-primary-button>
+    <app-back-button position="bottom" title="Terug naar de vorige stap" (click)="backAction()"></app-back-button>
 </div>

@@ -2,7 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'maf-primary-button',
+  selector: 'app-primary-button',
   templateUrl: './primary-button.component.html',
   styleUrls: ['./primary-button.component.scss']
 })

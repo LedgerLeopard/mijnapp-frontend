@@ -1,6 +1,6 @@
 <div class="page-wrapper">
   <div class="page_name">
-    <maf-back-button (back)="backPage()"></maf-back-button>
+    <app-back-button (back)="backPage()"></app-back-button>
     <div class="title">
       <div><img src="/assets/img/shared-page-icon.png" /></div>
       Gegevens delen
@@ -8,23 +8,23 @@
   </div>
   <div class="contentpart">
     <h3>Deze stappen ga je doorlopen</h3>
-    <ol class="list list--decimal-circled overviewlist"> 
+    <ul class="overviewlist">
       <li>
-        <a href="#">Geef aan wat je gaat delen</a>
+        <a href="#"><span>1</span>Geef aan wat je gaat delen</a>
       </li>
       <li>
-        <a href="#">Geef aan met wie je gaat delen</a>
+        <a href="#"><span>2</span>Geef aan met wie je gaat delen</a>
       </li>
       <li>
-        <a href="#">Geef aan hoe lang je gaat delen</a>
+        <a href="#"><span>3</span>Geef aan hoe lang je gaat delen</a>
       </li>
       <li>
-        <a href="#">Bevestig je deelinstellingen</a>
-      </li>  
-    </ol>
+        <a href="#"><span>4</span>Bevestig je deelinstellingen</a>
+      </li>
+    </ul>
   </div>
   <div class="btnrow cursor-pointer">
-    <maf-primary-button text="Starten" routerLink="/homepage/share-data"></maf-primary-button>
-    <maf-back-button  position="bottom" routerLink="/homepage"></maf-back-button>
+    <app-primary-button text="Starten" routerLink="/homepage/share-data"></app-primary-button>
+    <app-back-button  position="bottom" routerLink="/homepage"></app-back-button>
   </div>
 </div>

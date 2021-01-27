@@ -1,20 +1,18 @@
 <form [formGroup]="contactForm" *ngIf="!loading">
     <div class="contentpart">
-        <div class="inner-section inner-section--no-border p-0">
-            <h3 class="f-18px">{{question?.title}}</h3>
-            <p>
-                {{question?.subtitle}}
-            </p>
-        </div>
+        <h3>{{questionData?.title}}</h3>
+        <p>
+            {{questionData?.subtitle}}
+        </p>
         <div class="form-group" *ngFor="let option of questionData.options; let i = index">
             <label>{{option.title}}</label>
             <input [class.formControl-Error]="showError(option.value)" type="text" class="form-control"
-                id="text{{i + 1}}" aria-describedby="emailHelp"
+                id="text{{i + 1}}" aria-describedby="emailHelp" placeholder="ad.de.vries@gmail.com"
                 formControlName="{{option.value}}" />
         </div>
     </div>
     <div class="btnrow">
-        <maf-primary-button text=" Volgende stap" *ngIf="contactForm.valid" (click)='nextAction()'></maf-primary-button>
-        <maf-back-button position="bottom" title="Terug naar de vorige stap" (click)="backAction()"></maf-back-button>
+        <app-primary-button text=" Volgende stap" *ngIf="!!order.value" (click)='nextAction()'></app-primary-button>
+        <app-back-button position="bottom" title="Terug naar de vorige stap" (click)="backAction()"></app-back-button>
     </div>
 </form>

@@ -1,5 +1,4 @@
 @import "../../../styles/colors";
-@import "@nl-design-system/nl-design-system/src/components/card/card.scss";
 
 .page-wrapper {
   background: $backgroundColor;
@@ -22,7 +21,7 @@
       }
     }
   }
-.contentpart {
+  .contentpart {
     h3 {
       color: $mineShaft;
       font-style: normal;
@@ -32,40 +31,57 @@
       margin-bottom: 16px;
     }
 
-  ul.list.list--card.list--card-small {
-    margin: 0;
-    padding: 0;
-  }
-
-  .mb-2 {
-    margin-bottom: 2px;
-  }
- 
-  .card {
-    background: none;
-    border: 0;
-    border-bottom: 1px solid rgba(43, 43, 43, 0.10);
-    margin-bottom: 0;
-  }
-  
-  .card__body {
-    min-height: inherit;
-    padding: 15px 20px;
-    p {
-      margin: 0;
-      font-style: normal;
-      font-weight: normal;
-      font-size: 16px;
-      line-height: 22px;
+    .card {
+      padding: 15px 20px;
+      border: 0;
+      box-shadow: inset 0px -1px 0px $gallery;
+      border-radius: 0;
+      .row {
+        align-items: center;
+      }
+      .card-body {
+        padding: 0px;
+        p {
+          margin: 0;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 16px;
+          line-height: 22px;
+        }
+        label {
+          color: $gray;
+          margin: 0;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 14px;
+          line-height: 18px;
+        }
+        .value {
+          display: flex;
+          align-items: center;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 16px;
+          line-height: 22px;
+          img {
+            margin-right: 6px;
+          }
+        }
+        span {
+          font-style: normal;
+          font-weight: normal;
+          font-size: 12px;
+          line-height: 16px;
+          color: $gray;
+        }
+        h4 {
+          margin: 0;
+          font-style: normal;
+          font-family: "rijksoverheidsanswebtext_boBd";
+          font-size: 18px;
+          line-height: 26px;
+        }
+      }
     }
-    label {
-      color: $gray;
-      margin: 0;
-      font-style: normal;
-      font-weight: normal;
-      font-size: 14px;
-      line-height: 18px;
-    }
-  }
   }
 }

@@ -1,11 +1,17 @@
 @import "../styles/colors";
-@import "@nl-design-system/nl-design-system/src/components/card/card.scss";
 
 .page-wrapper {
   background: $backgroundColor;
 
   .contentpart {
-
+    h3 {
+      color: $mineShaft;
+      font-style: normal;
+      font-family: "rijksoverheidsanswebtext_boBd";
+      font-size: 18px;
+      line-height: 26px;
+      margin-bottom: 16px;
+    }
     .searchwrap {
       display: flex;
       border: 1px solid $silverSand;
@@ -24,24 +30,22 @@
         line-height: 22px;
       }
     }
-
-    ul {
-      margin: 0;
-      padding: 0;
-      list-style-type: none;
-      li {
-        margin-bottom: 8px !important;
-        .card__body {
-          padding: 1.5rem 2rem 2rem 1.5rem !important;
-        }
-        .card__title {
+    .card {
+      // padding: 15px 20px;
+      padding-bottom: 2px;
+      border: 0;
+      box-shadow: inset 0px -2px 0px rgba(43, 43, 43, 0.25);
+      border-radius: 0;
+      .card-body {
+        padding: 15px 0px 0px 20px;
+        h5 {
           margin-bottom: 10px;
           font-style: normal;
           font-family: "rijksoverheidsanswebtext_boBd";
           font-size: 16px;
           line-height: 22px;
         }
-        .card__status {
+        .status {
           font-style: normal;
           font-weight: normal;
           font-size: 16px;

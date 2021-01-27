@@ -13,7 +13,7 @@ export class MultipleTextComponent implements OnInit {
   @Input() order: order;
   @Input() set question(quen: any) {
     this.questionData = quen;
-    //this.bindForm();
+    this.bindForm();
   };
   @Output() back = new EventEmitter<any>();
   @Output() next = new EventEmitter<any>();
@@ -23,7 +23,6 @@ export class MultipleTextComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.bindForm();
   }
 
   bindForm() {
@@ -36,7 +35,7 @@ export class MultipleTextComponent implements OnInit {
       this.contactForm.addControl(e.value, this.build.control('', [Validators.required, Validators.pattern(e.pattern)]))
     });
 
-    if (!!this.order) {
+    if (!!order) {
       Object.keys(this.contactForm.controls).forEach((key, i) => {
         this.contactForm.controls[key].setValue(this.order.value[i]);
       });

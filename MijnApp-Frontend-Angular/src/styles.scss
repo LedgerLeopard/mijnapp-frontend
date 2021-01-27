@@ -1,7 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
 @import "./app/styles/colors";
-@import "@nl-design-system/nl-design-system/src/components/section/inner-section.scss";
-@import "@nl-design-system/nl-design-system/src/components/card/card.scss";
 
 html,
 body {
@@ -116,70 +114,4 @@ a {
 }
 .form-control{
   color: #2B2B2B!important;
-}
-.inner-section {
-  h3 {
-    color: $mineShaft;
-    font-style: normal;
-    font-family: "rijksoverheidsanswebtext_boBd";
-    font-size: 26px;
-    line-height: 30px;
-  }
-  p {
-    margin: 0;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 22px;
-  }
-  .f-18px {
-    font-size: 18px;
-  }
-}
-.contentpart {
-  ul.list.list--card.list--card-small {
-      margin: 0;
-      padding: 0;
-  .card {
-    border: 0;
-    border-bottom: 1px solid rgba(43, 43, 43, 0.10);
-    margin-bottom: 0;
-    &:focus {
-      outline: none;
-      background: none !important;
-     }
-    .card__content, .card__body {
-      &:focus {
-        outline: none;
-        background: none !important;
-       }
-    }
-  }
-  
-  .card__body {
-    min-height: inherit;
-    padding: 15px 20px;
-    p {
-      margin: 0;
-      font-style: normal;
-      font-weight: normal;
-      font-size: 16px;
-      line-height: 22px;
-    }
-    label {
-      color: $gray;
-      margin: 0;
-      font-style: normal;
-      font-weight: normal;
-      font-size: 14px;
-      line-height: 18px;
-    }
-  }
-  }
-  
-}
-maf-back-button {
-  &:focus{
-    outline: none;
-  }
 }

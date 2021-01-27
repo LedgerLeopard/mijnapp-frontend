@@ -1,6 +1,6 @@
 <div class="page-wrapper">
   <div class="page_name">
-    <maf-back-button (back)="backPage()"></maf-back-button>
+    <app-back-button (back)="backPage()"></app-back-button>
     <div class="d-flex justify-content-between">
       <div class="title">
         <div><img src="/assets/img/shared-page-icon.png" /></div>
@@ -13,15 +13,15 @@
   </ul>
   <div class="contentpart">
     <h3>Wat ga je delen?</h3>
-    <ul class="list list--card list--card-small">
-      <li class="card card--small">
-        <div class="d-flex">
-          <div class="card__body">
-            <div class="d-flex align-items-center justify-content-between w-100">
+    <div class="card">
+      <div class="row no-gutters">
+        <div class="col">
+          <div class="card-body">
+            <div class="d-flex align-items-center justify-content-between">
               <div>
-                <label class="mb-2">Gegevens bevestigd door</label>
+                <label>Gegevens bevestigd door</label>
                 <h4>Stichting WIJeindhoven</h4>
-                <p> Alleen lezen <img src="/assets/img/que-icon.png" /></p>
+                <span>Alleen lezen <img src="/assets/img/que-icon.png"/></span>
               </div>
               <div>
                 <img src="/assets/img/Logo WIJeindhoven.png" />
@@ -29,41 +29,72 @@
             </div>
           </div>
         </div>
-      </li>
-      <li class="card card--small">
-        <div class="card__body">
-          <label>Naam</label>
-          <p class="card__status"><img src="/assets/img/name-icon.png" /> Dhr. de Vries, Ad Willem </p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="row no-gutters">
+        <div class="col">
+          <div class="card-body">
+            <label>Naam</label>
+            <div class="value">
+              <img src="/assets/img/name-icon.png" /> Dhr. de Vries, Ad Willem
+            </div>
+          </div>
         </div>
-      </li>
-      <li class="card card--small">
-        <div class="card__body">
-          <label>Burgerservicenummer</label>
-          <p class="card__status"> <img src="/assets/img/name-icon.png" /> 12345678 </p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="row no-gutters">
+        <div class="col">
+          <div class="card-body">
+            <label>Burgerservicenummer</label>
+            <div class="value">
+              <img src="/assets/img/name-icon.png" /> 12345678
+            </div>
+          </div>
         </div>
-      </li>
-      <li class="card card--small">
-        <div class="card__body">
-          <label>Type overeenkomst</label>
-          <p class="card__status"><img src="/assets/img/type-icon.png" /> Bevestiging ondersteuning</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="row no-gutters">
+        <div class="col">
+          <div class="card-body">
+            <label>Type overeenkomst</label>
+            <div class="value">
+              <img src="/assets/img/type-icon.png" /> Bevestiging ondersteuning
+            </div>
+          </div>
         </div>
-      </li>
-      <li class="card card--small">
-        <div class="card__body">
-          <label>Status overeenkomst</label>
-          <p class="card__status"><img src="/assets/img/status-icon.png" /> Actief </p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="row no-gutters">
+        <div class="col">
+          <div class="card-body">
+            <label>Status overeenkomst</label>
+            <div class="value">
+              <img src="/assets/img/status-icon.png" /> Actief
+            </div>
+          </div>
         </div>
-      </li>
-      <li class="card card--small">
-        <div class="card__body">
-          <label>Startdatum</label>
-          <p class="card__status"><img src="/assets/img/calendar.png" /> 01-04-2020 </p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="row no-gutters">
+        <div class="col">
+          <div class="card-body">
+            <label>Startdatum</label>
+            <div class="value">
+              <img src="/assets/img/calendar.png" /> 01-04-2020
+            </div>
+          </div>
         </div>
-      </li>
-    </ul>
+      </div>
+    </div>
   </div>
   <div class="btnrow">
-  <maf-primary-button text="Volgende stap" routerLink="/homepage/share-person"></maf-primary-button>
-  <maf-back-button position="bottom" title="Terug naar de vorige stap"  routerLink="/homepage/steps-overview"></maf-back-button>
+
+  <app-primary-button text="Volgende stap" routerLink="/homepage/share-person"></app-primary-button>
+  <app-back-button position="bottom" title="Terug naar de vorige stap"  routerLink="/homepage/steps-overview"></app-back-button>
   </div>
 </div>

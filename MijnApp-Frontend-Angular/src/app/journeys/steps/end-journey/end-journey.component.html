@@ -1,38 +1,46 @@
 <div class="contentpart">
-    <div class="inner-section inner-section--no-border p-0">
-        <h3 class="f-18px">Controleer je gegevens</h3>
-      </div>
+    <h3>Controleer je gegevens</h3>
 
-    <ul class="list list--card list--card-small">
-        <li class="card card--small">
-            <a href="javascript:void(0)" class="card__content">
-                <div class="card__body">
+    <div class="card">
+        <div class="row no-gutters">
+            <div class="col">
+                <div class="card-body">
                     <label>Indiener</label>
-                    <p class="card__status"> Dhr. de Vries, Ad Willem</p>
+                    <p>
+                        Dhr. de Vries, Ad Willem
+                    </p>
                 </div>
-            </a>
-        </li>
-        <li class="card card--small" *ngIf="isAddressQuestion">
-            <a href="javascript:void(0)" class="card__content">
-                <div class="card__body">
+            </div>
+        </div>
+    </div>
+    <div class="card" *ngIf="isAddressQuestion">
+        <div class="row no-gutters">
+            <div class="col">
+                <div class="card-body">
                     <label>Oud adres</label>
-                    <p class="card__status">
+                    <p>
                         Nieuwezijds Voorburgwal 147, 1012RJ Amsterdam
                     </p>
                 </div>
-            </a>
-        </li>
-        <ng-container *ngFor="let order of orders">
-            <li class="card card--small" *ngIf="order.question !=='END'">
-                <div class="card__body">
+            </div>
+        </div>
+    </div>
+    <ng-container *ngFor="let order of orders">
+    <div class="card" *ngIf="order.question !=='END'">
+        <div class="row no-gutters" >
+            <div class="col">
+                <div class="card-body">
                     <label>{{order.keyTitle}}</label>
-                    <p class="card__status" *ngFor="let value of getValues(order.valueTitle)">{{value}}</p>
+                    <p *ngFor="let value of getValues(order.valueTitle)">
+                        {{value}}
+                    </p>
                 </div>
-            </li>
-        </ng-container>
-    </ul>
+            </div>
+        </div>
+    </div>
+</ng-container>
 </div>
 <div class="btnrow">
-    <maf-primary-button text="Aanvraag verzenden" (click)='saveOrder()'></maf-primary-button>
-    <maf-back-button position="bottom" title="Terug naar de vorige stap" (click)="backAction()"></maf-back-button>
+    <app-primary-button text="Aanvraag verzenden" (click)='saveOrder()'></app-primary-button>
+    <app-back-button position="bottom" title="Terug naar de vorige stap" (click)="backAction()"></app-back-button>
 </div>

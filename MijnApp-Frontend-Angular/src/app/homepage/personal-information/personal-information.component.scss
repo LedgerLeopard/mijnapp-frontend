@@ -1,5 +1,5 @@
 @import "../../styles/colors";
-@import "@nl-design-system/nl-design-system/src/components/card/card.scss";
+
 .page-wrapper {
   background: $backgroundColor;
   padding: 0;
@@ -23,22 +23,24 @@
   }
   .contentpart {
     h3 {
+      color: $mineShaft;
+      font-style: normal;
+      font-family: "rijksoverheidsanswebtext_boBd";
       font-size: 18px;
       line-height: 26px;
+      margin-bottom: 16px;
     }
 
-    ul.list.list--card.list--card-small {
-      margin: 0;
-      padding: 0;
-      .card {
-        border: 0;
-        border-bottom: 1px solid rgba(43, 43, 43, 0.10);
-        margin-bottom: 0;
+    .card {
+      padding: 15px 20px;
+      border: 0;
+      box-shadow: inset 0px -1px 0px $gallery;
+      border-radius: 0;
+      .row {
+        align-items: center;
       }
-      
-      .card__body {
-        min-height: inherit;
-        padding: 15px 20px;
+      .card-body {
+        padding: 0px;
         p {
           margin: 0;
           font-style: normal;

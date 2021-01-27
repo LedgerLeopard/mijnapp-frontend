@@ -1,13 +1,11 @@
 <div class="contentpart">
-    <div class="inner-section inner-section--no-border p-0">
-        <h3 class="f-18px">{{question?.title}}</h3>
-    </div>
+    <h3>{{question?.title}}</h3>
     <div class="form-group">
         <input type="text" class="form-control" id="text" autocomplete="off"
                      placeholder="{{question?.title}}" [(ngModel)] = "value" />
     </div>
 </div>
 <div class="btnrow">
-    <maf-primary-button text=" Volgende stap" *ngIf="!!value" (click)='nextAction()'></maf-primary-button>
-    <maf-back-button position="bottom" title="Terug naar de vorige stap" (click)="backAction()"></maf-back-button>
+    <app-primary-button text=" Volgende stap" *ngIf="!!value" (click)='nextAction()'></app-primary-button>
+    <app-back-button position="bottom" title="Terug naar de vorige stap" (click)="backAction()"></app-back-button>
 </div>

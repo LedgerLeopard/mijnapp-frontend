@@ -1,37 +1,51 @@
 @import "../styles/colors";
-@import "@nl-design-system/nl-design-system/src/components/card/card.scss";
 
 .page-wrapper {
   background: $backgroundColor;
 
   .contentpart {
-    ul.list.list--card.list--card-small {
-      margin: 0;
-      padding: 0;
+    h3 {
+      color: $mineShaft;
+      font-style: normal;
+      font-family: "rijksoverheidsanswebtext_boBd";
+      font-size: 18px;
+      line-height: 26px;
+      margin-bottom: 16px;
     }
+
     .card {
+      padding: 15px 20px;
       border: 0;
       box-shadow: inset 0px -2px 0px rgba(43, 43, 43, 0.25);
-      margin-bottom: 0;
-      padding: 15px 20px;
-      .card__body {
-        min-height: inherit;
-        padding:  0px 0px 0px 20px;
-         h5 {
-                margin-bottom: 0;
-                font-style: normal;
-                font-family: "rijksoverheidsanswebtext_boBd";
-                font-size: 16px;
-                line-height: 22px;
-              }
-              span {
-                font-style: normal;
-                font-weight: normal;
-                font-size: 14px;
-                line-height: 18px;
-                color: $gray;
-                margin-top: 4px;
-              }
+      border-radius: 0;
+      .row {
+        align-items: center;
+      }
+      .card-body {
+        padding: 0px;
+        p {
+          margin: 0;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 16px;
+          line-height: 22px;
+        }
+
+        span {
+          font-style: normal;
+          font-weight: normal;
+          font-size: 14px;
+          line-height: 18px;
+          color: $gray;
+        }
+
+        h5 {
+          margin: 0;
+          font-style: normal;
+          font-family: "rijksoverheidsanswebtext_boBd";
+          font-size: 16px;
+          line-height: 22px;
+        }
       }
     }
   }

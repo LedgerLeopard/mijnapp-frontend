@@ -1,6 +1,6 @@
 <div class="page-wrapper" *ngIf="!loading">
   <div class="page_name">
-    <maf-back-button (click)="homepage()"></maf-back-button>
+    <app-back-button (click)="homepage()"></app-back-button>
     <div class="title">
       <div><img src="/assets/img/srch-img-1.png" /></div>
       Ik ga verhuizen
@@ -8,15 +8,15 @@
   </div>
   <div class="contentpart">
     <h3>Deze stappen ga je doorlopen</h3>
-    <ol class="list list--decimal-circled overviewlist">
+    <ul class="overviewlist">
       <li *ngFor="let step of journey?.overview?.steps; let i = index">
-        <a>{{step}}</a>
-      </li>    
-  </ol>
+        <a><span>{{i + 1}}</span>{{step}}</a>
+      </li>
+    </ul>
   </div>
   <div class="btnrow cursor-pointer">
-    <maf-primary-button text="Starten" (click)="redirectToRoute()"></maf-primary-button>
-    <maf-back-button position="bottom" routerLink="/journeys"></maf-back-button>
+    <app-primary-button text="Starten" (click)="redirectToRoute()"></app-primary-button>
+    <app-back-button position="bottom" routerLink="/journeys"></app-back-button>
   </div>
   <div class="d-flex" *ngIf="!preconditionsFullFilled">
     <img class="warnIcon mr-3 ml-3" src="/assets/img/warn.svg" />
