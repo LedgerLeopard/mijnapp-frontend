@@ -1,0 +1,38 @@
+{
+  "steps": {
+    "header": "Welkom",
+    "buttons": {
+      "firstStep": "Volgende stap",
+      "lastStep": "Ga door naar inloggen"
+    },
+    "linkButton": "Overslaan",
+    "stepOne": {
+      "header": "Regelen",
+      "1": "Al je zaken regelen waar en wanneer het jou uitkomt",
+      "2": "Altijd weten waar jouw aanvraag in het proces zit",
+      "3": "Chatten voor hulp en informatie"
+    },
+    "stepTwo": {
+      "header": "Organiseren/controleren",
+      "1": "Altijd weten wie welke gegevens van jou heeft",
+      "2": "Altijd weten wanneer iemand jouw gegevens gezien heeft.",
+      "3": "Altijd kunnen controleren of jouw gegevens kloppen",
+      "4": "Zelf bepalen welke gegevens je met wie deelt (en wanneer je daarmee stopt!)"
+    },
+    "stepThree": {
+      "header": "Vinden",
+      "1": "Eén plek voor al je digitale diensten",
+      "2": "Snel doorgelinkt worden naar betrouwbaar aanbod",
+      "3": "Volledig af te stemmen op jouw persoonlijke voorkeuren"
+    }
+  },
+  "login": {
+    "lockScreen": {
+      "header": "MijnApp",
+      "subheader": "Alles zelf regelen.",
+      "button": "Inloggen met DigiD",
+      "firstText": "Heeft u nog geen DigiD?",
+      "additionalText": "Vraag uw DigiD aan op "
+    }
+  }
+}

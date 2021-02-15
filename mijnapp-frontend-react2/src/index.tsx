@@ -1,13 +1,27 @@
 import React from 'react';
+import {Provider} from 'mobx-react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {createMuiTheme, MuiThemeProvider} from '@material-ui/core';
+import './i18';
+
+
+const theme = createMuiTheme({
+    typography: {
+        fontFamily: 'RijksoverheidSansWebText, sans-serif',
+    }
+});
+
+const stores = {};
 
 ReactDOM.render(
-    <React.StrictMode>
-        <App/>
-    </React.StrictMode>,
+    <Provider {...stores}>
+        <MuiThemeProvider theme={theme}>
+            <App/>
+        </MuiThemeProvider>
+    </Provider>,
     document.getElementById('root')
 );
 
