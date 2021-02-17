@@ -33,6 +33,28 @@
       "button": "Inloggen met DigiD",
       "firstText": "Heeft u nog geen DigiD?",
       "additionalText": "Vraag uw DigiD aan op "
+    },
+    "variantLogin": {
+      "logoHeader": "Lnloggen bij",
+      "logoSubheader": "MijnApp",
+      "header": "Hoe wilt u inloggen",
+      "warningTextPart1": "MijnApp maakt gebruik van eenmalig inloggen.",
+      "warningTextPart2": "Bezoekt u hierna een andere website die dit ondersteunt, dan hoeft u niet opnieuw in te loggen.",
+      "alternateLoginButtonTitle": "Met de DigID app",
+      "alternateLoginButtonText": "De makkelijkste manier om veilig in te loggen",
+      "loginButtonText": "Met gebruikersnaam en wachtwoord",
+      "cancel": "Annuleren",
+      "linkText": "Nog geen DigiD? Vraag uw DigiD aan"
+    },
+    "signIn": {
+      "header": "Vul hieronder uw gebruikersnaam en wachtwoord in",
+      "loginField": "DigiD gebruikersnaam",
+      "passwordField": "Wachtwoord",
+      "rememberField": "Onthoud mijn DigiD gebruikersnaam",
+      "loginButton": "Lnloggen",
+      "cancel": "Annuleren",
+      "firstLink": "Wachtwoord vergeten?",
+      "secondLink": "Nog geen DigiD? Vraag uw DigiD aan"
     }
   }
 }

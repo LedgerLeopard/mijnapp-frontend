@@ -56,14 +56,13 @@ const MatIconButton =
         };
 
         return (
-            <Button
-                variant={variant}
-                className={classes.root + ' ' + (customClasses ? customClasses : '')}
-                startIcon={startIcon ? getIcon(startIcon, startIconColor, disabled) : ''}
-                endIcon={endIcon ? getIcon(endIcon, endIconColor, disabled) : ''}
-                onClick={onClick}
-                disabled={disabled}
-                disableElevation>
+            <Button variant={variant}
+                    className={classes.root + ' ' + (customClasses ? customClasses : '')}
+                    startIcon={startIcon ? getIcon(startIcon, startIconColor, disabled) : ''}
+                    endIcon={endIcon ? getIcon(endIcon, endIconColor, disabled) : ''}
+                    onClick={onClick}
+                    disabled={disabled}
+                    disableElevation>
                 {label}
             </Button>
         );

@@ -75,7 +75,7 @@ const LockScreen = () => {
     const history = useHistory();
 
     const goTo = () => {
-        // history.push('/login/variant-login');
+        history.push('/login/variant-login');
     };
 
     return (

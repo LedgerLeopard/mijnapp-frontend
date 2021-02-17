@@ -10,8 +10,8 @@ const Login = () => {
     return (
         <Switch>
             <Route exact path='/login/lock-screen' component={LockScreen}/>
-            {/*<Route exact path='/login/variant-login' component={VariantLogin}/>*/}
-            {/*<Route exact path='/login/signin' component={SignIn}/>*/}
+            <Route exact path='/login/variant-login' component={VariantLogin}/>
+            <Route exact path='/login/signIn' component={SignIn}/>
             <Redirect from='/login' to='/login/lock-screen'/>
         </Switch>
     );

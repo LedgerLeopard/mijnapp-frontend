@@ -4,7 +4,7 @@ const Layout = () => {
 
     return (
         <div>
-            fdgkdfgdjkfgjdfhf
+            Layout
         </div>
     );
 };
