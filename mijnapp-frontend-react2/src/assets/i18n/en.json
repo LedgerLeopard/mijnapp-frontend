@@ -56,5 +56,29 @@
       "firstLink": "Wachtwoord vergeten?",
       "secondLink": "Nog geen DigiD? Vraag uw DigiD aan"
     }
+  },
+  "tabBar": {
+    "start": "Start",
+    "search": "Zoeken",
+    "notification": "Berichten",
+    "settings": "Instellingen"
+  },
+  "main": {
+    "dashboard": {
+      "header": "Welkom terug ",
+      "start": {
+        "searchHeader": "Zoeken",
+        "searchPlaceholder": "Zoeken",
+        "menuHeader": "Mijn startpagina",
+        "personal": "Persoonsgegevens",
+        "notification": "Berichten",
+        "documents": "Bevestigingen",
+        "sharedData": "Gedeelde gegevens"
+      }
+    },
+    "search": {
+      "searchHeader": "Zoeken",
+      "searchPlaceholder": "Zoeken"
+    }
   }
 }

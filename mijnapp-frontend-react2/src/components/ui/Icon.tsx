@@ -7,22 +7,28 @@ const useStyles = makeStyles({
     root: {
         display: 'flex',
         margin: 'auto'
+    },
+    svg: {
+        height: '100%',
+        width: '100%'
     }
 });
 
-class CustomSvgIconData {
+interface CustomSvgIconData {
     icon: any;
     color?: string;
     className?: any;
+    fullWidthIcon?: boolean;
     disabled?: boolean;
 }
 
-const Icon = ({icon, color, className, disabled}: CustomSvgIconData) => {
+const Icon = ({icon, color, className, fullWidthIcon, disabled}: CustomSvgIconData) => {
     const classes = useStyles();
 
     return (
         <div className={classes.root + ' ' + (className ? className : '')}>
-            <SvgIcon style={{fill: disabled ? colors.midGrey : color ? color : colors.black}}
+            <SvgIcon classes={{root: fullWidthIcon ? classes.svg : ''}}
+                     style={{fill: disabled ? colors.midGrey : color ? color : colors.black}}
                      component={icon}/>
         </div>
     );

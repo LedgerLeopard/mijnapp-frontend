@@ -10,18 +10,22 @@ import {useTranslation} from 'react-i18next';
 import {useHistory} from 'react-router-dom';
 import MatIconButton from '../../../ui/MatIconButton';
 import MatInput from '../../../ui/MatInput';
+import {inject, observer} from 'mobx-react';
+import Stores from '../../../../models/Stores';
+import Loader from '../../../ui/Loader';
 
 
 const useStyles = makeStyles({
     root: {
         height: '100%',
         display: 'grid',
+        position: 'relative',
         overflow: 'auto',
         padding: '0 15px 0 15px',
         boxSizing: 'border-box',
         color: colors.white,
         backgroundColor: '#1E1E1E',
-        gridTemplateRows: '15px 40px 1fr 12px'
+        gridTemplateRows: '55px 1fr 12px'
     },
     picture: {
         height: '128px',
@@ -114,95 +118,102 @@ const useStyles = makeStyles({
     checked: {},
 });
 
-const SignIn = () => {
-    const classes = useStyles();
-    const history = useHistory();
-    const {t} = useTranslation();
+const SignIn =
+    inject((stores: Stores) => ({authStore: stores.authStore}))
+    (observer(({authStore}: Stores) => {
+        const classes = useStyles();
+        const history = useHistory();
+        const {t} = useTranslation();
+        const [loader, setLoader] = useState(false);
+        const [authData, setAuthData] = useState({
+            login: '',
+            password: '',
+            remember: false
+        });
 
-    const [authData, setAuthData] = useState({
-        login: '',
-        password: '',
-        remember: false
-    });
+        const handleChangeCheckbox = (event: React.ChangeEvent<HTMLInputElement>) => {
+            setAuthData({...authData, remember: event.target.checked});
+        };
 
-    const handleChangeCheckbox = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setAuthData({...authData, remember: event.target.checked});
-    };
+        const handleChangeInput = (event: React.ChangeEvent<HTMLInputElement>) => {
+            setAuthData({...authData, [event.target.id]: event.target.value});
+        };
 
-    const handleChangeInput = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setAuthData({...authData, [event.target.id]: event.target.value});
-    };
+        const login = () => {
+            setLoader(true);
+            authStore.login(authData.login, authData.password)
+                .then(() => {
+                    setLoader(false);
+                    history.push('/main/dashboard/start');
+                })
+                .catch(error => console.log(error));
+        };
 
-    const login = () => {
-        console.log(authData);
-        history.push('/dashboard');
-    };
+        const goBack = () => {
+            history.push('/login/variant-login');
+        };
 
-    const goBack = () => {
-        history.push('/login/variant-login');
-    };
+        return (
+            <div className={classes.root}>
+                <div className={classes.picture}/>
+                {loader && <Loader/>}
+                <div className={classes.container}>
+                    <div className={classes.logoBlock}>
+                        <div className={classes.logo}>
+                            <div className={classes.textLogo}>
+                                <div>Dig</div>
+                                <div style={{color: colors.primary}}>iD</div>
+                            </div>
+                        </div>
+                        <div>
+                            <div className={classes.logoHeader}>{t('login.variantLogin.logoHeader')}</div>
+                            <div className={classes.logoSubheader}>{t('login.variantLogin.logoSubheader')}</div>
+                        </div>
+                    </div>
+                    <div className={classes.contentWrapper}>
+                        <div className={classes.header}>{t('login.signIn.header')}</div>
+                        <MatInput id='login'
+                                  className={classes.input}
+                                  label={t('login.signIn.loginField')}
+                                  value={authData.login}
+                                  onChange={handleChangeInput}
+                                  required/>
+                        <MatInput id='password'
+                                  className={classes.input}
+                                  isSecret
+                                  label={t('login.signIn.passwordField')}
+                                  value={authData.password}
+                                  onChange={handleChangeInput}
+                                  required/>
+                        <FormControlLabel
+                            control={<Checkbox classes={{root: classes.checkBox, checked: classes.checked}}
+                                               color='default'
+                                               checked={authData.remember}
+                                               onChange={handleChangeCheckbox}/>}
+                            label={t('login.signIn.rememberField')}/>
 
-    return (
-        <div className={classes.root}>
-            <div className={classes.picture}/>
-            <div/>
-            <div className={classes.container}>
-                <div className={classes.logoBlock}>
-                    <div className={classes.logo}>
-                        <div className={classes.textLogo}>
-                            <div>Dig</div>
-                            <div style={{color: colors.primary}}>iD</div>
+                        <div className={classes.buttonBlock}>
+                            <LinkButton className={classes.backButton} onClick={goBack}>
+                                <Icon icon={ArrowLeft} color={colors.white}/>
+                                <div className={classes.buttonText}>{t('login.signIn.cancel')}</div>
+                            </LinkButton>
+
+                            <MatIconButton customClasses={classes.loginButton}
+                                           label={t('login.signIn.loginButton')}
+                                           endIcon={ArrowRight}
+                                           endIconColor={colors.white}
+                                           onClick={login}
+                                           disabled={!authData.login || !authData.password}/>
                         </div>
                     </div>
                     <div>
-                        <div className={classes.logoHeader}>{t('login.variantLogin.logoHeader')}</div>
-                        <div className={classes.logoSubheader}>{t('login.variantLogin.logoSubheader')}</div>
+                        <LinkButton className={classes.link}>{t('login.signIn.firstLink')}</LinkButton>
+                        <LinkButton className={classes.link}>{t('login.signIn.secondLink')}</LinkButton>
                     </div>
                 </div>
-                <div className={classes.contentWrapper}>
-                    <div className={classes.header}>{t('login.signIn.header')}</div>
-                    <MatInput id='login'
-                              className={classes.input}
-                              label={t('login.signIn.loginField')}
-                              value={authData.login}
-                              onChange={handleChangeInput}
-                              required/>
-                    <MatInput id='password'
-                              className={classes.input}
-                              isSecret
-                              label={t('login.signIn.passwordField')}
-                              value={authData.password}
-                              onChange={handleChangeInput}
-                              required/>
-                    <FormControlLabel
-                        control={<Checkbox classes={{root: classes.checkBox, checked: classes.checked}}
-                                           color='default'
-                                           checked={authData.remember}
-                                           onChange={handleChangeCheckbox}/>}
-                        label={t('login.signIn.rememberField')}/>
-
-                    <div className={classes.buttonBlock}>
-                        <LinkButton className={classes.backButton} onClick={goBack}>
-                            <Icon icon={ArrowLeft} color={colors.white}/>
-                            <div className={classes.buttonText}>{t('login.signIn.cancel')}</div>
-                        </LinkButton>
-
-                        <MatIconButton customClasses={classes.loginButton}
-                                       label={t('login.signIn.loginButton')}
-                                       endIcon={ArrowRight}
-                                       endIconColor={colors.white}
-                                       onClick={login}
-                                       disabled={!authData.login || !authData.password}/>
-                    </div>
-                </div>
-                <div>
-                    <LinkButton className={classes.link}>{t('login.signIn.firstLink')}</LinkButton>
-                    <LinkButton className={classes.link}>{t('login.signIn.secondLink')}</LinkButton>
-                </div>
+                <div className={classes.tailLogo}/>
             </div>
-            <div className={classes.tailLogo}/>
-        </div>
-    );
-};
+        );
+    }));
 
 export default SignIn;

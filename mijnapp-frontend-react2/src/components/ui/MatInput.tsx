@@ -24,7 +24,7 @@ const useStyles = makeStyles({
         '& input': {
             height: '100%',
             width: '100%',
-            padding: '0 14px',
+            padding: '0 10px',
             margin: 'auto',
         },
 
@@ -41,11 +41,21 @@ const useStyles = makeStyles({
         width: 'auto',
         margin: '0 14px 0 0'
     },
+    startAdornment: {
+        height: 'auto',
+        width: 'auto',
+        margin: '0 0 0 10px'
+    },
+    endAdornment: {
+        height: 'auto',
+        width: 'auto',
+        margin: '0 10px 0 0'
+    },
     notchedOutline: {},
     focused: {},
 });
 
-class MatInputData {
+interface MatInputData {
     id?: string;
     type?: string;
     className?: string;
@@ -54,6 +64,7 @@ class MatInputData {
     placeholder?: string;
     value?: any;
     onChange?: any;
+    onFocus?: any;
     startAdornment?: any;
     endAdornment?: any;
     valid?: boolean;
@@ -70,6 +81,7 @@ const MatInput = (
         placeholder,
         value,
         onChange,
+        onFocus,
         startAdornment,
         endAdornment,
         valid,
@@ -87,7 +99,7 @@ const MatInput = (
         <FormControl className={classes.wrapper + ' ' + className ? className : ''}
                      error={!valid || isDirty}
                      variant="outlined">
-            <label className={classes.label}>{label}</label>
+            {label && <label className={classes.label}>{label}</label>}
             <OutlinedInput
                 id={id}
                 type={isSecret ? passwordVisibility ? 'text' : 'password' : type || 'text'}
@@ -99,27 +111,29 @@ const MatInput = (
                 error={!(!valid || isDirty)}
                 placeholder={placeholder}
                 value={value}
+                onFocus={onFocus}
                 onBlur={() => setDirty(!!(!value && required))}
                 onChange={onChange}
-                startAdornment={startAdornment}
+                startAdornment={
+                    startAdornment &&
+                    <InputAdornment className={classes.startAdornment} position="start">
+                        {startAdornment}
+                    </InputAdornment>
+                }
                 endAdornment={
-                    <>
-                        {isSecret
-                            ? <InputAdornment className={classes.secretIcon} position="end">
-                                <IconButton aria-label="toggle password visibility"
-                                            onClick={handleClickShowPassword}
-                                            onMouseDown={handleMouseDownPassword}
-                                            edge="end">
-                                    {passwordVisibility ? <Visibility/> : <VisibilityOff/>}
-                                </IconButton>
-                            </InputAdornment>
-                            : endAdornment
-                        }
-                    </>
+                    (endAdornment || isSecret) &&
+                    <InputAdornment className={classes.endAdornment} position="end">
+                        {endAdornment}
+                        {isSecret && <IconButton aria-label="toggle password visibility"
+                                                 onClick={handleClickShowPassword}
+                                                 onMouseDown={handleMouseDownPassword}
+                                                 edge="end">
+                            {passwordVisibility ? <Visibility/> : <VisibilityOff/>}
+                        </IconButton>}
+                    </InputAdornment>
                 }/>
         </FormControl>
     );
-
 };
 
 export default MatInput;

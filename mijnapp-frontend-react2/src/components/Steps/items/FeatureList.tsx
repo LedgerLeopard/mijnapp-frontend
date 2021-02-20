@@ -31,7 +31,7 @@ const useStyles = makeStyles({
     }
 });
 
-class FeatureListData {
+interface FeatureListData {
     items: string[] | undefined;
     header: string | undefined;
 }

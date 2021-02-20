@@ -30,7 +30,7 @@ const useStyles = makeStyles({
     },
 });
 
-class StepperData {
+interface StepperData {
     steps: number | any[] | undefined;
     activeSteps: any[] | undefined;
 }

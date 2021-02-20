@@ -1,5 +1,6 @@
 import qs from 'qs';
 
+
 class Http {
     baseUrl: string | undefined;
     unauthorized: any;
@@ -26,7 +27,7 @@ class Http {
         isPublic = false,
         responseType = 'json',
         data
-    }: any = {}) {
+    }: any = {}): Promise<any> {
         const isForm = typeof FormData !== 'undefined' && data instanceof FormData;
         url = this.baseUrl + url;
 
@@ -65,23 +66,23 @@ class Http {
         }
     }
 
-    get(url: string, opts: { isPublic: boolean, responseType: string }) {
+    get(url: string, opts?: { isPublic?: boolean, responseType?: string }): Promise<any> {
         return this.request(url, {...opts, method: 'GET'});
     }
 
-    post(url: string, opts: { isPublic: boolean, responseType: string, data: any }) {
+    post(url: string, opts?: { isPublic?: boolean, responseType?: string, data?: any }): Promise<any> {
         return this.request(url, {...opts, method: 'POST'});
     }
 
-    put(url: string, opts: { isPublic: boolean, responseType: string, data: any }) {
+    put(url: string, opts?: { isPublic?: boolean, responseType?: string, data?: any }): Promise<any> {
         return this.request(url, {...opts, method: 'PUT'});
     }
 
-    del(url: string, opts: { isPublic: boolean, responseType: string }) {
+    del(url: string, opts?: { isPublic?: boolean, responseType?: string }): Promise<any> {
         return this.request(url, {...opts, method: 'DELETE'});
     }
 }
 
 export default new Http({
-    baseUrl: 'https://develop.sim.api.ledgerleopard.com/api',
+    baseUrl: 'https://mijnapp-backend-ll.azurewebsites.net',
 });

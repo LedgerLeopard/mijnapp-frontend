@@ -6,15 +6,23 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {createMuiTheme, MuiThemeProvider} from '@material-ui/core';
 import './i18';
+import Stores from './models/Stores';
 
 
 const theme = createMuiTheme({
+    palette: {
+        primary: {
+            light: '#FF9E52',
+            main: '#FF6F00',
+            dark: '#E06200'
+        }
+    },
     typography: {
         fontFamily: 'RijksoverheidSansWebText, sans-serif',
     }
 });
 
-const stores = {};
+const stores: Stores = new Stores();
 
 ReactDOM.render(
     <Provider {...stores}>

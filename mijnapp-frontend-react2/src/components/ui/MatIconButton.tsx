@@ -25,7 +25,7 @@ const useStyles = makeStyles({
     }
 });
 
-class MatIconButtonData {
+interface MatIconButtonData {
     label: any | undefined;
     variant?: any;
     customClasses?: any;

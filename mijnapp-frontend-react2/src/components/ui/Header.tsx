@@ -6,9 +6,11 @@ import {colors} from '../../assets/colors';
 
 const useStyles = makeStyles({
     root: {
+        minWidth: '100px',
         display: 'flex',
         padding: '10px 15px',
-        boxShadow: `inset 0px -1px 0px ${colors.lightGrey}`
+        boxShadow: `inset 0px -1px 0px ${colors.lightGrey}`,
+        boxSizing: 'border-box'
     },
     icon: {
         height: '30px',
@@ -19,7 +21,7 @@ const useStyles = makeStyles({
         margin: 'auto 10px auto 0'
     },
     header: {
-        maxWidth: '100%',
+        width: 'calc(100% - 70px)',
         whiteSpace: 'nowrap',
         textOverflow: 'ellipsis',
         overflow: 'hidden',
@@ -28,9 +30,10 @@ const useStyles = makeStyles({
         fontWeight: 'bold',
         fontSize: '26px',
         lineHeight: '30px',
+        boxSizing: 'border-box'
     },
     button: {
-        maxWidth: '100%',
+        minWidth: 'fit-content',
         margin: 'auto 0 auto auto',
         whiteSpace: 'nowrap',
         textOverflow: 'ellipsis',
@@ -38,7 +41,7 @@ const useStyles = makeStyles({
     }
 });
 
-class HeaderData {
+interface HeaderData {
     label: string | undefined;
     icon?: any;
     button?: any;
