@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  endPoint: 'https://localhost:40443',
+  endPoint: 'https://mijnapp-backend-ll.azurewebsites.net',
   HAS_FAKE_INLOG_ENABLED: true
 };
 

@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
   _signInWithDigiDFake() {
     this.authService.signInWithDigiDFake().subscribe(res => {
       sessionStorage.setItem('token', res['token']);
-      this.router.navigate(['/homepage']);
+      this.router.navigate(['/messages']);
     },
     error => {
       this.toastr.error(error['message']);

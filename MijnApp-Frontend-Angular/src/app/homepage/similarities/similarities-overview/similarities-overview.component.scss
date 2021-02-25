@@ -3,32 +3,40 @@
 .page-wrapper {
   background: $backgroundColor;
   padding: 0;
+
   .page_name {
     display: block;
+
     .title {
       display: flex;
       align-items: center;
+
       img {
         width: 30px;
         margin-right: 8px;
       }
     }
+
     .backpage {
       display: flex;
       width: 100%;
+
       img {
         margin-right: 6px;
       }
     }
   }
+
   .contentpart {
+    position: relative;
+
     h3 {
       color: $mineShaft;
       font-style: normal;
-      font-family: "rijksoverheidsanswebtext_boBd";
       font-size: 18px;
       line-height: 26px;
       margin-bottom: 16px;
+      font-weight: bold;
     }
 
     .card {
@@ -36,11 +44,14 @@
       border: 0;
       box-shadow: inset 0px -1px 0px $gallery;
       border-radius: 0;
+
       .row {
         align-items: center;
       }
+
       .card-body {
         padding: 0px;
+
         p {
           margin: 0;
           font-style: normal;
@@ -48,6 +59,7 @@
           font-size: 16px;
           line-height: 22px;
         }
+
         label {
           color: $gray;
           margin: 0;
@@ -56,6 +68,7 @@
           font-size: 14px;
           line-height: 18px;
         }
+
         .value {
           display: flex;
           align-items: center;
@@ -63,10 +76,12 @@
           font-weight: normal;
           font-size: 16px;
           line-height: 22px;
+
           img {
             margin-right: 6px;
           }
         }
+
         span {
           font-style: normal;
           font-weight: normal;
@@ -74,14 +89,26 @@
           line-height: 16px;
           color: $gray;
         }
+
         h4 {
           margin: 0;
           font-style: normal;
-          font-family: "rijksoverheidsanswebtext_boBd";
           font-size: 18px;
           line-height: 26px;
         }
       }
+
+      &.top {
+        border-radius: 8px 8px 0 0;
+      }
+
+      &.bottom {
+        border-radius: 0 0 8px 8px;
+      }
     }
   }
+}
+
+.text-content {
+  margin-left: 20px;
 }

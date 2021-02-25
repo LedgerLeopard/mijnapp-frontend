@@ -3,7 +3,7 @@
     <app-back-button (back)="backPage()"></app-back-button>
     <div class="d-flex justify-content-between">
       <div class="title">
-        <div><img src="/assets/img/shared-page-icon.png" /></div>
+        <div class=""><img src="/assets/img/share.svg"/></div>
         Gegevens delen
       </div>
     </div>
@@ -13,18 +13,17 @@
   </ul>
   <div class="contentpart">
     <h3>Wat ga je delen?</h3>
-    <div class="card">
+    <div class="card top">
       <div class="row no-gutters">
         <div class="col">
           <div class="card-body">
-            <div class="d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center">
               <div>
-                <label>Gegevens bevestigd door</label>
-                <h4>Stichting WIJeindhoven</h4>
-                <span>Alleen lezen <img src="/assets/img/que-icon.png"/></span>
+                <img src="/assets/img/Logo-WIJeindhoven.svg"/>
               </div>
-              <div>
-                <img src="/assets/img/Logo WIJeindhoven.png" />
+              <div class="text-content">
+                <label>Gegevens bevestigd door</label>
+                <h4>Gemeente X</h4>
               </div>
             </div>
           </div>
@@ -37,7 +36,7 @@
           <div class="card-body">
             <label>Naam</label>
             <div class="value">
-              <img src="/assets/img/name-icon.png" /> Dhr. de Vries, Ad Willem
+              <img src="/assets/img/user.svg"/> Dhr. de Vries, Ad Willem
             </div>
           </div>
         </div>
@@ -49,7 +48,7 @@
           <div class="card-body">
             <label>Burgerservicenummer</label>
             <div class="value">
-              <img src="/assets/img/name-icon.png" /> 12345678
+              <img src="/assets/img/BSN.svg"/> 12345678
             </div>
           </div>
         </div>
@@ -61,31 +60,19 @@
           <div class="card-body">
             <label>Type overeenkomst</label>
             <div class="value">
-              <img src="/assets/img/type-icon.png" /> Bevestiging ondersteuning
+              <img src="/assets/img/document.svg"/> Bevestiging ondersteuning
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="card">
+    <div class="card bottom">
       <div class="row no-gutters">
         <div class="col">
           <div class="card-body">
-            <label>Status overeenkomst</label>
+            <label>Status bevestiging</label>
             <div class="value">
-              <img src="/assets/img/status-icon.png" /> Actief
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="row no-gutters">
-        <div class="col">
-          <div class="card-body">
-            <label>Startdatum</label>
-            <div class="value">
-              <img src="/assets/img/calendar.png" /> 01-04-2020
+              <img src="/assets/img/status-icon-1.png"/> Actief
             </div>
           </div>
         </div>
@@ -94,7 +81,8 @@
   </div>
   <div class="btnrow">
 
-  <app-primary-button text="Volgende stap" routerLink="/homepage/share-person"></app-primary-button>
-  <app-back-button position="bottom" title="Terug naar de vorige stap"  routerLink="/homepage/steps-overview"></app-back-button>
+    <app-primary-button text="Volgende stap" routerLink="/homepage/share-person"></app-primary-button>
+    <app-back-button position="bottom" title="Terug naar de vorige stap"
+                     routerLink="/homepage/steps-overview"></app-back-button>
   </div>
 </div>

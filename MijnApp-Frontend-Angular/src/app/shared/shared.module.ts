@@ -13,9 +13,10 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { CdkStepperModule } from '@angular/cdk/stepper';
 import { BackButtonComponent } from './components/back-button/back-button.component';
 import { PrimaryButtonComponent } from './components/primary-button/primary-button.component';
+import { LoaderComponent } from './components/loader/loader.component';
 
 @NgModule({
-  declarations: [FooterComponent, BackButtonComponent, PrimaryButtonComponent],
+  declarations: [FooterComponent, BackButtonComponent, PrimaryButtonComponent, LoaderComponent],
   imports: [
     CommonModule,
     FormsModule,
@@ -31,6 +32,7 @@ import { PrimaryButtonComponent } from './components/primary-button/primary-butt
   exports: [
     FooterComponent,
     BackButtonComponent,
+    LoaderComponent,
     PrimaryButtonComponent,
     CommonModule,
     FormsModule,

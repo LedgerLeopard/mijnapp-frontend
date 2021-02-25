@@ -7,11 +7,12 @@
     h3 {
       color: $mineShaft;
       font-style: normal;
-      font-family: "rijksoverheidsanswebtext_boBd";
       font-size: 18px;
       line-height: 26px;
       margin-bottom: 16px;
+      font-weight: bold;
     }
+
     .searchwrap {
       display: flex;
       border: 1px solid $silverSand;
@@ -19,32 +20,36 @@
       background: $white;
       align-items: center;
       margin-bottom: 24px;
+      border-radius: 8px;
+
+
       input {
         border: 0;
         padding: 0;
         height: auto;
         padding-left: 10px;
         font-style: normal;
-        font-family: "rijksoverheidsanswebtext_boBd";
         font-size: 16px;
         line-height: 22px;
       }
     }
+
     .card {
-      // padding: 15px 20px;
-      padding-bottom: 2px;
-      border: 0;
-      box-shadow: inset 0px -2px 0px rgba(43, 43, 43, 0.25);
-      border-radius: 0;
+      border: 1px solid #EBEBEB;
+      border-radius: 8px;
+      margin-bottom: 8px !important;
+
       .card-body {
-        padding: 15px 0px 0px 20px;
+        padding: 15px 0 0 20px;
+
         h5 {
           margin-bottom: 10px;
           font-style: normal;
-          font-family: "rijksoverheidsanswebtext_boBd";
           font-size: 16px;
           line-height: 22px;
+          font-weight: bold;
         }
+
         .status {
           font-style: normal;
           font-weight: normal;
@@ -55,4 +60,8 @@
       }
     }
   }
+}
+
+.img {
+  border-radius: 8px 0 0 8px;
 }

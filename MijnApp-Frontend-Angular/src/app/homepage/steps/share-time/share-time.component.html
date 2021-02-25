@@ -3,7 +3,7 @@
     <app-back-button (back)="backPage()"></app-back-button>
     <div class="d-flex justify-content-between">
       <div class="title">
-        <div><img src="/assets/img/shared-page-icon.png" /></div>
+        <div><img src="/assets/img/share.svg"/></div>
         Gegevens delen
       </div>
     </div>
@@ -14,58 +14,23 @@
     <li class="active"></li>
   </ul>
   <div class="contentpart">
-    <h3>Hoe lang ga je delen?</h3>
-
-    <div class="form-group mb-4">
-      <label>Gewenste startdatum machtiging</label>
-      <!-- <input
-        type="text"
-        placeholder="Vandaag"
-        class="form-control dateicon"
-        bsDatepicker
-      /> -->
-    </div>
-    <div class="row date-block">
-      <div class="form-group col-2 mr-1">
-        <label class="lbl-title">dag</label>
-        <input
-          type="text"
-          class="form-control"
-          id="text1"
-          aria-describedby="emailHelp"
-          placeholder=""
-        />
+    <h3>Wanneer ga je delen?</h3>
+    <div class="card radius">
+      <div class="row no-gutters">
+        <div class="col">
+          <div class="card-body">
+            <label>Startdatum delen gegevens</label>
+            <div class="value">
+              <img src="/assets/img/calendar.svg"/> 14-04-2020
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="form-group col-2 mr-1">
-        <label class="lbl-title">maand</label>
-        <input
-          type="text"
-          class="form-control"
-          id="text1"
-          aria-describedby="emailHelp"
-          placeholder=""
-        />
-      </div>
-      <div class="form-group col-3">
-        <label class="lbl-title">jaar</label>
-        <input
-          type="text"
-          class="form-control year"
-          id="text1"
-          aria-describedby="emailHelp"
-          placeholder=""
-        />
-      </div>
-  </div>
-    <div class="form-group">
-      <label>Gewenste looptijd machtiging</label>
-      <select class="custom-select" required>
-        <option value="">8 maanden</option>
-      </select>
     </div>
   </div>
   <div class="btnrow">
     <app-primary-button text="Volgende stap" routerLink="/homepage/confirm-sharing"></app-primary-button>
-    <app-back-button title="Terug naar de vorige stap" position="bottom"  routerLink="/homepage/share-person"></app-back-button>
+    <app-back-button title="Terug naar de vorige stap" position="bottom"
+                     routerLink="/homepage/share-person"></app-back-button>
   </div>
 </div>

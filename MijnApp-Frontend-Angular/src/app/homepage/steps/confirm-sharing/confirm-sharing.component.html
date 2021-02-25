@@ -3,7 +3,7 @@
     <app-back-button (back)="backPage()"></app-back-button>
     <div class="d-flex justify-content-between">
       <div class="title">
-        <div><img src="/assets/img/shared-page-icon.png" /></div>
+        <div><img src="/assets/img/share.svg"/></div>
         Gegevens delen
       </div>
     </div>
@@ -16,66 +16,53 @@
   </ul>
   <div class="contentpart">
     <h3>Controleer je deelinstellingen</h3>
-    <h3>Je gaat delen met</h3>
+    <h3>Je gaat gegevens delen met</h3>
 
-    <div class="card">
+    <div class="card top">
       <div class="row no-gutters">
         <div class="col-auto pr-3">
           <div>
-            <img src="/assets/img/Logo Overheid.png" />
+            <img src="/assets/img/Logo Overheid.png"/>
           </div>
         </div>
         <div class="col">
           <div class="card-body">
             <div class="d-flex align-items-center justify-content-between">
               <div>
-                <h5>Centraal Justitieel Incass...</h5>
-                <span>Alleen lezen <img src="/assets/img/que-icon.png"/></span>
+                <h5>Centraal Justitieel Incassobureau</h5>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="card">
+    <div class="card bottom">
       <div class="row no-gutters">
         <div class="col">
           <div class="card-body">
-            <label>Startdatum machtiging</label>
+            <label>Startdatum delen gegevens</label>
             <div class="value">
-              <img src="/assets/img/calendar.png" /> 01-04-2020
+              <img src="/assets/img/calendar.svg"/> 14-04-2020
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="card">
-      <div class="row no-gutters">
-        <div class="col">
-          <div class="card-body">
-            <label>Einddatum machtiging</label>
-            <div class="value">
-              <img src="/assets/img/calendar.png" /> 01-12-2020
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+
 
     <h3 class="mt-24px">Deze gegevens ga je delen</h3>
 
-    <div class="card">
+    <div class="card top">
       <div class="row no-gutters">
         <div class="col">
           <div class="card-body">
-            <div class="d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center">
               <div>
-                <label>Gegevens bevestigd door</label>
-                <h4>Stichting WIJeindhoven</h4>
-                <span>Alleen lezen <img src="/assets/img/que-icon.png"/></span>
+                <img src="/assets/img/Logo-WIJeindhoven.svg"/>
               </div>
-              <div>
-                <img src="/assets/img/Logo WIJeindhoven.png" />
+              <div class="text-content">
+                <label>Gegevens bevestigd door</label>
+                <h4>Gemeente X</h4>
               </div>
             </div>
           </div>
@@ -88,44 +75,31 @@
           <div class="card-body">
             <label>Burgerservicenummer</label>
             <div class="value">
-              <img src="/assets/img/name-icon.png" />12345678
+              <img src="/assets/img/BSN.svg"/>12345678
             </div>
           </div>
         </div>
       </div>
     </div>
-
     <div class="card">
       <div class="row no-gutters">
         <div class="col">
           <div class="card-body">
             <label>Type overeenkomst</label>
             <div class="value">
-              <img src="/assets/img/type-icon.png" /> Bevestiging ondersteuning
+              <img src="/assets/img/document.svg"/> Bevestiging ondersteuning
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="card">
+    <div class="card bottom">
       <div class="row no-gutters">
         <div class="col">
           <div class="card-body">
             <label>Status overeenkomst</label>
             <div class="value">
-              <img src="/assets/img/status-icon.png" /> Actief
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="row no-gutters">
-        <div class="col">
-          <div class="card-body">
-            <label>Startdatum</label>
-            <div class="value">
-              <img src="/assets/img/calendar.png" /> 01-04-2020
+              <img src="/assets/img/status-icon-1.png"/> Actief
             </div>
           </div>
         </div>
@@ -136,10 +110,11 @@
     <!-- <a class="orangebtn cursor-pointer" routerLink="../shared-successfully">
       <div class="d-inline-flex">
         Volgende stap
-        <div class="ml-2"><img src="/assets/img/Arrow-forward-w.png" /></div>
+        <div class="ml-2"><img src="/assets/img/Arrow-forward.svg" /></div>
       </div>
     </a> -->
     <app-primary-button text="Volgende stap" routerLink="/homepage/shared-successfully"></app-primary-button>
-    <app-back-button position="bottom" title="Terug naar de vorige stap"  routerLink="/homepage/share-time"></app-back-button>
+    <app-back-button position="bottom" title="Terug naar de vorige stap"
+                     routerLink="/homepage/share-time"></app-back-button>
   </div>
 </div>

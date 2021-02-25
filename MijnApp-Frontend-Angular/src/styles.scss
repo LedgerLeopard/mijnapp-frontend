@@ -4,7 +4,7 @@
 html,
 body {
   height: 100%;
-  font-family: "rijksoverheidsanswebtext_reRg" !important;
+  font-family: 'RijksoverheidSansWebText', sans-serif !important;
 }
 a {
   cursor: pointer;
@@ -25,9 +25,10 @@ a {
     padding: 6px 15px 8px 15px;
     .title {
       font-style: normal;
-      font-family: "rijksoverheidsanswebtext_boBd";
+      font-family: 'RijksoverheidSansWebText', sans-serif;
       font-size: 26px;
       line-height: 30px;
+      font-weight: bold;
     }
     .backpage {
       margin-bottom: 4px;
@@ -55,6 +56,7 @@ a {
       height: 48px;
       align-items: center;
       justify-content: center;
+      border-radius: 8px;
     }
     .backbottom {
       margin-bottom: 16px;
@@ -75,7 +77,7 @@ a {
   }
   .btnrow2 {
     padding: 15px;
-    min-height: 128px;
+    min-height: 83px;
     box-shadow: 0px -4px 4px rgba(0, 0, 0, 0.04);
     background: $white;
     .orangebtn {
@@ -91,6 +93,7 @@ a {
       text-align: center;
       padding: 14px;
       text-decoration: none;
+      border-radius: 8px;
     }
     .backbottom {
       display: flex;

@@ -1,8 +1,8 @@
 <div class="page-wrapper">
   <div class="page_name">
-    <app-back-button (back)="backPage()"></app-back-button> 
+    <app-back-button (back)="backPage()"></app-back-button>
     <div class="d-flex justify-content-between">
-      <div class="title">Ad de Vries</div>
+      <div class="title">Henk de Vries</div>
       <div class="profilepic">
         <img src="/assets/img/Ellipse 4.png" />
       </div>
@@ -11,7 +11,7 @@
 
   <div class="contentpart">
     <h3>Persoonsgegevens</h3>
-    <div class="card">
+    <div class="card top">
       <div class="row no-gutters">
         <div class="col">
           <div class="card-body">
@@ -29,7 +29,7 @@
           <div class="card-body">
             <label>Achternaam</label>
             <p>
-              {{personalInfo?.naam?.geslachtsnaam}} 
+              {{personalInfo?.naam?.geslachtsnaam}}
             </p>
           </div>
         </div>
@@ -41,7 +41,7 @@
           <div class="card-body">
             <label>Geboortedatum</label>
             <p>
-             {{personalInfo?.geboorte?.datum?.datum}}  
+             {{personalInfo?.geboorte?.datum?.datum}}
             </p>
           </div>
         </div>
@@ -95,7 +95,7 @@
         </div>
       </div>
     </div>
-    <div class="card">
+    <div class="card bottom">
       <div class="row no-gutters">
         <div class="col">
           <div class="card-body">

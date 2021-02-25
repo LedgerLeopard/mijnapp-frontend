@@ -3,110 +3,141 @@
 .page-wrapper {
   background: $backgroundColor;
   padding: 0;
+
   .page_name {
     display: block;
+
     .title {
       display: flex;
       align-items: center;
+
       img {
         width: 30px;
         margin-right: 8px;
       }
     }
+
     .backpage {
       display: flex;
       width: 100%;
+
       img {
         margin-right: 6px;
       }
     }
   }
+
   .contentpart {
+    position: relative;
+
     h3 {
       color: $mineShaft;
       font-style: normal;
-      font-family: "rijksoverheidsanswebtext_boBd";
       font-size: 18px;
       line-height: 26px;
       margin-bottom: 16px;
+      font-weight: bold;
     }
-    .mb-4 {
-      margin-bottom: 4px !important;
-    }
-    .form-group {
-      margin-bottom: 16px;
-      label {
-        margin-bottom: 4px;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 16px;
-        line-height: 22px;
+
+    .card {
+      padding: 15px 20px;
+      border: 0;
+      box-shadow: inset 0px -1px 0px $gallery;
+      border-radius: 0;
+
+      .row {
+        align-items: center;
       }
-      .form-control {
-        border: 1px solid $silverSand;
-        border-radius: 0;
-        height: 48px;
-        position: relative;
-        &.dateicon {
-          padding-left: 40px;
+
+      .card-body {
+        padding: 0px;
+
+        p {
+          margin: 0;
           font-style: normal;
-          font-family: "rijksoverheidsanswebtext_boBd";
+          font-weight: normal;
           font-size: 16px;
           line-height: 22px;
-          color: $mineShaft;
-          background-image: url("../../../../assets/img/calendar.png"),
-            url("../../../../assets/img/Triangle down.png");
-          background-position: 10px center, right center;
-          background-repeat: no-repeat, no-repeat;
+        }
+
+        label {
+          color: $gray;
+          margin: 0;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 14px;
+          line-height: 18px;
+        }
+
+        .value {
+          display: flex;
+          align-items: center;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 16px;
+          line-height: 22px;
+
+          img {
+            margin-right: 6px;
+          }
+        }
+
+        span {
+          font-style: normal;
+          font-weight: normal;
+          font-size: 12px;
+          line-height: 16px;
+          color: $gray;
+        }
+
+        h4 {
+          margin: 0;
+          font-style: normal;
+          font-size: 18px;
+          line-height: 26px;
         }
       }
-      .custom-select {
-        background: none;
-        background-color: $white;
-        background-image: url("../../../../assets/img/Triangle down.png");
-        background-position: right center;
-        background-repeat: no-repeat;
-        border: 1px solid $silverSand;
-        border-radius: 0;
-        height: 48px;
-        position: relative;
-        font-style: normal;
-        font-family: "rijksoverheidsanswebtext_boBd";
-        font-size: 16px;
-        line-height: 22px;
-        color: $mineShaft;
+
+      &.radius {
+        border-radius: 8px;
       }
     }
   }
+
   .statusbar {
     list-style-type: none;
     width: 100%;
     margin: 0;
     padding: 0;
     display: flex;
+
     li {
       width: 25%;
       height: 4px;
       margin-left: 4px;
+
       &.active {
         background: $laPalma;
       }
+
       &:first-child {
         margin: 0;
       }
     }
   }
 }
+
 .lbl-title {
-  font-family: "RijksoverheidSerifWeb-Italic";
   color: #666666;
-  }
+}
+
 .date-block {
   .form-control {
-      min-width: 48px;
+    min-width: 48px;
   }
+
   .year {
     min-width: 70px !important;
   }
 }
-  
+

@@ -3,7 +3,7 @@
       <div class="title">Zoeken</div>
       <div class="closebtn">
         <a routerLink="../homepage">
-          <div><img src="/assets/img/cross.png" /></div>
+          <div><img src="/assets/img/new-cross.svg" /></div>
           sluit
         </a>
       </div>
@@ -16,14 +16,14 @@
           class="form-control"
           id="text1"
           aria-describedby="emailHelp"
-          placeholder="Zoeken op een regeling"
+          placeholder="Zoeken"
         />
       </div>
       <h3>Suggesties</h3>
       <div class="card" *ngFor="let journey of journeys">
         <div class="row no-gutters">
           <div class="col-auto">
-            <img src="/assets/img/srch-img-1.png" />
+            <img src="/assets/img/truck.svg" />
           </div>
           <div class="col">
             <div class="card-body cursor-pointer"  [routerLink]="['search-overview']"
@@ -36,4 +36,3 @@
       </div>
     </div>
   </div>
-  

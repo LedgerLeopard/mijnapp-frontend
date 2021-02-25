@@ -22,6 +22,8 @@
     }
   }
   .contentpart {
+    position: relative;
+
     p {
       font-style: normal;
       font-weight: normal;
@@ -32,8 +34,8 @@
     .card {
       padding: 15px 20px;
       border: 0;
-      box-shadow: inset 0px -2px 0px rgba(43, 43, 43, 0.25);
-      border-radius: 0;
+      box-shadow: 1px 1px 10px rgb(43 43 43 / 25%);
+      border-radius: 8px;
 
       .card-body {
         padding: 0px 0px 0px 20px;

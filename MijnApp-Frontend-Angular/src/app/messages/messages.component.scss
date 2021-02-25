@@ -7,17 +7,17 @@
     h3 {
       color: $mineShaft;
       font-style: normal;
-      font-family: "rijksoverheidsanswebtext_boBd";
       font-size: 18px;
       line-height: 26px;
       margin-bottom: 16px;
+      font-weight: bold;
     }
 
     .card {
       padding: 15px 20px;
       border: 0;
-      box-shadow: inset 0px -2px 0px rgba(43, 43, 43, 0.25);
-      border-radius: 0;
+      box-shadow: 1px 2px 7px rgb(43 43 43 / 25%);
+      border-radius: 8px;
       .row {
         align-items: center;
       }
@@ -42,9 +42,9 @@
         h5 {
           margin: 0;
           font-style: normal;
-          font-family: "rijksoverheidsanswebtext_boBd";
           font-size: 16px;
           line-height: 22px;
+          font-weight: bold;
         }
       }
     }

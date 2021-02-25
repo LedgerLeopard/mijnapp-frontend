@@ -1,0 +1,20 @@
+@import "../../../styles/colors";
+
+.loader {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  display: flex;
+  z-index: 10000;
+  justify-content: center;
+  align-items: center;
+
+  .spinner-border {
+    height: 3rem;
+    width: 3rem;
+    border: .29em solid currentColor;
+    border-right-color: transparent;
+    color: $orange;
+  }
+}
+

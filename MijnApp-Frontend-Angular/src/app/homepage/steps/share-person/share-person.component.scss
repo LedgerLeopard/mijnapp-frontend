@@ -31,7 +31,6 @@
     h3 {
       color: $mineShaft;
       font-style: normal;
-      font-family: "rijksoverheidsanswebtext_boBd";
       font-size: 18px;
       line-height: 26px;
       margin-bottom: 16px;
@@ -73,7 +72,6 @@
 
         h4 {
           font-style: normal;
-          font-family: "rijksoverheidsanswebtext_boBd";
           font-size: 16px;
           line-height: 22px;
           margin: 0;
@@ -81,7 +79,6 @@
 
         h5 {
           font-style: normal;
-          font-family: "rijksoverheidsanswebtext_boBd";
           font-size: 16px;
           line-height: 22px;
           margin: 0;
@@ -130,14 +127,16 @@
 
 ::ng-deep {
   .switch {
+    background-color: $nobel;
+
     &.switch-small {
-      border-radius: 0px;
+      border-radius: 20px;
       width: 40px;
       height: 22px;
       border: 0;
 
       small {
-        border-radius: 0px;
+        border-radius: 20px;
         margin: 1px;
         width: 20px;
         height: 20px;
@@ -147,5 +146,13 @@
     &.switch.checked {
       background: $laPalma;
     }
+  }
+}
+
+.round-slider {
+  border-radius: 20px;
+
+  &.switch.switch-small {
+    border-radius: 20px;
   }
 }

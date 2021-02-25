@@ -25,10 +25,10 @@
     h3 {
       color: $mineShaft;
       font-style: normal;
-      font-family: "rijksoverheidsanswebtext_boBd";
       font-size: 18px;
       line-height: 26px;
       margin-bottom: 16px;
+      font-weight: bold;
     }
 
     .mt-24px {
@@ -81,17 +81,24 @@
         h4 {
           margin: 0;
           font-style: normal;
-          font-family: "rijksoverheidsanswebtext_boBd";
           font-size: 18px;
           line-height: 26px;
+          font-weight: bold;
         }
         h5 {
           margin: 0;
           font-style: normal;
-          font-family: "rijksoverheidsanswebtext_boBd";
           font-size: 16px;
           line-height: 22px;
         }
+      }
+
+      &.top {
+        border-radius: 8px 8px 0 0;
+      }
+
+      &.bottom {
+        border-radius: 0 0 8px 8px;
       }
     }
   }
@@ -113,4 +120,8 @@
       }
     }
   }
+}
+
+.text-content {
+  margin-left: 20px;
 }

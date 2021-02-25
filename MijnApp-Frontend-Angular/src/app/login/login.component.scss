@@ -14,15 +14,14 @@
     h3 {
       color: $mineShaft;
       font-style: normal;
-      font-family: "rijksoverheidsanswebtext_boBd";
       font-size: 26px;
       line-height: 30px;
       margin-bottom: 16px;
+      font-weight: bold;
     }
     h5 {
       color: $mineShaft;
       font-style: italic;
-      font-family: 'RijksoverheidSerifWeb-Italic' !important;
       font-weight: normal;
       font-size: 23px;
       line-height: 22px;
@@ -36,10 +35,10 @@
       margin-top: 24px;
       label {
         font-style: normal;
-        font-family: "rijksoverheidsanswebtext_boBd";
         font-size: 16px;
         line-height: 22px;
         margin: 0;
+        font-weight: bold;
       }
       p {
         margin: 0;
