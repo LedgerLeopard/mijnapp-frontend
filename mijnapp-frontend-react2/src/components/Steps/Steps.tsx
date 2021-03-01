@@ -72,7 +72,7 @@ const Steps = () => {
         <div className={classes.root}>
             <div className={classes.headerContainer}>
                 <Header label={t('steps.header')}
-                        button={<LinkButton onClick={goToLogin}>{t('steps.linkButton')}</LinkButton>}/>
+                        endComponent={<LinkButton onClick={goToLogin}>{t('steps.linkButton')}</LinkButton>}/>
                 <Stepper steps={3} activeSteps={activeSteps}/>
             </div>
             <div className={classes.wrapper}>

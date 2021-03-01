@@ -78,7 +78,20 @@
     },
     "search": {
       "searchHeader": "Zoeken",
-      "searchPlaceholder": "Zoeken"
+      "searchPlaceholder": "Zoeken",
+      "contentHeader": "Suggesties"
+    },
+    "personalData": {
+      "header": "Terug naar Start",
+      "title": "Persoonsgegevens",
+      "firstName": "Voornaam(en)",
+      "lastName": "Achternaam",
+      "birthday": "Geboortedatum",
+      "serviceNumber": "Burgerservicenummer",
+      "birthplace": "Geboorteplaats",
+      "countryBirth": "Geboorteland",
+      "marriage": "Geregisteerd partnerschap",
+      "children": "Kinderen"
     }
   }
 }

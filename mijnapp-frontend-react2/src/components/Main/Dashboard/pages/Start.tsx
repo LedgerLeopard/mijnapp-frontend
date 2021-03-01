@@ -1,15 +1,17 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import {Button, makeStyles} from '@material-ui/core';
 import MatInput from '../../../ui/MatInput';
-import SearchRoundedIcon from '@material-ui/icons/SearchRounded';
+import {ReactComponent as SearchIcon} from '../../../../assets/icons/search.svg';
 import Icon from '../../../ui/Icon';
 import {ReactComponent as User} from '../../../../assets/icons/user.svg';
-import NotificationsNoneOutlinedIcon from '@material-ui/icons/NotificationsNoneOutlined';
-import FolderOpenIcon from '@material-ui/icons/FolderOpen';
-import ShareOutlinedIcon from '@material-ui/icons/ShareOutlined';
+import {ReactComponent as Notification} from '../../../../assets/icons/notifications.svg';
+import {ReactComponent as Folder} from '../../../../assets/icons/folder.svg';
+import {ReactComponent as Share} from '../../../../assets/icons/share.svg';
 import {colors} from '../../../../assets/colors';
 import {useTranslation} from 'react-i18next';
 import {useHistory} from 'react-router-dom';
+import {inject, observer} from 'mobx-react';
+import Stores from '../../../../models/Stores';
 
 
 const useStyles = makeStyles({
@@ -73,56 +75,65 @@ const useStyles = makeStyles({
 });
 
 const menuItems = [
-    {header: 'personal', subheader: '', route: '/main/dashboard/start', icon: User},
-    {header: 'notification', subheader: '', route: '/main/dashboard/notification', icon: NotificationsNoneOutlinedIcon},
-    {header: 'documents', subheader: '', route: '/main/dashboard/start', icon: FolderOpenIcon},
-    {header: 'sharedData', subheader: '', route: '/main/dashboard/start', icon: ShareOutlinedIcon},
+    {header: 'personal', subheader: '', route: '/personal', icon: User},
+    {header: 'notification', subheader: '', route: '/dashboard/notification', icon: Notification},
+    {header: 'documents', subheader: '', route: '/dashboard/start', icon: Folder},
+    {header: 'sharedData', subheader: '', route: '/share', icon: Share},
 ];
 
-const Start = () => {
-    const classes = useStyles();
-    const history = useHistory();
-    const {t} = useTranslation();
+const Start =
+    inject((stores: Stores) => ({popupUiStore: stores.popupUiStore}))
+    (observer(({popupUiStore}: Stores) => {
+        const classes = useStyles();
+        const history = useHistory();
+        const {t} = useTranslation();
+        const input = useRef<HTMLInputElement>(null);
 
-    const goTo = (route: string) => {
-        history.push(route);
-    };
+        const goTo = (route: string) => {
+            history.push('/main' + route);
+        };
 
-    return (
-        <div className={classes.root}>
-            <div className={classes.searchBlock}>
-                <div className={classes.header}>{t('main.dashboard.start.searchHeader')}</div>
-                <MatInput className={classes.search}
-                          placeholder={t('main.dashboard.start.searchPlaceholder')}
-                          startAdornment={<Icon icon={SearchRoundedIcon}/>}
-                          onFocus={() => goTo('/main/search')}/>
-            </div>
-            <div>
-                <div className={classes.header}>{t('main.dashboard.start.menuHeader')}</div>
-                {menuItems.map(item => (
-                    <Button key={'key-' + item.header}
-                            className={classes.card}
-                            variant='contained'
-                            onClick={() => goTo(item.route)}
-                            disableElevation>
-                        <div className={classes.cardContent}>
-                            <Icon className={classes.cardIcon} fullWidthIcon={true} icon={item.icon}/>
-                            <div className={classes.cardTextContent}>
-                                <div className={classes.cardHeader}>
-                                    {t('main.dashboard.start.' + item.header)}
+        const focus = () => {
+            input.current?.blur();
+            popupUiStore.openSearch();
+        };
+
+        return (
+            <div className={classes.root}>
+                <div className={classes.searchBlock}>
+                    <div className={classes.header}>{t('main.dashboard.start.searchHeader')}</div>
+                    <MatInput id='test'
+                              inputRef={input}
+                              className={classes.search}
+                              placeholder={t('main.dashboard.start.searchPlaceholder')}
+                              startAdornment={<Icon icon={SearchIcon}/>}
+                              onFocus={focus}/>
+                </div>
+                <div>
+                    <div className={classes.header}>{t('main.dashboard.start.menuHeader')}</div>
+                    {menuItems.map(item => (
+                        <Button key={'key-' + item.header}
+                                className={classes.card}
+                                variant='contained'
+                                onClick={() => goTo(item.route)}
+                                disableElevation>
+                            <div className={classes.cardContent}>
+                                <Icon className={classes.cardIcon} fullWidthIcon={true} icon={item.icon}/>
+                                <div className={classes.cardTextContent}>
+                                    <div className={classes.cardHeader}>
+                                        {t('main.dashboard.start.' + item.header)}
+                                    </div>
+                                    {item.subheader &&
+                                    <div className={classes.cardSubheader}>
+                                        {t('main.dashboard.start.' + item.subheader)}
+                                    </div>}
                                 </div>
-                                {item.subheader &&
-                                <div className={classes.cardSubheader}>
-                                    {t('main.dashboard.start.' + item.subheader)}
-                                </div>}
                             </div>
-                        </div>
-                    </Button>
-                ))}
-
+                        </Button>
+                    ))}
+                </div>
             </div>
-        </div>
-    );
-};
+        );
+    }));
 
 export default Start;

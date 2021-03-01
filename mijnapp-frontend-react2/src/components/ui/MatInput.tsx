@@ -58,6 +58,7 @@ const useStyles = makeStyles({
 interface MatInputData {
     id?: string;
     type?: string;
+    inputRef?: any;
     className?: string;
     isSecret?: boolean;
     label?: any;
@@ -75,6 +76,7 @@ const MatInput = (
     {
         id,
         type,
+        inputRef,
         className,
         isSecret,
         label,
@@ -102,6 +104,7 @@ const MatInput = (
             {label && <label className={classes.label}>{label}</label>}
             <OutlinedInput
                 id={id}
+                inputRef={inputRef}
                 type={isSecret ? passwordVisibility ? 'text' : 'password' : type || 'text'}
                 classes={{
                     root: classes.input,

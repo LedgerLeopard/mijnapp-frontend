@@ -144,7 +144,7 @@ const SignIn =
             authStore.login(authData.login, authData.password)
                 .then(() => {
                     setLoader(false);
-                    history.push('/main/dashboard/start');
+                    history.push('/main/dashboard/notification');
                 })
                 .catch(error => console.log(error));
         };

@@ -3,10 +3,10 @@ import {makeStyles} from '@material-ui/core';
 import Header from '../../ui/Header';
 import {Redirect, Route, Switch} from 'react-router-dom';
 import {colors} from '../../../assets/colors';
-import TabBar from '../../TabBar/TabBar';
+import TabBar from '../share/TabBar/TabBar';
 import Empty from '../../Empty';
 import Start from './pages/Start';
-import {inject} from 'mobx-react';
+import {inject, observer} from 'mobx-react';
 import Stores from '../../../models/Stores';
 import {useTranslation} from 'react-i18next';
 import MatIconButton from '../../ui/MatIconButton';
@@ -40,14 +40,14 @@ const useStyles = makeStyles({
 
 const Dashboard =
     inject((stores: Stores) => ({authStore: stores.authStore}))
-    (({authStore}: Stores) => {
+    (observer(({authStore}: Stores) => {
         const classes = useStyles();
         const {t} = useTranslation();
 
         return (
             <div className={classes.root}>
                 <Header label={t('main.dashboard.header') + authStore.user.firstName}
-                        button={
+                        endComponent={
                             <MatIconButton customClasses={classes.avatarButton}
                                            label={<img className={classes.img} src={`${authStore.user.avatar}`} alt='Avatar'/>}/>
                         }/>
@@ -62,7 +62,7 @@ const Dashboard =
                 <TabBar/>
             </div>
         );
-    });
+    }));
 
 
 export default Dashboard;

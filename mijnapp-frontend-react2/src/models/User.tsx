@@ -4,6 +4,12 @@ export default class User {
     login: string | undefined | null;
     firstName: string | undefined | null;
     lastName: string | undefined | null;
+    birthday: string | undefined | null;
+    serviceNumber: string | undefined | null;
+    birthplace: string | undefined | null;
+    countryBirth: string | undefined | null;
+    marriage: string | undefined | null;
+    children: string | undefined | null;
     avatar: string | undefined | null;
     email: string | undefined | null;
 

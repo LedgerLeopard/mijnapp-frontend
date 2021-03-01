@@ -8,8 +8,14 @@ const authService = {
                 _id: '_id',
                 token: 'token',
                 login: 'Login',
-                firstName: 'First Name',
-                lastName: 'Last Name',
+                firstName: 'Henk',
+                lastName: 'de Vries',
+                birthday: '13-04-1984',
+                serviceNumber: '12345678',
+                birthplace: 'Utrecht',
+                countryBirth: 'Nederland',
+                marriage: 'Evelien de Vries',
+                children: 'Paul de Vries',
                 avatar: 'https://ifcviewerblobstorage.blob.core.windows.net/cirlinq-ifc/ou491rxps6feoxbndi1qt_84854.jpg'
             })), 1000);
         });
@@ -20,8 +26,14 @@ const authService = {
                 _id: '_id',
                 token: 'token',
                 login: 'Login',
-                firstName: 'First Name',
-                lastName: 'Last Name',
+                firstName: 'Henk',
+                lastName: 'de Vries',
+                birthday: '13-04-1984',
+                serviceNumber: '12345678',
+                birthplace: 'Utrecht',
+                countryBirth: 'Nederland',
+                marriage: 'Evelien de Vries',
+                children: 'Paul de Vries',
                 avatar: 'https://ifcviewerblobstorage.blob.core.windows.net/cirlinq-ifc/ou491rxps6feoxbndi1qt_84854.jpg'
             })), 1000);
         });
