@@ -48,7 +48,7 @@ const useStyles = makeStyles({
     },
     backButton: {
         height: '24px',
-        width: '160px',
+        width: 'fit-content',
         display: 'flex',
         margin: 'auto auto auto 0',
         color: colors.black,

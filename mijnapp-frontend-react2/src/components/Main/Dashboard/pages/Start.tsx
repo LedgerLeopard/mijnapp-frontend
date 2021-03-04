@@ -78,7 +78,7 @@ const menuItems = [
     {header: 'personal', subheader: '', route: '/personal', icon: User},
     {header: 'notification', subheader: '', route: '/dashboard/notification', icon: Notification},
     {header: 'documents', subheader: '', route: '/dashboard/start', icon: Folder},
-    {header: 'sharedData', subheader: '', route: '/share', icon: Share},
+    {header: 'sharedInfo', subheader: '', route: '/share', icon: Share},
 ];
 
 const Start =

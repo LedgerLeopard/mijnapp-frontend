@@ -7,6 +7,8 @@ import reportWebVitals from './reportWebVitals';
 import {createMuiTheme, MuiThemeProvider} from '@material-ui/core';
 import './i18';
 import Stores from './models/Stores';
+import {MuiPickersUtilsProvider} from '@material-ui/pickers';
+import DateFnsUtils from '@date-io/date-fns';
 
 
 const theme = createMuiTheme({
@@ -27,7 +29,9 @@ const stores: Stores = new Stores();
 ReactDOM.render(
     <Provider {...stores}>
         <MuiThemeProvider theme={theme}>
-            <App/>
+            <MuiPickersUtilsProvider utils={DateFnsUtils}>
+                <App/>
+            </MuiPickersUtilsProvider>
         </MuiThemeProvider>
     </Provider>,
     document.getElementById('root')

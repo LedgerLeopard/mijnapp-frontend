@@ -112,7 +112,7 @@ const PersonalData =
 
                                 <ListItem className={classes.listItem} divider>
                                     <div className={classes.header}>{t('main.personalData.serviceNumber')}</div>
-                                    <div className={classes.subheader}>{authStore.user.serviceNumber}</div>
+                                    <div className={classes.subheader}>{authStore.user.BSN}</div>
                                 </ListItem>
 
                                 <ListItem className={classes.listItem} divider>

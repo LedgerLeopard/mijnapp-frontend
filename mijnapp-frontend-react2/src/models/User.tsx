@@ -5,7 +5,7 @@ export default class User {
     firstName: string | undefined | null;
     lastName: string | undefined | null;
     birthday: string | undefined | null;
-    serviceNumber: string | undefined | null;
+    BSN: string | undefined | null;
     birthplace: string | undefined | null;
     countryBirth: string | undefined | null;
     marriage: string | undefined | null;

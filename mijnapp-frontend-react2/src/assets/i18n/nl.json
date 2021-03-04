@@ -73,7 +73,7 @@
         "personal": "Persoonsgegevens",
         "notification": "Berichten",
         "documents": "Bevestigingen",
-        "sharedData": "Gedeelde gegevens"
+        "sharedInfo": "Gedeelde gegevens"
       }
     },
     "search": {
@@ -92,6 +92,25 @@
       "countryBirth": "Geboorteland",
       "marriage": "Geregisteerd partnerschap",
       "children": "Kinderen"
+    },
+    "sharedInfo": {
+      "header": "Gedeelde gegevens",
+      "backButton": "Terug naar Start",
+      "textWhenEmpty": "Je hebt op dit moment nog niets gedeeld. Druk op het plusje om te beginnen met het delen van je gegevens.",
+      "dateText": "Delen gestart op"
+    },
+    "creatingSharedInfo": {
+      "preview": {
+        "header": "Deze stappen ga je doorlopen",
+        "what": "Geef aan wat je gaat delen",
+        "whom": "Geef aan met wie je gaat delen",
+        "when": "Geef aan wanneer je gaat delen",
+        "confirm": "Bevestig je deelinstellingen"
+      },
+      "stepThree": {
+        "header": "Wanneer ga je delen?",
+        "subheader": "Startdatum delen gegevens"
+      }
     }
   }
 }

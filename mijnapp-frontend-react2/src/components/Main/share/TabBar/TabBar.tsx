@@ -41,8 +41,8 @@ const menuItems: { key: string, route: string, icon: any }[] = [
 ];
 
 const TabBar =
-    inject((stores: Stores) => ({searchStore: stores.popupUiStore}))
-    (observer(({searchStore}: Stores | any) => {
+    inject((stores: Stores) => ({popupUiStore: stores.popupUiStore}))
+    (observer(({popupUiStore}: Stores | any) => {
         const classes = useStyles();
         const {t} = useTranslation();
         const history = useHistory();
@@ -62,7 +62,7 @@ const TabBar =
         }, []);
 
         const handleChange = (event: React.ChangeEvent<{}>, newValue: number) => {
-            if (menuItems[newValue].key === 'search') return searchStore.handleOpen();
+            if (menuItems[newValue].key === 'search') return popupUiStore.openSearch();
             history.push(menuItems[newValue].route);
         };
 

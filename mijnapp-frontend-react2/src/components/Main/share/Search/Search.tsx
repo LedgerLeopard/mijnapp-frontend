@@ -10,12 +10,18 @@ import Loader from '../../../ui/Loader';
 import {delay} from '../../../../share/utils';
 import {ReactComponent as Truck} from '../../../../assets/icons/truck.svg';
 import {ReactComponent as SearchIcon} from '../../../../assets/icons/search.svg';
+import {ReactComponent as Document} from '../../../../assets/icons/document.svg';
+import {ReactComponent as CheckMark} from '../../../../assets/icons/check-mark.svg';
 import searchService from '../../../../services/searchService';
 import Dialog from '@material-ui/core/Dialog';
 import Slide from '@material-ui/core/Slide';
 import {TransitionProps} from '@material-ui/core/transitions';
 import {inject, observer} from 'mobx-react';
 import Stores from '../../../../models/Stores';
+import {SearchType} from '../../../../share/constants/searchType';
+import {SearchItem} from '../../../../models/SearchItem';
+import {ConfirmationStatus} from '../../../../share/constants/confirmationStatus';
+import {Organization} from '../../../../stores/SharedInformation/Organization';
 
 
 const useStyles = makeStyles({
@@ -83,7 +89,6 @@ const useStyles = makeStyles({
         marginBottom: '16px'
     },
     card: {
-        height: '72px',
         width: '100%',
         padding: '0',
         border: `1px solid ${colors.lightGrey}`,
@@ -95,18 +100,26 @@ const useStyles = makeStyles({
         height: '100%',
         width: '100%',
         display: 'flex',
+        padding: '5px 0'
     },
     cardIcon: {
+        height: '40px',
+        width: '40px',
         margin: '14px',
         padding: '10px',
         boxSizing: 'border-box',
         borderRadius: '100%',
         backgroundColor: colors.lightGrey
     },
+    cardImg: {
+        height: '40px',
+        width: '40px',
+        margin: 'auto'
+    },
     cardTextContent: {
         width: 'calc(100% - 74px)',
         margin: '1px',
-        padding: '10px',
+        padding: '5px 10px',
         boxSizing: 'border-box',
         textTransform: 'none',
         textAlign: 'initial',
@@ -120,7 +133,15 @@ const useStyles = makeStyles({
         overflow: 'hidden',
     },
     cardSubheader: {
+        display: 'flex',
+        width: 'fit-content',
         color: colors.primary
+    },
+    customSubheader: {
+        color: colors.black
+    },
+    customTextStatus: {
+        color: colors.grey
     }
 });
 
@@ -130,19 +151,13 @@ const Transition = forwardRef(
     }
 );
 
-class SearchItems {
-    _id: string | undefined;
-    header: string | undefined;
-    subheader?: string | undefined;
-}
-
 const Search =
-    inject((stores: Stores) => ({popupUiStore: stores.popupUiStore}))
-    (observer(({popupUiStore}: Stores | any) => {
+    inject((stores: Stores) => ({popupUiStore: stores.popupUiStore, sharedDataStore: stores.sharedInformationStore}))
+    (observer(({popupUiStore, sharedDataStore}: Stores | any) => {
         const classes = useStyles();
         const {t} = useTranslation();
         const [loading, setLoading] = useState(false);
-        const [items, setItems] = useState<SearchItems[]>([]);
+        const [items, setItems] = useState<SearchItem[]>([]);
         const input = useRef<HTMLInputElement>(null);
 
         const search = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -153,21 +168,55 @@ const Search =
                     setLoading(false);
                     return setItems([]);
                 }
-                searchService.search(value).then(items => {
+                let method;
+                switch (popupUiStore.searchMode.get()) {
+                    case SearchType.Data:
+                        method = searchService.searchData;
+                        break;
+                    case SearchType.Organization:
+                        method = searchService.searchOrganizations;
+                        break;
+                    default:
+                        method = searchService.search;
+                        break;
+                }
+
+                method(value).then(items => {
                     setItems(items);
                     setLoading(false);
                 });
             }, 500);
         };
 
-        const goTo = (_id: string | undefined) => {
-            console.log(_id);
+        const action = (item: SearchItem) => {
+            if (loading) return;
+            switch (popupUiStore.searchMode.get()) {
+                case SearchType.Data:
+                    sharedDataStore.setSharedData({infoId: item._id});
+                    break;
+                case SearchType.Organization:
+                    sharedDataStore.addOrganization(new Organization(item));
+                    break;
+                default:
+                    console.log(item._id);
+                    break;
+            }
+            close();
         };
 
         const close = () => {
             setItems([]);
             setLoading(false);
             popupUiStore.closeSearch();
+        };
+
+        const getIcon = (type: SearchType | undefined) => {
+            switch (type) {
+                case SearchType.Data:
+                    return Document;
+                default:
+                    return Truck;
+            }
         };
 
         return (
@@ -203,13 +252,30 @@ const Search =
                                     <Button key={'key-' + index + '-' + item._id}
                                             className={classes.card}
                                             variant='contained'
-                                            onClick={() => goTo(item._id)}
+                                            onClick={() => action(item)}
                                             disableElevation>
                                         <div className={classes.cardContent}>
-                                            <Icon className={classes.cardIcon} fullWidthIcon={true} icon={Truck}/>
+
+                                            {item.type !== SearchType.Organization
+                                                ? <Icon className={classes.cardIcon} fullWidthIcon={true} icon={getIcon(item.type)}/>
+                                                : <img className={classes.cardImg} src={item.logo} alt={'Organization logo'}/>}
+
                                             <div className={classes.cardTextContent}>
-                                                <div className={classes.cardHeader}>{item.header}</div>
-                                                {item.subheader && <div className={classes.cardSubheader}>{item.subheader}</div>}
+                                                <div className={classes.cardHeader}>{item.name}</div>
+
+                                                {item.additionalName &&
+                                                <div className={classes.cardSubheader + ' ' +
+                                                (item.type !== SearchType.Default ? classes.customSubheader : '')}>
+                                                    {item.additionalName}
+                                                </div>}
+
+                                                {item.status && <div className={classes.cardSubheader + '  ' +
+                                                (item.type !== SearchType.Default ? classes.customTextStatus : '')}>
+                                                    {item.status === ConfirmationStatus.Active
+                                                        ? <Icon icon={CheckMark} color={colors.success}/>
+                                                        : <Icon icon={CloseOutlinedIcon} color={'red'}/>}
+                                                    {t(`${item.status}`)}
+                                                </div>}
                                             </div>
                                         </div>
                                     </Button>))}

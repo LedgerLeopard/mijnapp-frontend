@@ -1,13 +1,15 @@
+import {SearchItems_MOKE} from '../MOKE/MOKE';
+import {SearchItem} from '../models/SearchItem';
+
 const searchService = {
-    search: (search: string): Promise<any> => {
-        return new Promise<any>(resolve => {
-            setTimeout(() =>
-                resolve([
-                    {_id: '1', header: 'Ik ga verhuizen', subheader: ''},
-                    {_id: '2', header: 'Test 1', subheader: 'Subheader 1'},
-                    {_id: '3', header: 'Test 2', subheader: 'Subheader 2'},
-                ]), 1000);
-        });
+    search: (search: string): Promise<SearchItem[]> => {
+        return new Promise<SearchItem[]>(resolve => setTimeout(() => resolve(SearchItems_MOKE.default.map(item => new SearchItem(item))), 1000));
+    },
+    searchData: (search: string): Promise<SearchItem[]> => {
+        return new Promise<SearchItem[]>(resolve => setTimeout(() => resolve(SearchItems_MOKE.data.map(item => new SearchItem(item))), 1000));
+    },
+    searchOrganizations: (search: string): Promise<SearchItem[]> => {
+        return new Promise<SearchItem[]>(resolve => setTimeout(() => resolve(SearchItems_MOKE.organization.map(item => new SearchItem(item))), 1000));
     }
 };
 

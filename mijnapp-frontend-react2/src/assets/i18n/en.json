@@ -73,7 +73,7 @@
         "personal": "Persoonsgegevens",
         "notification": "Berichten",
         "documents": "Bevestigingen",
-        "sharedData": "Gedeelde gegevens"
+        "sharedInfo": "Gedeelde gegevens"
       }
     },
     "search": {
@@ -92,6 +92,77 @@
       "countryBirth": "Geboorteland",
       "marriage": "Geregisteerd partnerschap",
       "children": "Kinderen"
+    },
+    "sharedInfoList": {
+      "header": "Gedeelde gegevens",
+      "backButton": "Terug naar Start",
+      "textWhenEmpty": "Je hebt op dit moment nog niets gedeeld. Druk op het plusje om te beginnen met het delen van je gegevens.",
+      "dateText": "Delen gestart op"
+    },
+    "sharedInfoSingle": {
+      "headerOne": "Je gegevens zijn gedeeld met",
+      "headerTwo": "Je hebt deze gegevens gedeeld",
+      "headerThree": "Gegevens volgen",
+      "uploadDate": "Startdatum delen gegevens",
+      "organizationName": "Gegevens bevestigd door",
+      "bsn": "Burgerservicenummer",
+      "typeVerification": "Type bevestiging",
+      "status": "Status bevestiging",
+      "terminateShareButton": "Stoppen met delen",
+      "backButtonTop": "Terug naar Gedeelde gegevens",
+      "backButtonBottom": "Terug naar Start"
+    },
+    "creatingSharedInfo": {
+      "header": "Gegevens delen",
+      "backButton": "Terug naar Start",
+      "buttonNames": {
+        "nextFirst": "Starten",
+        "nextLast": "Delen bevestigen",
+        "nextDefault": "Volgende stap",
+        "backFirst": "Terug naar Start",
+        "backDefault": "Terug naar de vorige stap"
+      },
+      "success": {
+        "header": "Je gegevens zijn succesvol gedeeld.",
+        "subheader": "Je schulden staan 8 maanden stil. We gaan samen aan de slag met je traject. Je kunt altijd stoppen met het delen van je gegevens."
+      },
+      "preview": {
+        "header": "Deze stappen ga je doorlopen",
+        "what": "Geef aan wat je gaat delen",
+        "whom": "Geef aan met wie je gaat delen",
+        "when": "Geef aan wanneer je gaat delen",
+        "confirm": "Bevestig je deelinstellingen"
+      },
+      "stepOne": {
+        "header": "Wat ga je delen?",
+        "select": "Selecteer gegevens",
+        "organizationName": "Gegevens bevestigd door",
+        "name": "Naam",
+        "bsn": "Burgerservicenummer",
+        "typeVerification": "Type bevestiging",
+        "status": "Status bevestiging"
+      },
+      "stepTwo": {
+        "header": "Met wie wil je delen?",
+        "select": "Organisatie toevoegen"
+      },
+      "stepThree": {
+        "header": "Wanneer ga je delen?",
+        "subheader": "Startdatum delen gegevens"
+      },
+      "stepFour": {
+        "header": "Controleer je deelinstellingen",
+        "subheaderOne": "Je gaat gegevens delen met",
+        "subheaderTwo": "Deze gegevens ga je delen",
+        "date": "Startdatum delen gegevens",
+        "organizationName": "Gegevens bevestigd door",
+        "bsn": "Burgerservicenummer",
+        "typeVerification": "Type bevestiging",
+        "status": "Status bevestiging"
+      }
+    },
+    "success": {
+      "button": "Ga door naar Start"
     }
   }
 }

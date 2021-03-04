@@ -20,7 +20,7 @@ const useStyles = makeStyles({
         height: '100%',
         maxWidth: '1000px',
         display: 'grid',
-        gridTemplateRows: '0.5fr 1fr 124px',
+        gridTemplateRows: '0.4fr 1fr 80px 140px',
         margin: 'auto',
     },
     wrapper: {
@@ -28,6 +28,7 @@ const useStyles = makeStyles({
         padding: '15px',
         boxSizing: 'border-box',
         backgroundColor: colors.background,
+        overflow: 'auto'
     },
     header: {
         marginTop: 'auto',
@@ -48,6 +49,13 @@ const useStyles = makeStyles({
         width: '100px',
         margin: 'auto'
     },
+    subheader: {
+        textAlign: 'center',
+        color: colors.black
+    },
+    button: {
+        margin: '20px 0'
+    }
 });
 
 const Transition = forwardRef(
@@ -74,11 +82,13 @@ const Success =
                     TransitionComponent={Transition}>
                 <div className={classes.wrapper}>
                     <div className={classes.root}>
-                        <div className={classes.header}>{t('Je adreswijzigingsaanvraag is succesvol verzonden.')}</div>
+                        <div className={classes.header}>{popupUiStore.successHeader.get()}</div>
                         <div className={classes.imgContainer}>
                             <Icon className={classes.img} fullWidthIcon icon={CheckMark} color={colors.success}/>
                         </div>
-                        <MatIconButton label={t('Ga door naar Start')}
+                        <div className={classes.subheader}>{popupUiStore.successSubheader.get()}</div>
+                        <MatIconButton customClasses={classes.button}
+                                       label={t('main.success.button')}
                                        endIcon={ArrowRight}
                                        onClick={close}
                                        endIconColor={'white'}/>
