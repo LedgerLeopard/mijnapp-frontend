@@ -3,12 +3,12 @@ import {makeStyles} from '@material-ui/core';
 import Header from '../../ui/Header';
 import {Redirect, Route, Switch} from 'react-router-dom';
 import {colors} from '../../../assets/colors';
-import TabBar from '../share/TabBar/TabBar';
-import Empty from '../../Empty';
+import TabBar from '../share/TabBar';
 import Start from './pages/Start';
+import Notification from './pages/Notification';
+import Settings from './pages/Settings';
 import {inject, observer} from 'mobx-react';
 import Stores from '../../../models/Stores';
-import {useTranslation} from 'react-i18next';
 import MatIconButton from '../../ui/MatIconButton';
 
 
@@ -20,6 +20,8 @@ const useStyles = makeStyles({
     },
     wrapper: {
         height: '100%',
+        padding: '15px',
+        boxSizing: 'border-box',
         overflow: 'auto',
         backgroundColor: colors.background
     },
@@ -39,14 +41,13 @@ const useStyles = makeStyles({
 });
 
 const Dashboard =
-    inject((stores: Stores) => ({authStore: stores.authStore}))
-    (observer(({authStore}: Stores) => {
+    inject((stores: Stores) => ({authStore: stores.authStore, uiStore: stores.uiStore}))
+    (observer(({authStore, uiStore}: Stores) => {
         const classes = useStyles();
-        const {t} = useTranslation();
 
         return (
             <div className={classes.root}>
-                <Header label={t('main.dashboard.header') + authStore.user.firstName}
+                <Header label={uiStore.dashboardHeader.get()}
                         endComponent={
                             <MatIconButton customClasses={classes.avatarButton}
                                            label={<img className={classes.img} src={`${authStore.user.avatar}`} alt='Avatar'/>}/>
@@ -54,8 +55,8 @@ const Dashboard =
                 <div className={classes.wrapper}>
                     <Switch>
                         <Route exact path='/main/dashboard/start' component={Start}/>
-                        <Route exact path='/main/dashboard/notification' component={Empty}/>
-                        <Route exact path='/main/dashboard/settings' component={Empty}/>
+                        <Route exact path='/main/dashboard/notification' component={Notification}/>
+                        <Route exact path='/main/dashboard/settings' component={Settings}/>
                         <Redirect from='/main/dashboard' to='/main/dashboard/start'/>
                     </Switch>
                 </div>

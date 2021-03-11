@@ -12,6 +12,7 @@ import Loader from '../../ui/Loader';
 import {formatDate} from '../../../share/utils';
 import {inject, observer} from 'mobx-react';
 import Stores from '../../../models/Stores';
+import {CleaningMode} from '../../../share/constants/popUpModifiers';
 
 
 const useStyles = makeStyles({
@@ -119,8 +120,14 @@ const SharedInfoList =
                 });
         };
 
+        const onDestroy = () => {
+            setLoading(false);
+            popupUiStore.clearResultValue(CleaningMode.SharedData);
+        }
+
         useEffect(() => {
             loadData();
+            return onDestroy;
         }, []);
 
         const goBack = () => {

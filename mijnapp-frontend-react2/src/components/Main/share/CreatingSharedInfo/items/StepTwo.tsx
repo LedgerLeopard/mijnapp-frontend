@@ -53,7 +53,7 @@ const useStyles = makeStyles({
 });
 
 const StepTwo =
-    inject((stores: Stores) => ({popupUiStore: stores.popupUiStore, sharedDataStore: stores.sharedInformationStore}))
+    inject((stores: Stores) => ({popupUiStore: stores.popupUiStore, sharedDataStore: stores.sharedInfoStore}))
     (observer(({popupUiStore, sharedDataStore}: Stores | any) => {
         const classes = useStyles();
         const {t} = useTranslation();

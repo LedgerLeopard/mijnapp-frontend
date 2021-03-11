@@ -1,4 +1,4 @@
-import {action, makeObservable, observable, toJS} from 'mobx';
+import {action, makeAutoObservable, toJS} from 'mobx';
 import {Organization} from './Organization';
 import {Info} from './Info';
 import {TrackingData} from './TrackingData';
@@ -13,14 +13,7 @@ export default class SharedInfo {
     trackingData: TrackingData[] = [];
 
     constructor(data?: any) {
-        makeObservable(this, {
-            _id: observable,
-            infoId: observable,
-            info: observable,
-            organizations: observable,
-            uploadDate: observable,
-            trackingData: observable
-        });
+        makeAutoObservable(this);
         Object.assign(this, data);
     }
 
@@ -37,8 +30,9 @@ export default class SharedInfo {
         this.uploadDate = date ? date : new Date();
     });
 
-    getShareData = action((): { dataId: string | null, uploadDate: Date, organizations: (string | null)[] } => {
+    getShareData = action((): { _id: string | null, dataId: string | null, uploadDate: Date, organizations: (string | null)[] } => {
         return {
+            _id: this._id,
             dataId: this.infoId,
             organizations: toJS(this.organizations.filter(organization => organization.use).map(organization => organization._id)),
             uploadDate: this.uploadDate

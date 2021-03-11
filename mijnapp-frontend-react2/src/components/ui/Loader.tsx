@@ -5,7 +5,7 @@ import {colors} from '../../assets/colors';
 const useStyles = makeStyles({
     root: {
         height: '100%',
-        'z-index': '10000',
+        'z-index': '1000',
         width: '100%',
         display: 'flex',
         position: 'absolute',

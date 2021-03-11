@@ -36,6 +36,28 @@ const useStyles = makeStyles({
             border: `2px solid ${colors.primary}`
         },
     },
+    errorInput: {
+        height: 'auto',
+        minHeight: '45px',
+        padding: '0',
+        borderRadius: '8px',
+        backgroundColor: colors.white,
+
+        '& input': {
+            height: '100%',
+            width: '100%',
+            padding: '0 10px',
+            margin: 'auto',
+        },
+
+        '&:hover $notchedOutline': {
+            border: `2px solid red`
+        },
+
+        '&$focused $notchedOutline': {
+            border: `2px solid red`
+        },
+    },
     secretIcon: {
         height: 'auto',
         width: 'auto',
@@ -62,6 +84,7 @@ interface MatInputData {
     className?: string;
     isSecret?: boolean;
     label?: any;
+    labelClass?: string;
     placeholder?: string;
     value?: any;
     onChange?: any;
@@ -80,6 +103,7 @@ const MatInput = (
         className,
         isSecret,
         label,
+        labelClass,
         placeholder,
         value,
         onChange,
@@ -101,13 +125,13 @@ const MatInput = (
         <FormControl className={classes.wrapper + ' ' + className ? className : ''}
                      error={!valid || isDirty}
                      variant="outlined">
-            {label && <label className={classes.label}>{label}</label>}
+            {label && <label className={classes.label + ' ' + (labelClass ? labelClass : '')}>{label}</label>}
             <OutlinedInput
                 id={id}
                 inputRef={inputRef}
                 type={isSecret ? passwordVisibility ? 'text' : 'password' : type || 'text'}
                 classes={{
-                    root: classes.input,
+                    root: !valid ? classes.input : classes.errorInput,
                     notchedOutline: classes.notchedOutline,
                     focused: classes.focused
                 }}

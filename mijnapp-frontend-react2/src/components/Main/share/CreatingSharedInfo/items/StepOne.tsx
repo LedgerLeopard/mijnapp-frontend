@@ -86,7 +86,7 @@ const useStyles = makeStyles({
 });
 
 const ViewSharedData =
-    inject((stores: Stores) => ({sharedDataStore: stores.sharedInformationStore}))
+    inject((stores: Stores) => ({sharedDataStore: stores.sharedInfoStore}))
     (observer(({sharedDataStore}: Stores | any) => {
         const classes = useStyles();
         const {t} = useTranslation();
@@ -162,7 +162,7 @@ const ViewSharedData =
     }));
 
 const StepOne =
-    inject((stores: Stores) => ({popupUiStore: stores.popupUiStore, sharedDataStore: stores.sharedInformationStore}))
+    inject((stores: Stores) => ({popupUiStore: stores.popupUiStore, sharedDataStore: stores.sharedInfoStore}))
     (observer(({popupUiStore, sharedDataStore}: Stores | any) => {
         const classes = useStyles();
         const {t} = useTranslation();

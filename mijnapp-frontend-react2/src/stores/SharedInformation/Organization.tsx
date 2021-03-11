@@ -1,4 +1,4 @@
-import {action, makeObservable, observable} from 'mobx';
+import {action, makeAutoObservable} from 'mobx';
 
 
 export class Organization {
@@ -8,13 +8,11 @@ export class Organization {
     use: boolean = true;
 
     constructor(data?: any) {
-        makeObservable(this, {
-            _id: observable,
-            name: observable,
-            logo: observable,
-            use: observable
-        });
-        Object.assign(this, data);
+        this._id = data._id;
+        this.name = data.name;
+        this.logo = data.logo;
+        this.use = true;
+        makeAutoObservable(this);
     }
 
     markOrganization = action((checked: boolean) => this.use = checked);

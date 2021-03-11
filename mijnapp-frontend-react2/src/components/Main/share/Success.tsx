@@ -3,14 +3,15 @@ import {makeStyles} from '@material-ui/core';
 import Dialog from '@material-ui/core/Dialog';
 import {TransitionProps} from '@material-ui/core/transitions';
 import Slide from '@material-ui/core/Slide';
-import MatIconButton from '../../../ui/MatIconButton';
-import {ReactComponent as ArrowRight} from '../../../../assets/icons/arrow-right.svg';
+import MatIconButton from '../../ui/MatIconButton';
+import {ReactComponent as ArrowRight} from '../../../assets/icons/arrow-right.svg';
 import {inject, observer} from 'mobx-react';
-import Stores from '../../../../models/Stores';
+import Stores from '../../../models/Stores';
 import {useTranslation} from 'react-i18next';
-import {ReactComponent as CheckMark} from '../../../../assets/icons/check-mark.svg';
-import Icon from '../../../ui/Icon';
-import {colors} from '../../../../assets/colors';
+import {ReactComponent as CheckMark} from '../../../assets/icons/check-mark.svg';
+import Icon from '../../ui/Icon';
+import {colors} from '../../../assets/colors';
+import {useHistory} from 'react-router-dom';
 
 const useStyles = makeStyles({
     dialog: {
@@ -68,9 +69,11 @@ const Success =
     inject((stores: Stores) => ({popupUiStore: stores.popupUiStore}))
     (observer(({popupUiStore}: Stores | any) => {
         const classes = useStyles();
+        const history = useHistory();
         const {t} = useTranslation();
 
         const close = () => {
+            history.replace('main/dashboard/start');
             popupUiStore.closeSuccess();
         };
 

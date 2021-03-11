@@ -53,7 +53,7 @@ const useStyles = makeStyles({
 });
 
 const StepThree =
-    inject((stores: Stores) => ({sharedDataStore: stores.sharedInformationStore}))
+    inject((stores: Stores) => ({sharedDataStore: stores.sharedInfoStore}))
     (observer(({sharedDataStore}: Stores | any) => {
         const classes = useStyles();
         const {t} = useTranslation();
@@ -70,7 +70,7 @@ const StepThree =
                     <div className={classes.cardHeader}>{t('main.creatingSharedInfo.stepThree.subheader')}</div>
                     <div className={classes.cardContent}>
                         <Icon className={classes.icon} icon={Calendar}/>
-                        <div>{formatDate(uploadDate ? uploadDate.toISOString() : '', true)}</div>
+                        <div>{formatDate(uploadDate ? uploadDate : '', true)}</div>
                     </div>
                 </Button>
 

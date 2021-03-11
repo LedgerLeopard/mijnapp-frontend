@@ -76,10 +76,28 @@
         "sharedInfo": "Gedeelde gegevens"
       }
     },
+    "preview": {
+      "header": "Deze stappen ga je doorlopen",
+      "what": "Geef aan wat je gaat delen",
+      "whom": "Geef aan met wie je gaat delen",
+      "when": "Geef aan wanneer je gaat delen",
+      "confirmShared": "Bevestig je deelinstellingen",
+      "newAddress": "Geef je nieuwe adres aan",
+      "movingDate": "Geef je verhuisdatum op",
+      "withWhom": "Geef aan met wie je gaat verhuizen",
+      "communicationData": "Geef aan hoe we je kunnen bereiken",
+      "confirmChanging": "Bevestig je gegevens"
+    },
     "search": {
       "searchHeader": "Zoeken",
       "searchPlaceholder": "Zoeken",
       "contentHeader": "Suggesties"
+    },
+    "terminate": {
+      "header": "Stoppen met delen",
+      "text": "Weet je zeker dat je je gegevens niet langer wilt delen? Dit heeft mogelijk invloed op je dienstverlening.",
+      "confirm": "Bevestigen",
+      "cancel": "Nee, ga terug"
     },
     "personalData": {
       "header": "Terug naar Start",
@@ -93,24 +111,110 @@
       "marriage": "Geregisteerd partnerschap",
       "children": "Kinderen"
     },
-    "sharedInfo": {
+    "sharedInfoList": {
       "header": "Gedeelde gegevens",
       "backButton": "Terug naar Start",
       "textWhenEmpty": "Je hebt op dit moment nog niets gedeeld. Druk op het plusje om te beginnen met het delen van je gegevens.",
       "dateText": "Delen gestart op"
     },
+    "sharedInfoSingle": {
+      "headerOne": "Je gegevens zijn gedeeld met",
+      "headerTwo": "Je hebt deze gegevens gedeeld",
+      "headerThree": "Gegevens volgen",
+      "uploadDate": "Startdatum delen gegevens",
+      "organizationName": "Gegevens bevestigd door",
+      "bsn": "Burgerservicenummer",
+      "typeVerification": "Type bevestiging",
+      "status": "Status bevestiging",
+      "terminateShareButton": "Stoppen met delen",
+      "backButtonTop": "Terug naar Gedeelde gegevens",
+      "backButtonBottom": "Terug naar Start",
+      "successHeader": "Je gegevens worden niet meer gedeeld."
+    },
     "creatingSharedInfo": {
-      "preview": {
-        "header": "Deze stappen ga je doorlopen",
-        "what": "Geef aan wat je gaat delen",
-        "whom": "Geef aan met wie je gaat delen",
-        "when": "Geef aan wanneer je gaat delen",
-        "confirm": "Bevestig je deelinstellingen"
+      "header": "Gegevens delen",
+      "backButton": "Terug naar Start",
+      "buttonNames": {
+        "nextFirst": "Starten",
+        "nextLast": "Delen bevestigen",
+        "nextDefault": "Volgende stap",
+        "backFirst": "Terug naar Start",
+        "backDefault": "Terug naar de vorige stap"
+      },
+      "success": {
+        "header": "Je gegevens zijn succesvol gedeeld.",
+        "subheader": "Je schulden staan 8 maanden stil. We gaan samen aan de slag met je traject. Je kunt altijd stoppen met het delen van je gegevens."
+      },
+      "stepOne": {
+        "header": "Wat ga je delen?",
+        "select": "Selecteer gegevens",
+        "organizationName": "Gegevens bevestigd door",
+        "name": "Naam",
+        "bsn": "Burgerservicenummer",
+        "typeVerification": "Type bevestiging",
+        "status": "Status bevestiging"
+      },
+      "stepTwo": {
+        "header": "Met wie wil je delen?",
+        "select": "Organisatie toevoegen"
       },
       "stepThree": {
         "header": "Wanneer ga je delen?",
         "subheader": "Startdatum delen gegevens"
+      },
+      "stepFour": {
+        "header": "Controleer je deelinstellingen",
+        "subheaderOne": "Je gaat gegevens delen met",
+        "subheaderTwo": "Deze gegevens ga je delen",
+        "date": "Startdatum delen gegevens",
+        "organizationName": "Gegevens bevestigd door",
+        "bsn": "Burgerservicenummer",
+        "typeVerification": "Type bevestiging",
+        "status": "Status bevestiging"
       }
+    },
+    "changingUserData": {
+      "stepOne": {
+        "headerOne": "Wat wordt je nieuwe adres?",
+        "headerTwo": "Gevonden adressen",
+        "text": "Vul je postcode, huisnummer en eventuele toevoeging in van het nieuwe adres.",
+        "postcode": "postcode",
+        "houseNumber": "huisnummer",
+        "additionalData": "toevoeging",
+        "warningText": "Het opgegeven adres is onbekend.\n Controleer de postcode, huisnummer en eventueel toevoeging en probeer opnieuw."
+      },
+      "stepTwo": {
+        "header": "Wanneer ga je verhuizen?",
+        "text": "Kies je verhuisdatum in de onderstaande kalender.",
+        "subheader": "Verhuisdatum",
+        "day": "dag",
+        "month": "maand",
+        "year": "jaar"
+      },
+      "stepThree": {
+        "header": "Met wie ga je verhuizen?",
+        "text": "Er wordt een bericht gestuurd naar de persoon die meeverhuist (onderstaande personen staan nu op hetzelfde adres als jij ingeschreven)"
+      },
+      "stepFour": {
+        "header": "Hoe kunnen we je bereiken?",
+        "text": "Vul je e-mailadres en/of je telefoonnummer in",
+        "email": "E-mailadres",
+        "phone": "Telefoonnummer",
+        "emailPlaceholder": "Vul je e-mailadres in",
+        "phonePlaceholder": "Voer telefoonnummer in"
+      },
+      "stepFive": {
+        "header": "Controleer je gegevens",
+        "submitter": "Indiener",
+        "oldAddress": "Oud adres",
+        "newAddress": "Nieuw adres",
+        "movingDate": "Verhuisdatum",
+        "people": "Meeverhuizende personen",
+        "contacts": "Contactgegevens"
+      }
+    },
+    "success": {
+      "button": "Ga door naar Start"
     }
   }
 }

@@ -17,7 +17,6 @@ import Stores from '../../../../models/Stores';
 const useStyles = makeStyles({
     root: {
         maxWidth: '1000px',
-        padding: '15px',
         margin: 'auto',
     },
     searchBlock: {
@@ -77,7 +76,7 @@ const useStyles = makeStyles({
 const menuItems = [
     {header: 'personal', subheader: '', route: '/personal', icon: User},
     {header: 'notification', subheader: '', route: '/dashboard/notification', icon: Notification},
-    {header: 'documents', subheader: '', route: '/dashboard/start', icon: Folder},
+    {header: 'documents', subheader: '', route: '/documents', icon: Folder},
     {header: 'sharedInfo', subheader: '', route: '/share', icon: Share},
 ];
 

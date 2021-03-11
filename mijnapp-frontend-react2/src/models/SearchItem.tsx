@@ -6,6 +6,7 @@ export class SearchItem {
     type: SearchType | undefined;
     logo: string | undefined;
     name: string | undefined;
+    address: string | undefined;
     additionalName?: string;
     status?: ConfirmationStatus;
 

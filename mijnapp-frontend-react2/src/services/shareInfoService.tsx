@@ -10,8 +10,14 @@ const shareInfoService = {
     createShareData: (data: { dataId: string | null, uploadDate: Date, organizations: (string | null)[] }): Promise<any> => {
         return new Promise<any>(resolve => setTimeout(() => resolve(true), 1000));
     },
+    editShareData: (data: { dataId: string | null, uploadDate: Date, organizations: (string | null)[] }): Promise<any> => {
+        return new Promise<any>(resolve => setTimeout(() => resolve(true), 1000));
+    },
     getSharedData: (id: string): Promise<any> => {
         return new Promise<any>(resolve => setTimeout(() => resolve(SharedData_MOKE.getSharedData), 1000));
+    },
+    terminateSharingInfo: (id: string): Promise<any> => {
+        return new Promise<any>(resolve => setTimeout(() => resolve(true), 1000));
     }
 };
 

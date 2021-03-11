@@ -1,4 +1,4 @@
-import {makeObservable, observable} from 'mobx';
+import {makeAutoObservable} from 'mobx';
 
 export class Info {
     _id: string | null = null;
@@ -10,15 +10,7 @@ export class Info {
     status: string | null = null;
 
     constructor(data?: any) {
-        makeObservable(this, {
-            _id: observable,
-            organizationLogo: observable,
-            organizationName: observable,
-            name: observable,
-            BSN: observable,
-            verificationType: observable,
-            status: observable,
-        });
+        makeAutoObservable(this);
         Object.assign(this, data);
     }
 }

@@ -19,6 +19,11 @@ import {Info} from '../../../stores/SharedInformation/Info';
 import {TrackingData} from '../../../stores/SharedInformation/TrackingData';
 import MatIconButton from '../../ui/MatIconButton';
 import {ReactComponent as ArrowLeft} from '../../../assets/icons/arrow-left.svg';
+import Stepper from '@material-ui/core/Stepper';
+import {CustomConnector, CustomStepContent} from '../../ui/SimpleComponents';
+import Step from '@material-ui/core/Step';
+import StepLabel from '@material-ui/core/StepLabel';
+import {CleaningMode} from '../../../share/constants/popUpModifiers';
 
 
 const useStyles = makeStyles({
@@ -43,7 +48,10 @@ const useStyles = makeStyles({
     header: {
         fontSize: '18px',
         fontWeight: 'bold',
-        marginBottom: '16px'
+        marginBottom: '16px',
+        whiteSpace: 'nowrap',
+        textOverflow: 'ellipsis',
+        overflow: 'hidden',
     },
     subheader: {
         marginTop: '16px'
@@ -113,26 +121,50 @@ const useStyles = makeStyles({
         '&:hover': {
             backgroundColor: colors.background,
         },
+    },
+    stepper: {
+        borderRadius: '8px',
+        boxShadow: `0px 8px 16px ${colors.lightGrey}`,
+    },
+    label: {
+        fontSize: '16px',
+        fontWeight: 'bold',
+        color: colors.black,
+        whiteSpace: 'nowrap',
+        textOverflow: 'ellipsis',
+        overflow: 'hidden',
+    },
+    icon: {
+        height: '12px',
+        width: '12px',
+        borderRadius: '50%',
+        border: `2px solid ${colors.lightGrey}`,
+        backgroundColor: colors.lightGrey
+    },
+    date: {
+        paddingTop: '5px',
+        color: colors.grey
     }
 });
 
 const SharedInfoSingle =
-    inject((stores: Stores) => ({sharedInformationStore: stores.sharedInformationStore}))
-    (observer(({sharedInformationStore, ...props}: any) => {
+    inject((stores: Stores) => ({popupUiStore: stores.popupUiStore, sharedInfoStore: stores.sharedInfoStore}))
+    (observer(({popupUiStore, sharedInfoStore, ...props}: any) => {
         const classes = useStyles();
         const history = useHistory();
         const {t} = useTranslation();
         const [loading, setLoading] = useState(true);
-        const organizations: Organization[] = sharedInformationStore.organizations;
-        const info: Info = sharedInformationStore.info;
-        const trackingData: TrackingData[] = sharedInformationStore.trackingData;
+        const [actionLoading, setActionLoading] = useState(false);
+        const organizations: Organization[] = sharedInfoStore.organizations;
+        const info: Info = sharedInfoStore.info;
+        const trackingData: TrackingData[] = sharedInfoStore.trackingData;
 
         const loadData = () => {
             setLoading(true);
             const id = props.match.params.id;
             shareInfoService.getSharedData(id)
                 .then(information => {
-                    sharedInformationStore.setSharedData({
+                    sharedInfoStore.setSharedData({
                         organizations: information.organizations.map((organization: any) => new Organization(organization)),
                         trackingData: information.trackingData.map((data: any) => new TrackingData(data)),
                         ...information
@@ -145,15 +177,37 @@ const SharedInfoSingle =
                 });
         };
 
+        const onDestroy = () => {
+            sharedInfoStore.clearStore();
+            popupUiStore.clearResultValue(CleaningMode.Terminate);
+        };
+
         useEffect(() => {
             loadData();
-            return sharedInformationStore.clearStore;
+            return onDestroy;
         }, []);
+
+        const openDialog = () => {
+            popupUiStore.openTerminate()
+                .then((value: boolean) => {
+                    if (!value) return;
+                    setActionLoading(true);
+                    const id = props.match.params.id;
+                    shareInfoService.terminateSharingInfo(id)
+                        .then(() => {
+                            setActionLoading(false);
+                            popupUiStore.openSuccess(t('main.sharedInfoSingle.successHeader')).then();
+                        })
+                        .catch(error => {
+                            setActionLoading(false);
+                            console.log(error);
+                        });
+                });
+        };
 
         const goBack = () => {
             history.goBack();
         };
-
 
         return (
             <div className={classes.root}>
@@ -162,7 +216,7 @@ const SharedInfoSingle =
                         backButtonAction={goBack}/>
                 <div className={classes.wrapper}>
                     <div className={classes.content}>
-                        {loading && <Loader/>}
+                        {(loading || actionLoading) && <Loader/>}
                         {!loading &&
                         <>
                             <div className={classes.header}>{t('main.sharedInfoSingle.headerOne')}</div>
@@ -179,7 +233,7 @@ const SharedInfoSingle =
                                     <div className={classes.itemHeader}>{t('main.sharedInfoSingle.uploadDate')}</div>
                                     <div className={classes.itemContent}>
                                         <Icon icon={Calendar}/>
-                                        <div className={classes.itemData}>{formatDate(sharedInformationStore.uploadDate, true)}</div>
+                                        <div className={classes.itemData}>{formatDate(sharedInfoStore.uploadDate, true)}</div>
                                     </div>
                                 </ListItem>
                             </Paper>
@@ -224,9 +278,24 @@ const SharedInfoSingle =
 
                             <div className={classes.header + ' ' + classes.subheader}>{t('main.sharedInfoSingle.headerThree')}</div>
 
+                            <Stepper className={classes.stepper} orientation="vertical" connector={<CustomConnector/>}>
+                                {trackingData.map(data => (
+                                    <Step key={`key-${data._id}`} active={true}>
+                                        <StepLabel StepIconComponent={() => <div className={classes.icon}/>}>
+                                            <div className={classes.label}>{data.name}</div>
+                                        </StepLabel>
+                                        <CustomStepContent>
+                                            <div>{data.action}</div>
+                                            <div className={classes.date}>{formatDate(data.date)}</div>
+                                        </CustomStepContent>
+                                    </Step>
+                                ))}
+                            </Stepper>
+
                             <div className={classes.blockButton}>
                                 <MatIconButton customClasses={classes.terminateButton}
-                                               label={t('main.sharedInfoSingle.terminateShareButton')}/>
+                                               label={t('main.sharedInfoSingle.terminateShareButton')}
+                                               onClick={openDialog}/>
                                 <MatIconButton label={t('main.sharedInfoSingle.backButtonBottom')}
                                                customClasses={classes.backButton}
                                                startIcon={ArrowLeft}

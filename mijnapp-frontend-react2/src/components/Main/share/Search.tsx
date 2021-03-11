@@ -1,27 +1,27 @@
-import React, {forwardRef, useRef, useState} from 'react';
-import MatInput from '../../../ui/MatInput';
-import Icon from '../../../ui/Icon';
+import React, {forwardRef, useEffect, useRef, useState} from 'react';
+import MatInput from '../../ui/MatInput';
+import Icon from '../../ui/Icon';
 import {Button, makeStyles} from '@material-ui/core';
-import {colors} from '../../../../assets/colors';
+import {colors} from '../../../assets/colors';
 import {useTranslation} from 'react-i18next';
-import MatIconButton from '../../../ui/MatIconButton';
+import MatIconButton from '../../ui/MatIconButton';
 import CloseOutlinedIcon from '@material-ui/icons/CloseOutlined';
-import Loader from '../../../ui/Loader';
-import {delay} from '../../../../share/utils';
-import {ReactComponent as Truck} from '../../../../assets/icons/truck.svg';
-import {ReactComponent as SearchIcon} from '../../../../assets/icons/search.svg';
-import {ReactComponent as Document} from '../../../../assets/icons/document.svg';
-import {ReactComponent as CheckMark} from '../../../../assets/icons/check-mark.svg';
-import searchService from '../../../../services/searchService';
+import Loader from '../../ui/Loader';
+import {delay} from '../../../share/utils';
+import {ReactComponent as Truck} from '../../../assets/icons/truck.svg';
+import {ReactComponent as SearchIcon} from '../../../assets/icons/search.svg';
+import {ReactComponent as Document} from '../../../assets/icons/document.svg';
+import {ReactComponent as CheckMark} from '../../../assets/icons/check-mark.svg';
+import searchService from '../../../services/searchService';
 import Dialog from '@material-ui/core/Dialog';
 import Slide from '@material-ui/core/Slide';
 import {TransitionProps} from '@material-ui/core/transitions';
 import {inject, observer} from 'mobx-react';
-import Stores from '../../../../models/Stores';
-import {SearchType} from '../../../../share/constants/searchType';
-import {SearchItem} from '../../../../models/SearchItem';
-import {ConfirmationStatus} from '../../../../share/constants/confirmationStatus';
-import {Organization} from '../../../../stores/SharedInformation/Organization';
+import Stores from '../../../models/Stores';
+import {SearchType} from '../../../share/constants/searchType';
+import {SearchItem} from '../../../models/SearchItem';
+import {ConfirmationStatus} from '../../../share/constants/confirmationStatus';
+import {Organization} from '../../../stores/SharedInformation/Organization';
 
 
 const useStyles = makeStyles({
@@ -152,13 +152,21 @@ const Transition = forwardRef(
 );
 
 const Search =
-    inject((stores: Stores) => ({popupUiStore: stores.popupUiStore, sharedDataStore: stores.sharedInformationStore}))
-    (observer(({popupUiStore, sharedDataStore}: Stores | any) => {
+    inject((stores: Stores) => ({popupUiStore: stores.popupUiStore, sharedInfoStore: stores.sharedInfoStore}))
+    (observer(({popupUiStore, sharedInfoStore}: Stores | any) => {
         const classes = useStyles();
         const {t} = useTranslation();
         const [loading, setLoading] = useState(false);
         const [items, setItems] = useState<SearchItem[]>([]);
         const input = useRef<HTMLInputElement>(null);
+
+        const onDestroy = () => {
+            setLoading(false);
+        };
+
+        useEffect(() => {
+            return onDestroy;
+        }, []);
 
         const search = (event: React.ChangeEvent<HTMLInputElement>) => {
             setLoading(true);
@@ -192,13 +200,18 @@ const Search =
             if (loading) return;
             switch (popupUiStore.searchMode.get()) {
                 case SearchType.Data:
-                    sharedDataStore.setSharedData({infoId: item._id});
+                    sharedInfoStore.setSharedData({infoId: item._id});
                     break;
                 case SearchType.Organization:
-                    sharedDataStore.addOrganization(new Organization(item));
+                    sharedInfoStore.addOrganization(new Organization(item));
                     break;
                 default:
-                    console.log(item._id);
+                    popupUiStore.openChangingUserData({
+                        _id: item._id,
+                        type: item.type,
+                        header: item.name,
+                        address: item.address
+                    }).then();
                     break;
             }
             close();

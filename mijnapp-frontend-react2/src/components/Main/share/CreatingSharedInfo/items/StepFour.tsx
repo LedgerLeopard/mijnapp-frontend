@@ -72,7 +72,7 @@ const useStyles = makeStyles({
 });
 
 const StepFour =
-    inject((stores: Stores) => ({sharedDataStore: stores.sharedInformationStore}))
+    inject((stores: Stores) => ({sharedDataStore: stores.sharedInfoStore}))
     (observer(({sharedDataStore}: Stores | any) => {
         const classes = useStyles();
         const {t} = useTranslation();

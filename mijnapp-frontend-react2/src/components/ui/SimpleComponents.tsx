@@ -1,6 +1,7 @@
 import {createStyles, Link, StepConnector, Switch, Tabs, Theme, withStyles} from '@material-ui/core';
 import {colors} from '../../assets/colors';
 import React from 'react';
+import StepContent from '@material-ui/core/StepContent';
 
 
 export const LinkButton = withStyles({
@@ -31,6 +32,20 @@ export const CustomConnector = withStyles({
         borderLeftWidth: '2px'
     }
 })(StepConnector);
+
+export const CustomStepContent = withStyles({
+    root: {
+        marginTop: 0,
+        marginLeft: '7px',
+        paddingTop: '5px',
+        paddingLeft: '16px',
+        borderLeft: `2px solid ${colors.lightGrey}`,
+        fontSize: '14px'
+    },
+    last: {
+        borderLeft: 'none'
+    }
+})(StepContent);
 
 export const CustomSwitch = withStyles((theme: Theme) =>
     createStyles({

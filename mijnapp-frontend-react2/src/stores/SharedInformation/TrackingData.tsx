@@ -1,4 +1,4 @@
-import {makeObservable, observable} from 'mobx';
+import {makeAutoObservable} from 'mobx';
 
 
 export class TrackingData {
@@ -8,12 +8,7 @@ export class TrackingData {
     date: Date | null = null;
 
     constructor(data?: any) {
-        makeObservable(this, {
-            _id: observable,
-            name: observable,
-            action: observable,
-            date: observable,
-        });
+        makeAutoObservable(this);
         Object.assign(this, data);
     }
 }

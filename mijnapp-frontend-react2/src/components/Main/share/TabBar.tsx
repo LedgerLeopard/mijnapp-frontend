@@ -2,14 +2,14 @@ import React, {useEffect, useState} from 'react';
 import {Badge, makeStyles, Tab, Tabs} from '@material-ui/core';
 import {useHistory} from 'react-router-dom';
 import {useTranslation} from 'react-i18next';
-import {colors} from '../../../../assets/colors';
-import Icon from '../../../ui/Icon';
-import {ReactComponent as Home} from '../../../../assets/icons/home.svg';
-import {ReactComponent as Search} from '../../../../assets/icons/search.svg';
-import {ReactComponent as Notification} from '../../../../assets/icons/notifications.svg';
-import {ReactComponent as Settings} from '../../../../assets/icons/settings.svg';
+import {colors} from '../../../assets/colors';
+import Icon from '../../ui/Icon';
+import {ReactComponent as Home} from '../../../assets/icons/home.svg';
+import {ReactComponent as Search} from '../../../assets/icons/search.svg';
+import {ReactComponent as Notification} from '../../../assets/icons/notifications.svg';
+import {ReactComponent as Settings} from '../../../assets/icons/settings.svg';
 import {inject, observer} from 'mobx-react';
-import Stores from '../../../../models/Stores';
+import Stores from '../../../models/Stores';
 
 
 const useStyles = makeStyles({
@@ -41,15 +41,23 @@ const menuItems: { key: string, route: string, icon: any }[] = [
 ];
 
 const TabBar =
-    inject((stores: Stores) => ({popupUiStore: stores.popupUiStore}))
-    (observer(({popupUiStore}: Stores | any) => {
+    inject((stores: Stores) => ({popupUiStore: stores.popupUiStore, uiStore: stores.uiStore, authStore: stores.authStore}))
+    (observer(({popupUiStore, uiStore, authStore}: Stores | any) => {
         const classes = useStyles();
         const {t} = useTranslation();
         const history = useHistory();
 
+        const setDashBoardHeader = (value: number) => {
+            const key = menuItems[value].key;
+            const header = t(`main.dashboardHeaders.${key}`) + (key === 'start' ? ' ' + authStore.user.firstName : '');
+            uiStore.setDashboardHeader(header);
+        };
+
         const onRouteChange = (url: string): number => {
             const index = menuItems.findIndex(item => url.includes(item.key));
-            return index !== -1 ? index : 0;
+            const value = index !== -1 ? index : 0;
+            setDashBoardHeader(value);
+            return value;
         };
 
         const [tab, setTab] = useState(onRouteChange(history.location.pathname));
