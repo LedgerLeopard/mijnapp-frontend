@@ -1,4 +1,4 @@
-import {createStyles, Link, StepConnector, Switch, Tabs, Theme, withStyles} from '@material-ui/core';
+import {createStyles, Link, Select, StepConnector, Switch, Tabs, Theme, withStyles} from '@material-ui/core';
 import {colors} from '../../assets/colors';
 import React from 'react';
 import StepContent from '@material-ui/core/StepContent';
@@ -101,3 +101,10 @@ export const CustomSwitch = withStyles((theme: Theme) =>
         {...props}
     />
 ));
+
+export const MatSelect = withStyles({
+    root: {},
+    nativeInput: {
+        width: 'calc(100% - 10px)'
+    }
+})(Select);

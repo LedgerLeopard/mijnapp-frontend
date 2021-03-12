@@ -1,4 +1,14 @@
 {
+  "errors": {
+    "400": "Sorry, something went wrong. Try again later.",
+    "401": "Your session expired",
+    "403": "Sorry, you are not allowed for that",
+    "404": "Sorry, something went wrong. Try again later.",
+    "500": "Functionality temporarily unavailable",
+    "503": "Functionality temporarily unavailable",
+    "504": "Functionality temporarily unavailable",
+    "badParsing": "Server response parsing error"
+  },
   "steps": {
     "header": "Welkom",
     "buttons": {
@@ -79,7 +89,18 @@
         "personal": "Persoonsgegevens",
         "notification": "Berichten",
         "documents": "Bevestigingen",
-        "sharedInfo": "Gedeelde gegevens"
+        "sharedInfo": "Gedeelde gegevens",
+        "subheaderNotification": " nieuw bericht"
+      },
+      "notifications": {
+        "newNotification": "Nieuw",
+        "oldNotification": "Eerder"
+      },
+      "settings": {
+        "logout": "Uitloggen",
+        "english": "English",
+        "dutch": "Dutch",
+        "label": "Choose language"
       }
     },
     "preview": {

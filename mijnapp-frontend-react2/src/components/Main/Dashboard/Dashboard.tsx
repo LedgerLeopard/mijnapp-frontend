@@ -1,7 +1,7 @@
 import React from 'react';
 import {makeStyles} from '@material-ui/core';
 import Header from '../../ui/Header';
-import {Redirect, Route, Switch} from 'react-router-dom';
+import {Redirect, Route, Switch, useHistory} from 'react-router-dom';
 import {colors} from '../../../assets/colors';
 import TabBar from '../share/TabBar';
 import Start from './pages/Start';
@@ -44,13 +44,17 @@ const Dashboard =
     inject((stores: Stores) => ({authStore: stores.authStore, uiStore: stores.uiStore}))
     (observer(({authStore, uiStore}: Stores) => {
         const classes = useStyles();
+        const history = useHistory();
+
+        const goToPersonalData = () => history.push('/main/personal');
 
         return (
             <div className={classes.root}>
                 <Header label={uiStore.dashboardHeader.get()}
                         endComponent={
                             <MatIconButton customClasses={classes.avatarButton}
-                                           label={<img className={classes.img} src={`${authStore.user.avatar}`} alt='Avatar'/>}/>
+                                           label={<img className={classes.img} src={`${authStore.user.avatar}`} alt='Avatar'/>}
+                                           onClick={goToPersonalData}/>
                         }/>
                 <div className={classes.wrapper}>
                     <Switch>

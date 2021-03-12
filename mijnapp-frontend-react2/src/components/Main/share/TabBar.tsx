@@ -41,8 +41,13 @@ const menuItems: { key: string, route: string, icon: any }[] = [
 ];
 
 const TabBar =
-    inject((stores: Stores) => ({popupUiStore: stores.popupUiStore, uiStore: stores.uiStore, authStore: stores.authStore}))
-    (observer(({popupUiStore, uiStore, authStore}: Stores | any) => {
+    inject((stores: Stores) => ({
+        popupUiStore: stores.popupUiStore,
+        uiStore: stores.uiStore,
+        authStore: stores.authStore,
+        countNotification: stores.countNotification
+    }))
+    (observer(({popupUiStore, uiStore, authStore, countNotification}: Stores | any) => {
         const classes = useStyles();
         const {t} = useTranslation();
         const history = useHistory();
@@ -89,7 +94,7 @@ const TabBar =
                          icon={
                              item.key === 'notification'
                                  ? <Badge classes={{badge: classes.badge}}
-                                          badgeContent={1}
+                                          badgeContent={countNotification.count.get()}
                                           color='primary'
                                           children={<Icon icon={item.icon}/>}/>
                                  : <Icon icon={item.icon}/>

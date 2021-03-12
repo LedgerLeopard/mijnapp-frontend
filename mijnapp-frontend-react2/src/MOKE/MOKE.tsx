@@ -1,6 +1,6 @@
 export const UserData_MOKE = {
-    _id: '_id',
-    token: 'token',
+    _id: 'ddfe0514-7330-4a1a-9f6a-66385046c79d',
+    token: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJPbmxpbmUgSldUIEJ1aWxkZXIiLCJpYXQiOjE2MTU1NDU4NDIsImV4cCI6MTY0NzA4MTg0MiwiYXVkIjoid3d3LmV4YW1wbGUuY29tIiwic3ViIjoianJvY2tldEBleGFtcGxlLmNvbSIsIkdpdmVuTmFtZSI6IkpvaG5ueSIsIlN1cm5hbWUiOiJSb2NrZXQiLCJFbWFpbCI6Impyb2NrZXRAZXhhbXBsZS5jb20iLCJSb2xlIjpbIk1hbmFnZXIiLCJQcm9qZWN0IEFkbWluaXN0cmF0b3IiXX0.p7V33LUDSq1z7S4yG2gYEbppRzCPTOaZMY1EwjAPPNk',
     login: 'Login',
     firstName: 'Henk',
     lastName: 'de Vries',
@@ -184,6 +184,14 @@ export const Notification_MOKE = {
             text: 'Gemeente X heeft een bevestiging naar jou gestuurd.',
             status: 'new',
             date: '2021-03-04T10:44:57.363Z'
-        }
+        },
+        // {
+        //     _id: 'c008871f-1c30-4bba-a313-69882bc405c2',
+        //     dataId: 'cab95eb3-7d12-4ef1-9425-abdf066d8be1',
+        //     logo: 'https://ifcviewerblobstorage.blob.core.windows.net/cirlinq-ifc/fmwzkpl1tidouannndvozk_Logo%20Overheid.png',
+        //     text: 'Je bevestiging ondersteuning is gelezen door Centraal Justitieel Incassobureau.',
+        //     status: 'new',
+        //     date: '2021-03-04T10:44:57.363Z'
+        // }
     ]
 };

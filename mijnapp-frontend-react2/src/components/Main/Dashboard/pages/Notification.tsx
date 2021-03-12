@@ -37,7 +37,11 @@ const useStyles = makeStyles({
         borderRadius: '8px',
     },
     cardOld: {
-        opacity: '0.6'
+        opacity: '0.6',
+
+        '&:hover': {
+            opacity: '1'
+        }
     },
     cardContent: {
         height: '100%',
@@ -73,20 +77,20 @@ const useStyles = makeStyles({
 
 const Notification =
     inject((stores: Stores) => ({popupUiStore: stores.popupUiStore, sharedInfoStore: stores.sharedInfoStore}))
-    (observer(({popupUiStore, sharedInfoStore}: any) => {
+    (observer(({popupUiStore, sharedInfoStore}: Stores | any) => {
         const classes = useStyles();
         const {t} = useTranslation();
-        const [loading, setLoading] = useState(false);
+        const [loading, setLoading] = useState(true);
         const [loadingAdditionalData, setLoadingAdditionalData] = useState(false);
-        const [newNotifications, setNewNotifications] = useState<Notifications[]>([]);
-        const [oldNotifications, setOldNotifications] = useState<Notifications[]>([]);
+        const [notifications, setNotifications] = useState<Notifications[]>([]);
+        const newNotifications = notifications.filter(notification => notification.status === 'new');
+        const oldNotifications = notifications.filter(notification => notification.status === 'old');
 
         const loadData = () => {
             setLoading(true);
             notificationService.getNotifications()
                 .then(notifications => {
-                    setNewNotifications(notifications.filter((n: any) => n.status === 'new'));
-                    setOldNotifications(notifications.filter((n: any) => n.status === 'old'));
+                    setNotifications(notifications);
                     setLoading(false);
                 })
                 .catch(error => {
@@ -99,11 +103,13 @@ const Notification =
             loadData();
         }, []);
 
-        const loadAdditionalData = (id: string) => {
+        const loadAdditionalData = (notification: Notifications) => {
             setLoadingAdditionalData(true);
-            documentService.getDocument(id)
+            notificationService.markAsRead(notification._id).catch(error => console.log(error));
+            documentService.getDocument(notification.dataId)
                 .then(data => {
                     openPopup(data);
+                    notification.status = 'old';
                     setLoadingAdditionalData(false);
                 })
                 .catch(error => {
@@ -127,12 +133,14 @@ const Notification =
             <div className={classes.root}>
                 {(loading || loadingAdditionalData) && <Loader/>}
                 {!loading && newNotifications.length > 0 && <>
-                    <div className={classes.header}>{t('Nieuw (1)')}</div>
+                    <div className={classes.header}>
+                        {t('main.dashboard.notifications.newNotification') + ` (${newNotifications.length})`}
+                    </div>
                     {newNotifications.map(notification => (
                         <Button key={'key-' + notification._id}
                                 className={classes.card}
                                 variant='contained'
-                                onClick={() => loadAdditionalData(notification.dataId)}
+                                onClick={() => loadAdditionalData(notification)}
                                 disableElevation>
                             <div className={classes.cardContent}>
                                 <img className={classes.cardImg} src={notification.logo} alt={'Organization logo'}/>
@@ -145,12 +153,12 @@ const Notification =
                     ))}
                 </>}
                 {!loading && oldNotifications.length > 0 && <>
-                    <div className={classes.header}>{t('Eerder')}</div>
+                    <div className={classes.header}>{t('main.dashboard.notifications.oldNotification')}</div>
                     {oldNotifications.map(notification => (
                         <Button key={'key-' + notification._id}
                                 className={classes.card + ' ' + classes.cardOld}
                                 variant='contained'
-                                onClick={() => loadAdditionalData(notification.dataId)}
+                                onClick={() => loadAdditionalData(notification)}
                                 disableElevation>
                             <div className={classes.cardContent}>
                                 <img className={classes.cardImg} src={notification.logo} alt={'Organization logo'}/>

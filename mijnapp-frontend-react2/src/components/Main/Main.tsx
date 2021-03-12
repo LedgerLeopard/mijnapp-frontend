@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Redirect, Route, Switch} from 'react-router-dom';
 import Dashboard from './Dashboard/Dashboard';
 import PersonalData from './PersonalData/PersonalData';
@@ -16,8 +16,14 @@ import DocumentSingle from './Documents/DocumentSingle';
 
 
 const Main =
-    inject((stores: Stores) => ({popupUiStore: stores.popupUiStore}))
-    (observer(({popupUiStore}: Stores) => {
+    inject((stores: Stores) => ({popupUiStore: stores.popupUiStore, countNotification: stores.countNotification}))
+    (observer(({popupUiStore, countNotification}: Stores) => {
+
+        useEffect(() => {
+            countNotification.pollingServer();
+            return countNotification.abortPollingServer
+        }, []);
+
         return (
             <>
                 <Switch>

@@ -74,15 +74,15 @@ const useStyles = makeStyles({
 });
 
 const menuItems = [
-    {header: 'personal', subheader: '', route: '/personal', icon: User},
-    {header: 'notification', subheader: '', route: '/dashboard/notification', icon: Notification},
-    {header: 'documents', subheader: '', route: '/documents', icon: Folder},
-    {header: 'sharedInfo', subheader: '', route: '/share', icon: Share},
+    {key: 'personal', subheader: '', route: '/personal', icon: User},
+    {key: 'notification', subheader: '', route: '/dashboard/notification', icon: Notification},
+    {key: 'documents', subheader: '', route: '/documents', icon: Folder},
+    {key: 'sharedInfo', subheader: '', route: '/share', icon: Share},
 ];
 
 const Start =
-    inject((stores: Stores) => ({popupUiStore: stores.popupUiStore}))
-    (observer(({popupUiStore}: Stores) => {
+    inject((stores: Stores) => ({popupUiStore: stores.popupUiStore, countNotification: stores.countNotification}))
+    (observer(({popupUiStore, countNotification}: Stores) => {
         const classes = useStyles();
         const history = useHistory();
         const {t} = useTranslation();
@@ -95,6 +95,15 @@ const Start =
         const focus = () => {
             input.current?.blur();
             popupUiStore.openSearch();
+        };
+
+        const getMenuItems = () => {
+            return menuItems.map(item => {
+                if (item.key === 'notification' && countNotification.count.get()) {
+                    item.subheader = countNotification.count.get() + t('main.dashboard.start.subheaderNotification');
+                }
+                return item;
+            });
         };
 
         return (
@@ -110,8 +119,8 @@ const Start =
                 </div>
                 <div>
                     <div className={classes.header}>{t('main.dashboard.start.menuHeader')}</div>
-                    {menuItems.map(item => (
-                        <Button key={'key-' + item.header}
+                    {getMenuItems().map(item => (
+                        <Button key={'key-' + item.key}
                                 className={classes.card}
                                 variant='contained'
                                 onClick={() => goTo(item.route)}
@@ -120,12 +129,9 @@ const Start =
                                 <Icon className={classes.cardIcon} fullWidthIcon={true} icon={item.icon}/>
                                 <div className={classes.cardTextContent}>
                                     <div className={classes.cardHeader}>
-                                        {t('main.dashboard.start.' + item.header)}
+                                        {t('main.dashboard.start.' + item.key)}
                                     </div>
-                                    {item.subheader &&
-                                    <div className={classes.cardSubheader}>
-                                        {t('main.dashboard.start.' + item.subheader)}
-                                    </div>}
+                                    {item.subheader && <div className={classes.cardSubheader}>{item.subheader}</div>}
                                 </div>
                             </div>
                         </Button>

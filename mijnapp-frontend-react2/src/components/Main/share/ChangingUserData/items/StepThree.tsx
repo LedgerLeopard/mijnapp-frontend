@@ -79,7 +79,7 @@ const StepThree =
                                 <ListItem key={'listKey-' + index + '-' + person._id}
                                           className={classes.listItem}
                                           onClick={() => person.markPerson()}
-                                          divider={index < 3}
+                                          divider={(people.length - 1) < index}
                                           button>
                                     <ListItemIcon classes={{root: classes.listItemIcon}}>
                                         <Checkbox edge="start"

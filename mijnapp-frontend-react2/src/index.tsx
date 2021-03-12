@@ -9,6 +9,7 @@ import './i18';
 import Stores from './models/Stores';
 import {MuiPickersUtilsProvider} from '@material-ui/pickers';
 import DateFnsUtils from '@date-io/date-fns';
+import {ToastProvider} from 'react-toast-notifications';
 
 
 const theme = createMuiTheme({
@@ -35,7 +36,9 @@ ReactDOM.render(
     <Provider {...stores}>
         <MuiThemeProvider theme={theme}>
             <MuiPickersUtilsProvider utils={DateFnsUtils}>
-                <App/>
+                <ToastProvider autoDismiss={true} autoDismissTimeout={3000} placement='top-center'>
+                    <App/>
+                </ToastProvider>
             </MuiPickersUtilsProvider>
         </MuiThemeProvider>
     </Provider>,

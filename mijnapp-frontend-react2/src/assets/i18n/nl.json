@@ -1,4 +1,14 @@
 {
+  "errors": {
+    "400": "Sorry, something went wrong. Try again later.",
+    "401": "Your session expired",
+    "403": "Sorry, you are not allowed for that",
+    "404": "Sorry, something went wrong. Try again later.",
+    "500": "Functionality temporarily unavailable",
+    "503": "Functionality temporarily unavailable",
+    "504": "Functionality temporarily unavailable",
+    "badParsing": "Server response parsing error"
+  },
   "steps": {
     "header": "Welkom",
     "buttons": {
@@ -64,6 +74,12 @@
     "settings": "Instellingen"
   },
   "main": {
+    "dashboardHeaders": {
+      "start": "Welkom terug",
+      "search": "Zoeken",
+      "notification": "Berichten",
+      "settings": "Instellingen"
+    },
     "dashboard": {
       "header": "Welkom terug ",
       "start": {
@@ -73,7 +89,18 @@
         "personal": "Persoonsgegevens",
         "notification": "Berichten",
         "documents": "Bevestigingen",
-        "sharedInfo": "Gedeelde gegevens"
+        "sharedInfo": "Gedeelde gegevens",
+        "subheaderNotification": " nieuw bericht"
+      },
+      "notifications": {
+        "newNotification": "Nieuw",
+        "oldNotification": "Eerder"
+      },
+      "settings": {
+        "logout": "Uitloggen",
+        "english": "English",
+        "dutch": "Dutch",
+        "label": "Choose language"
       }
     },
     "preview": {
@@ -110,6 +137,21 @@
       "countryBirth": "Geboorteland",
       "marriage": "Geregisteerd partnerschap",
       "children": "Kinderen"
+    },
+    "documentList": {
+      "header": "Bevestigingen",
+      "backButton": "Terug naar Start"
+    },
+    "documentSingle": {
+      "header": "Inhoud bevestiging",
+      "backButton": "Terug naar Bevestigingen",
+      "organizationName": "Gegevens bevestigd door",
+      "name": "Naam",
+      "bsn": "Burgerservicenummer",
+      "typeVerification": "Type bevestiging",
+      "status": "Status bevestiging",
+      "backButtonTop": "Delen",
+      "backButtonBottom": "Terug naar Start"
     },
     "sharedInfoList": {
       "header": "Gedeelde gegevens",
@@ -174,6 +216,15 @@
       }
     },
     "changingUserData": {
+      "backButton": "Terug naar Start",
+      "success": "Je adreswijzigingsaanvraag is succesvol verzonden.",
+      "buttonNames": {
+        "nextFirst": "Starten",
+        "nextLast": "Aanvraag verzenden",
+        "nextDefault": "Volgende stap",
+        "backFirst": "Terug naar Start",
+        "backDefault": "Terug naar de vorige stap"
+      },
       "stepOne": {
         "headerOne": "Wat wordt je nieuwe adres?",
         "headerTwo": "Gevonden adressen",
